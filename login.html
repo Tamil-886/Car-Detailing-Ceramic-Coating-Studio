@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sign In | APEX OBSIDIAN Automotive Studio</title>
+    <meta name="description" content="Sign in to your APEX OBSIDIAN account to manage detailing appointments, track live cleanroom bays, and access warranties.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="auth-page">
+
+    <!-- Top Navigation & Controls Bar -->
+    <header class="auth-top-bar">
+        <a href="index.html" class="auth-nav-link" title="Return to Homepage">
+            <i class="ri-arrow-left-line"></i> <span>Back to Website</span>
+        </a>
+
+        <div class="auth-actions-group">
+            <!-- LTR / RTL Button -->
+            <button type="button" class="auth-action-btn rtl-toggle" id="rtl-toggle-btn" title="Toggle Layout Direction (LTR/RTL)" aria-label="Toggle Layout Direction">
+                <i class="ri-translate-2"></i> <span>LTR</span>
+            </button>
+
+            <!-- Theme Toggle Button (Light/Dark) -->
+            <button type="button" class="auth-action-btn theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+                <i class="ri-sun-line theme-icon-light"></i>
+                <i class="ri-moon-line theme-icon-dark"></i>
+                <span class="theme-label-text">Theme</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Form Container -->
+    <main class="auth-main-container">
+        <div class="auth-card-wrapper">
+            <div class="auth-card">
+                <!-- Header -->
+                <div class="auth-header">
+                    <a href="index.html" class="logo">
+                        <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                        <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                    </a>
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to access your garage, service telemetry, and studio bookings.</p>
+                </div>
+
+                <!-- Notification Alert -->
+                <div id="login-alert" class="auth-alert" style="display: none;" role="alert"></div>
+
+                <!-- Login Form -->
+                <form id="apex-login-form" class="auth-form" novalidate onsubmit="handleLogin(event)">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label class="form-label" for="login-email">Email Address</label>
+                        <div class="auth-input-wrapper">
+                            <i class="ri-mail-line input-icon"></i>
+                            <input type="email" id="login-email" name="email" class="form-control" placeholder="name@example.com" required autocomplete="email">
+                        </div>
+                        <span id="email-error-msg" class="field-error-msg" style="display: none;"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label class="form-label" for="login-password">Password</label>
+                        <div class="auth-input-wrapper">
+                            <i class="ri-lock-line input-icon"></i>
+                            <input type="password" id="login-password" name="password" class="form-control" placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" id="toggle-login-password" class="password-toggle-btn" onclick="togglePasswordVisibility('login-password', this)" title="Show/Hide Password" aria-label="Toggle password visibility">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                        <span id="password-error-msg" class="field-error-msg" style="display: none;"></span>
+                    </div>
+
+                    <!-- Form Meta: Remember Me & Forgot Password -->
+                    <div class="auth-form-meta">
+                        <label class="auth-checkbox-label" for="remember-me">
+                            <input type="checkbox" id="remember-me" name="remember">
+                            <span>Remember Me</span>
+                        </label>
+                        <a href="forgot-password.html" class="auth-link">Forgot Password?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="login-btn" class="btn btn-gold w-100" style="padding: 13px; font-weight: 700;">
+                        <i class="ri-login-box-line"></i> Sign In
+                    </button>
+                </form>
+
+                <!-- Footer Link to Register -->
+                <div class="auth-footer">
+                    Don't have an account? <a href="register.html" class="auth-link" style="font-weight: 600;">Create an Account</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function togglePasswordVisibility(inputId, btn) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            const isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
+            const icon = btn.querySelector('i');
+            if (icon) {
+                icon.className = isPassword ? 'ri-eye-off-line text-gold' : 'ri-eye-line';
+            }
+        }
+
+        function showAlert(message, type = 'error') {
+            const alertBox = document.getElementById('login-alert');
+            if (!alertBox) return;
+            alertBox.className = `auth-alert auth-alert-${type}`;
+            const icon = type === 'success' ? 'ri-checkbox-circle-fill' : (type === 'info' ? 'ri-information-line' : 'ri-error-warning-fill');
+            alertBox.innerHTML = `<i class="${icon}" style="font-size: 1.15rem; flex-shrink: 0;"></i> <span>${message}</span>`;
+            alertBox.style.display = 'flex';
+        }
+
+        function hideAlert() {
+            const alertBox = document.getElementById('login-alert');
+            if (alertBox) alertBox.style.display = 'none';
+        }
+
+        function clearFieldErrors() {
+            document.querySelectorAll('.form-control').forEach(el => el.classList.remove('is-invalid'));
+            document.querySelectorAll('.field-error-msg').forEach(el => {
+                el.textContent = '';
+                el.style.display = 'none';
+            });
+        }
+
+        function showFieldError(inputId, errorMsgId, message) {
+            const input = document.getElementById(inputId);
+            const msg = document.getElementById(errorMsgId);
+            if (input) input.classList.add('is-invalid');
+            if (msg) {
+                msg.textContent = message;
+                msg.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('registered') === 'true') {
+                const registeredEmail = params.get('email');
+                if (registeredEmail) {
+                    document.getElementById('login-email').value = registeredEmail;
+                }
+                showAlert('Account registered successfully! Please sign in with your credentials.', 'success');
+            } else if (params.get('logout') === 'true') {
+                showAlert('You have been signed out successfully.', 'info');
+            }
+        });
+
+        function handleLogin(e) {
+            e.preventDefault();
+            clearFieldErrors();
+            hideAlert();
+
+            const emailInput = document.getElementById('login-email');
+            const passwordInput = document.getElementById('login-password');
+            const rememberInput = document.getElementById('remember-me');
+            const submitBtn = document.getElementById('login-btn') || document.getElementById('login-submit-btn');
+
+            const email = (emailInput.value || '').trim();
+            const password = passwordInput.value || '';
+            const remember = rememberInput ? rememberInput.checked : false;
+
+            let hasError = false;
+            if (!email) {
+                showFieldError('login-email', 'email-error-msg', 'Please enter your email address.');
+                hasError = true;
+            } else if (!ApexAuth.validateEmail(email)) {
+                showFieldError('login-email', 'email-error-msg', 'Please enter a valid email format.');
+                hasError = true;
+            }
+
+            if (!password) {
+                showFieldError('login-password', 'password-error-msg', 'Please enter your password.');
+                hasError = true;
+            }
+
+            if (hasError) return;
+
+            const originalBtnHTML = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="ri-loader-4-line spin"></i> Signing In...';
+
+            setTimeout(() => {
+                const result = ApexAuth.login(email, password, remember);
+
+                if (!result.success) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHTML;
+                    showAlert(result.message, 'error');
+                    passwordInput.classList.add('is-invalid');
+                    return;
+                }
+
+                showAlert(`Welcome back, ${result.user.name}! Redirecting...`, 'success');
+                submitBtn.innerHTML = '<i class="ri-check-line"></i> Success! Redirecting...';
+
+                setTimeout(() => {
+                    const redirectUrl = sessionStorage.getItem('apex_auth_redirect') || 'index.html';
+                    sessionStorage.removeItem('apex_auth_redirect');
+                    window.location.href = redirectUrl;
+                }, 500);
+            }, 500);
+        }
+    </script>
+</body>
+</html>

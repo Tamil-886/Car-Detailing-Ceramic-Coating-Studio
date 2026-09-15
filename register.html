@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | APEX OBSIDIAN Automotive Studio</title>
+    <meta name="description" content="Create an account with APEX OBSIDIAN to manage vehicle detailing appointments, track live cleanroom bays, and access warranties.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="auth-page">
+
+    <!-- Top Navigation & Controls Bar -->
+    <header class="auth-top-bar">
+        <a href="index.html" class="auth-nav-link" title="Return to Homepage">
+            <i class="ri-arrow-left-line"></i> <span>Back to Website</span>
+        </a>
+
+        <div class="auth-actions-group">
+            <!-- LTR / RTL Button -->
+            <button type="button" class="auth-action-btn rtl-toggle" id="rtl-toggle-btn" title="Toggle Layout Direction (LTR/RTL)" aria-label="Toggle Layout Direction">
+                <i class="ri-translate-2"></i> <span>LTR</span>
+            </button>
+
+            <!-- Theme Toggle Button (Light/Dark) -->
+            <button type="button" class="auth-action-btn theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+                <i class="ri-sun-line theme-icon-light"></i>
+                <i class="ri-moon-line theme-icon-dark"></i>
+                <span class="theme-label-text">Theme</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Form Container -->
+    <main class="auth-main-container">
+        <div class="auth-card-wrapper wide">
+            <div class="auth-card">
+                <!-- Header -->
+                <div class="auth-header">
+                    <a href="index.html" class="logo">
+                        <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                        <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                    </a>
+                    <h2>Create Account</h2>
+                    <p>Register your account to manage detailing appointments and track live cleanroom bays.</p>
+                </div>
+
+                <!-- Notification Alert -->
+                <div id="register-alert" class="auth-alert" style="display: none;" role="alert"></div>
+
+                <!-- Register Form -->
+                <form id="apex-register-form" class="auth-form" novalidate onsubmit="handleRegister(event)">
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label class="form-label" for="register-fullname">Full Name</label>
+                        <div class="auth-input-wrapper">
+                            <i class="ri-user-line input-icon"></i>
+                            <input type="text" id="register-fullname" name="fullname" class="form-control" placeholder="Alexander Vance" required autocomplete="name">
+                        </div>
+                        <span id="name-error-msg" class="field-error-msg" style="display: none;"></span>
+                    </div>
+
+                    <!-- Email & Phone Number Grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" class="grid-2-col">
+                        <div class="form-group">
+                            <label class="form-label" for="register-email">Email Address</label>
+                            <div class="auth-input-wrapper">
+                                <i class="ri-mail-line input-icon"></i>
+                                <input type="email" id="register-email" name="email" class="form-control" placeholder="name@example.com" required autocomplete="email">
+                            </div>
+                            <span id="email-error-msg" class="field-error-msg" style="display: none;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="register-phone">Phone Number</label>
+                            <div class="auth-input-wrapper">
+                                <i class="ri-phone-line input-icon"></i>
+                                <input type="tel" id="register-phone" name="phone" class="form-control" placeholder="+1 (310) 555-0192" autocomplete="tel">
+                            </div>
+                            <span id="phone-error-msg" class="field-error-msg" style="display: none;"></span>
+                        </div>
+                    </div>
+
+                    <!-- Password & Confirm Password Grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" class="grid-2-col">
+                        <div class="form-group">
+                            <label class="form-label" for="register-password">Password</label>
+                            <div class="auth-input-wrapper">
+                                <i class="ri-lock-line input-icon"></i>
+                                <input type="password" id="register-password" name="password" class="form-control" placeholder="Min 6 characters" required minlength="6" autocomplete="new-password">
+                                <button type="button" id="toggle-register-password" class="password-toggle-btn" onclick="togglePasswordVisibility('register-password', this)" title="Show/Hide Password" aria-label="Toggle password visibility">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                            <span id="password-error-msg" class="field-error-msg" style="display: none;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="register-confirm-password">Confirm Password</label>
+                            <div class="auth-input-wrapper">
+                                <i class="ri-lock-check-line input-icon"></i>
+                                <input type="password" id="register-confirm-password" name="confirm_password" class="form-control" placeholder="Confirm password" required minlength="6" autocomplete="new-password">
+                                <button type="button" id="toggle-register-confirm-password" class="password-toggle-btn" onclick="togglePasswordVisibility('register-confirm-password', this)" title="Show/Hide Password" aria-label="Toggle password visibility">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </div>
+                            <span id="confirm-password-error-msg" class="field-error-msg" style="display: none;"></span>
+                        </div>
+                    </div>
+
+                    <!-- Terms & Conditions Checkbox -->
+                    <div class="form-group" style="margin-bottom: 22px;">
+                        <label class="auth-checkbox-label" for="register-terms" style="align-items: flex-start;">
+                            <input type="checkbox" id="register-terms" name="terms" required checked style="margin-top: 3px;">
+                            <span>I agree to the <a href="contact.html" class="auth-link" target="_blank">Terms & Conditions</a> and <a href="contact.html" class="auth-link" target="_blank">Privacy Policy</a>.</span>
+                        </label>
+                        <span id="terms-error-msg" class="field-error-msg" style="display: none;"></span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="register-btn" class="btn btn-gold w-100" style="padding: 13px; font-weight: 700;">
+                        <i class="ri-user-add-line"></i> Create Account
+                    </button>
+                </form>
+
+                <!-- Footer Link to Login -->
+                <div class="auth-footer">
+                    Already have an account? <a href="login.html" class="auth-link" style="font-weight: 600;">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function togglePasswordVisibility(inputId, btn) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            const isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
+            const icon = btn.querySelector('i');
+            if (icon) {
+                icon.className = isPassword ? 'ri-eye-off-line text-gold' : 'ri-eye-line';
+            }
+        }
+
+        function showAlert(message, type = 'error') {
+            const alertBox = document.getElementById('register-alert');
+            if (!alertBox) return;
+            alertBox.className = `auth-alert auth-alert-${type}`;
+            const icon = type === 'success' ? 'ri-checkbox-circle-fill' : (type === 'info' ? 'ri-information-line' : 'ri-error-warning-fill');
+            alertBox.innerHTML = `<i class="${icon}" style="font-size: 1.15rem; flex-shrink: 0;"></i> <span>${message}</span>`;
+            alertBox.style.display = 'flex';
+        }
+
+        function hideAlert() {
+            const alertBox = document.getElementById('register-alert');
+            if (alertBox) alertBox.style.display = 'none';
+        }
+
+        function clearFieldErrors() {
+            document.querySelectorAll('.form-control').forEach(el => el.classList.remove('is-invalid'));
+            document.querySelectorAll('.field-error-msg').forEach(el => {
+                el.textContent = '';
+                el.style.display = 'none';
+            });
+        }
+
+        function showFieldError(inputId, errorMsgId, message) {
+            const input = document.getElementById(inputId);
+            const msg = document.getElementById(errorMsgId);
+            if (input) input.classList.add('is-invalid');
+            if (msg) {
+                msg.textContent = message;
+                msg.style.display = 'block';
+            }
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            clearFieldErrors();
+            hideAlert();
+
+            const nameInput = document.getElementById('register-fullname');
+            const emailInput = document.getElementById('register-email');
+            const phoneInput = document.getElementById('register-phone');
+            const passwordInput = document.getElementById('register-password');
+            const confirmPasswordInput = document.getElementById('register-confirm-password');
+            const termsInput = document.getElementById('register-terms');
+            const submitBtn = document.getElementById('register-btn') || document.getElementById('register-submit-btn');
+
+            const name = (nameInput.value || '').trim();
+            const email = (emailInput.value || '').trim();
+            const phone = (phoneInput.value || '').trim();
+            const password = passwordInput.value || '';
+            const confirmPassword = confirmPasswordInput.value || '';
+            const terms = termsInput.checked;
+
+            let hasError = false;
+
+            if (!name || name.length < 2) {
+                showFieldError('register-fullname', 'name-error-msg', 'Please enter your full name (at least 2 characters).');
+                hasError = true;
+            }
+
+            if (!email) {
+                showFieldError('register-email', 'email-error-msg', 'Please enter your email address.');
+                hasError = true;
+            } else if (!ApexAuth.validateEmail(email)) {
+                showFieldError('register-email', 'email-error-msg', 'Please enter a valid email format.');
+                hasError = true;
+            }
+
+            if (!password) {
+                showFieldError('register-password', 'password-error-msg', 'Please create a password.');
+                hasError = true;
+            } else if (password.length < 6) {
+                showFieldError('register-password', 'password-error-msg', 'Password must be at least 6 characters.');
+                hasError = true;
+            }
+
+            if (!confirmPassword) {
+                showFieldError('register-confirm-password', 'confirm-password-error-msg', 'Please confirm your password.');
+                hasError = true;
+            } else if (password !== confirmPassword) {
+                showFieldError('register-confirm-password', 'confirm-password-error-msg', 'Passwords do not match.');
+                hasError = true;
+            }
+
+            if (!terms) {
+                const termsMsg = document.getElementById('terms-error-msg');
+                if (termsMsg) {
+                    termsMsg.textContent = 'You must agree to the Terms & Conditions to register.';
+                    termsMsg.style.display = 'block';
+                }
+                hasError = true;
+            }
+
+            if (hasError) return;
+
+            const originalBtnHTML = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="ri-loader-4-line spin"></i> Creating Account...';
+
+            setTimeout(() => {
+                const result = ApexAuth.register({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    password: password,
+                    confirmPassword: confirmPassword,
+                    terms: terms
+                });
+
+                if (!result.success) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHTML;
+                    showAlert(result.message, 'error');
+                    if (result.field === 'email') emailInput.classList.add('is-invalid');
+                    return;
+                }
+
+                showAlert('Account created successfully! Redirecting to sign in...', 'success');
+                submitBtn.innerHTML = '<i class="ri-check-line"></i> Registered! Redirecting...';
+
+                setTimeout(() => {
+                    window.location.href = `login.html?registered=true&email=${encodeURIComponent(email)}`;
+                }, 800);
+            }, 600);
+        }
+    </script>
+</body>
+</html>

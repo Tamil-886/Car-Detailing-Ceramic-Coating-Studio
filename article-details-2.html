@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Physics of Optical Clarity: Achieving 99+ Gloss Units on Soft Clearcoats | APEX OBSIDIAN Journal</title>
+    <meta name="description" content="How multi-stage step-down abrasives, ultrasonic micron thickness profiling, and thermal management unlock mirror-like distinction of image (DOI) without compromising clearcoat longevity.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <style>
+        .article-body h2 {
+            color: var(--text-primary);
+            margin: 40px 0 16px;
+            font-size: 1.65rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .article-body h3 {
+            color: var(--text-primary);
+            margin: 28px 0 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .article-body p {
+            margin-bottom: 20px;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+        .article-body ul, .article-body ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .article-body li {
+            margin-bottom: 10px;
+        }
+        .article-card-hover {
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .article-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.5) !important;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95rem;
+        }
+        .spec-table th, .spec-table td {
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .spec-table th {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+        .key-takeaways {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 35px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li class="has-dropdown">
+                        <a href="index.html">Home <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html"><i class="ri-sparkling-2-line"></i> Home 1 - Detailing Studio</a></li>
+                            <li><a href="home-2.html"><i class="ri-shield-flash-line"></i> Home 2 - Ceramic Coating Focus</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Studio</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
+                            <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="before-after.html">Before & After</a></li>
+                    <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="blog.html" class="active">Journal</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="palette-trigger-btn" title="Search Spotlight (Ctrl+K)">
+                    <i class="ri-search-line"></i>
+                </button>
+                <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+                    <i class="ri-sun-line theme-icon-light"></i>
+                    <i class="ri-moon-line theme-icon-dark"></i>
+                </button>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
+                    <i class="ri-translate-2"></i>
+                </button>
+                <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span class="nav-cart-text">Cart</span>
+                    <span class="cart-count-badge" id="cart-count-badge">0</span>
+                </a>
+                <a href="login.html" class="btn btn-outline btn-sm"><i class="ri-user-line"></i> Sign In</a>
+                <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+                    <i class="ri-menu-4-line"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </div>
+            <button class="drawer-close" id="drawer-close-btn">&times;</button>
+        </div>
+        <div class="drawer-body">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home 1 - Detailing Studio</a></li>
+                <li><a href="home-2.html">Home 2 - Ceramic Coating</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">All 20 Services</a></li>
+                <li><a href="packages.html">Packages & Pricing</a></li>
+                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
+                <li><a href="before-after.html">Before & After Sliders</a></li>
+                <li><a href="gallery.html">Showroom Gallery</a></li>
+                <li><a href="dashboard/index.html">Customer Dashboard</a></li>
+                <li><a href="blog.html" class="active">Journal</a></li>
+                <li><a href="contact.html">Contact Studio</a></li>
+            </ul>
+            <div style="margin-top: 25px; display: flex; flex-direction: column; gap: 10px;">
+                <a href="login.html" class="btn btn-outline w-100"><i class="ri-user-3-line"></i> Customer Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Header & Hero Section -->
+    <section style="padding: 90px 0 40px; background: radial-gradient(circle at center, rgba(0,212,255,0.06) 0%, transparent 70%), var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+        <div class="container" style="max-width: 880px;">
+            <!-- Breadcrumb Navigation -->
+            <div style="display: flex; gap: 10px; align-items: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+                <a href="blog.html" style="color: var(--primary-gold); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+                    <i class="ri-arrow-left-line"></i> Back to Journal
+                </a>
+                <span>/</span>
+                <span class="text-cyan" style="color: var(--primary-cyan);">Paint Correction Science</span>
+            </div>
+
+            <!-- Badges -->
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 18px;">
+                <span class="badge badge-cyan"><i class="ri-sparkling-2-line"></i> Paint Correction</span>
+                <span class="badge badge-outline"><i class="ri-time-line"></i> 8 min read</span>
+                <span class="badge badge-outline"><i class="ri-focus-2-line"></i> 99+ Gloss Unit (GU) Standard</span>
+            </div>
+
+            <h1 style="font-size: clamp(2rem, 3.8vw, 3.1rem); line-height: 1.25; margin-bottom: 24px; font-weight: 800;">
+                The Physics of Optical Clarity: Achieving 99+ Gloss Units on Soft Clearcoats
+            </h1>
+            
+            <!-- Author & Action Header Bar -->
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; padding-top: 15px; border-top: 1px solid var(--border-color);">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-cyan), #008ba3); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(0,212,255,0.3);">
+                        ER
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-primary); display: block; font-size: 1rem;">Elena Rostova</strong>
+                        <span style="font-size: 0.82rem; color: var(--text-muted);">Senior Optical Surface Specialist • Apr 29, 2024</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px;">
+                    <a href="blog.html" class="btn btn-outline btn-sm"><i class="ri-arrow-left-line"></i> All Articles</a>
+                    <a href="service-details.html?id=paint-correction" class="btn btn-gold btn-sm"><i class="ri-magic-line"></i> View Correction Spec</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content Section -->
+    <section class="section" style="padding-top: 40px;">
+        <div class="container" style="max-width: 880px;">
+            <!-- Featured Hero Image -->
+            <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 20px 45px rgba(0,0,0,0.5);">
+                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80" alt="Precision Machine Paint Correction and Flawless Gloss Reflection" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block;">
+            </div>
+
+            <!-- Body Paragraphs & Headings -->
+            <div class="article-body">
+                <p>
+                    When car enthusiasts admire a showroom exotic, they often speak of "deep shine" or "wet look." In optical surface metrology, however, reflection is not subjective poetry—it is an exact physical measurement known as <strong>Specular Gloss Units (GU)</strong> and <strong>Distinction of Image (DOI)</strong>.
+                </p>
+
+                <p>
+                    Achieving a flawless 99+ GU mirror reflection on hard German ceramiclears (like Mercedes-Benz nano-clear) is a test of abrasive cutting power. But achieving that same clarity on <em>ultra-soft, sticky Japanese clearcoats</em> (such as Lexus Obsidian 212) or vintage single-stage lacquer is an elite art form requiring surgical precision.
+                </p>
+
+                <h2><i class="ri-dashboard-2-line text-cyan" style="color: var(--primary-cyan);"></i> The Clearcoat Budget: Why Preservation Trumps Aggressive Cutting</h2>
+                <p>
+                    Modern automotive OEM paint systems are shockingly thin. A standard factory clearcoat measures merely <strong>35 to 50 microns</strong>—roughly the thickness of a single Post-it note.
+                </p>
+                <ul>
+                    <li>All UV absorbers and photochemical stabilizers are concentrated in the uppermost <strong>15 to 20%</strong> of that clearcoat layer.</li>
+                    <li>If an untrained detailer removes more than 5 to 7 microns during heavy compound cutting, the clearcoat’s UV barrier is permanently compromised, leading to premature delamination (clearcoat failure) 3 years later.</li>
+                    <li>At APEX OBSIDIAN, we deploy multi-point <strong>ultrasonic depth gauges</strong> to map substrate thickness down to 0.1 microns before a polishing pad ever touches the vehicle.</li>
+                </ul>
+
+                <!-- Highlight Box -->
+                <div class="glass-card" style="padding: 26px; border-radius: 14px; border-left: 4px solid var(--primary-cyan); margin: 35px 0;">
+                    <h4 style="color: var(--primary-cyan); margin: 0 0 10px; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="ri-radar-line"></i> The Optical Metrology Standard:
+                    </h4>
+                    <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                        A brand new factory supercar typically leaves the assembly line with a gloss rating between <strong>82 and 88 GU</strong> due to industrial orange peel and robotic wipe marks. After our 3-stage jewel polishing protocol, the paint reaches <strong>99.4 GU</strong> with a Distinction of Image (DOI) score of 98.6%.
+                    </p>
+                </div>
+
+                <h2><i class="ri-equalizer-line text-cyan" style="color: var(--primary-cyan);"></i> The Sticky Clearcoat Conundrum: DAT vs. SMAT Abrasives</h2>
+                <p>
+                    Why do budget detailing shops struggle with soft black paint? The culprit is <em>micro-marring</em> and <em>pad stalling</em> caused by mismatched abrasive grain physics:
+                </p>
+
+                <!-- Comparison Table -->
+                <div class="table-responsive-wrapper">
+<table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Abrasive Technology</th>
+                            <th>Particle Behavior</th>
+                            <th>Best Applied For</th>
+                            <th>Risk on Soft Clear</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Diminishing Abrasives (DAT)</strong></td>
+                            <td>Aluminum oxide clusters break down into progressively finer particles during the buffing cycle.</td>
+                            <td>Hard German clearcoats (Audi, Porsche, BMW).</td>
+                            <td>Can leave micro-scratches if cycle is terminated prematurely before full breakdown.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Super Micro Abrasives (SMAT)</strong></td>
+                            <td>Sub-micron precision-engineered crystals maintain constant microscopic size throughout the cycle.</td>
+                            <td>Soft, sticky clears (Lexus 212, Ferrari Rosso, Aston Martin).</td>
+                            <td>Zero micro-marring when paired with closed-cell jewelling foam pads.</td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+
+                <h2><i class="ri-disc-line text-cyan" style="color: var(--primary-cyan);"></i> Machine Kinematics: Rotary vs. Random Orbital Heat Dissipation</h2>
+                <p>
+                    Rotary machines cut paint quickly through direct-drive circular friction, but they generate intense localized surface temperatures (exceeding 140°F / 60°C). On soft resins, this heat softens the clearcoat, causing compound oils to bake into microscopic voids and creating holographic ghost trails.
+                </p>
+                <p>
+                    Our surgical protocol utilizes <strong>15mm and 21mm long-throw Dual-Action (DA) polishers</strong> featuring random orbital rotation. This distributes friction across an elliptical path, maintaining panel surface temperature under 95°F (35°C) and completely eliminating buffer holograms.
+                </p>
+
+                <h2><i class="ri-flask-line text-cyan" style="color: var(--primary-cyan);"></i> The 3-Stage Surgical Step-Down Protocol</h2>
+                <ol>
+                    <li><strong>Stage 1: Defect Leveling (Orthopedic Wool / Microfiber):</strong> Precision elimination of 1,500–2,000 grit sand marks, water etchings, and heavy swirls while sacrificing less than 2.5 microns of clearcoat.</li>
+                    <li><strong>Stage 2: Clarity Clarification (Medium Open-Cell Foam):</strong> Smoothing out compound haze and leveling micro-texture to restore 92+ GU baseline reflection.</li>
+                    <li><strong>Stage 3: Jewelling & Refinement (Ultra-Soft Reticulated Foam):</strong> Run at ultra-low OPM (oscillations per minute) with nano-finishing emulsion to produce the signature APEX obsidian reflection.</li>
+                </ol>
+
+                <!-- Key Takeaways Card -->
+                <div class="key-takeaways" style="border-color: rgba(0, 212, 255, 0.3); background: rgba(0, 212, 255, 0.04);">
+                    <h3 style="color: var(--primary-cyan); margin-top: 0; margin-bottom: 12px; font-size: 1.25rem;">
+                        <i class="ri-checkbox-circle-fill"></i> Essential Rules of Master Paint Correction
+                    </h3>
+                    <ul style="margin-bottom: 0; padding-left: 20px;">
+                        <li><strong>Always Perform a Panel Wipe:</strong> Inspect under 5000K LED sunlight lamps with pure Isopropyl Alcohol / solvent spray to verify that defects are truly removed, not masked by polishing oils.</li>
+                        <li><strong>Measure Twice, Cut Once:</strong> Ultrasonic gauge readings protect against edge burn-through on sharp body character lines.</li>
+                        <li><strong>Seal Immediately:</strong> Freshly jewelled clearcoat is raw and vulnerable; immediate 10H ceramic or PPF encapsulation is essential.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Author Bio Box -->
+            <div class="glass-card" style="padding: 30px; border-radius: 18px; margin-top: 50px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                <div style="width: 74px; height: 74px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-cyan), #008ba3); color: #000; font-size: 1.6rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 18px rgba(0,212,255,0.35);">
+                    ER
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+                        <h4 style="margin: 0; font-size: 1.15rem; font-weight: 700;">Written by Elena Rostova</h4>
+                        <span class="badge badge-cyan" style="font-size: 0.75rem;">Senior Optical Surface Specialist</span>
+                    </div>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.65;">
+                        Elena holds a degree in Materials Engineering and has spent 12 years perfecting optical clarity on one-off coachbuilt prototypes and rare multi-million-dollar collector automobiles. She oversees surface metrology and gloss verification audits at APEX OBSIDIAN.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Navigation Back Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 15px;">
+                <a href="blog.html" class="btn btn-outline"><i class="ri-arrow-left-line"></i> Back to Journal Archive</a>
+                <a href="article-details-3.html" class="btn btn-gold">Next Article: Leather Preservation <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles Section -->
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: 70px 0;">
+        <div class="container" style="max-width: 960px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 35px; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <span class="badge badge-gold"><i class="ri-book-open-line"></i> Continue Reading</span>
+                    <h2 style="font-size: 1.9rem; margin-top: 8px; margin-bottom: 0;">Related Detailing Science</h2>
+                </div>
+                <a href="blog.html" class="link-arrow" style="color: var(--primary-gold); font-weight: 600;">View All Journal Articles <i class="ri-arrow-right-line"></i></a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                
+                <!-- Related Article 1 Card -->
+                <article class="glass-card article-card-hover" onclick="window.location.href='article-details-1.html'" style="border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; padding: 0;">
+                    <a href="article-details-1.html" style="display: block; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Ceramic Coating Guide" style="width: 100%; height: 210px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                    </a>
+                    <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted);">
+                            <span class="badge badge-gold">Nanotechnology</span>
+                            <span>May 18, 2024 • 6 min read</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 10px; line-height: 1.4;">
+                            <a href="article-details-1.html" style="color: var(--text-primary); text-decoration: none;">Ceramic Coating Myths vs Facts: What 9H and 10H Hardness Actually Mean</a>
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin-bottom: 18px; flex-grow: 1;">
+                            Deconstructing pencil hardness scales versus Mohs mineral scales, and what chemical protection you can realistically expect on factory paint.
+                        </p>
+                        <a href="article-details-1.html" class="link-arrow" style="font-weight: 600; color: var(--primary-gold);">Read Full Article <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </article>
+
+                <!-- Related Article 3 Card -->
+                <article class="glass-card article-card-hover" onclick="window.location.href='article-details-3.html'" style="border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; padding: 0;">
+                    <a href="article-details-3.html" style="display: block; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Interior Detailing" style="width: 100%; height: 210px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                    </a>
+                    <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted);">
+                            <span class="badge badge-gold">Interior Care</span>
+                            <span>Apr 12, 2024 • 5 min read</span>
+                        </div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 10px; line-height: 1.4;">
+                            <a href="article-details-3.html" style="color: var(--text-primary); text-decoration: none;">Preserving Semi-Aniline Leather: Why Silicone Conditioners Destroy Italian Hide</a>
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin-bottom: 18px; flex-grow: 1;">
+                            How to clean Ferrari, Bentley, and Aston Martin leathers without clogging natural micropores or leaving an unsightly greasy residue.
+                        </p>
+                        <a href="article-details-3.html" class="link-arrow" style="font-weight: 600; color: var(--primary-gold);">Read Full Article <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!-- Master Footer -->
+    <footer class="site-footer" id="main-site-footer">
+        <!-- Top Highlights Bar -->
+        <div class="footer-highlights">
+            <div class="container">
+                <div class="footer-highlights-grid">
+                    <div class="footer-highlight-item">
+                        <div class="highlight-icon"><i class="ri-shield-star-fill text-gold"></i></div>
+                        <div class="highlight-text">
+                            <h4>ISO-6 Cleanroom Facility</h4>
+                            <p>HEPA-filtered climate & dust-free bays</p>
+                        </div>
+                    </div>
+                    <div class="footer-highlight-item">
+                        <div class="highlight-icon"><i class="ri-award-fill text-gold"></i></div>
+                        <div class="highlight-text">
+                            <h4>Certified Master Detailers</h4>
+                            <p>XPEL, Gtechniq & Swissvax verified</p>
+                        </div>
+                    </div>
+                    <div class="footer-highlight-item">
+                        <div class="highlight-icon"><i class="ri-dashboard-3-fill text-gold"></i></div>
+                        <div class="highlight-text">
+                            <h4>Live 7-Stage Telemetry</h4>
+                            <p>Real-time customer progress portal</p>
+                        </div>
+                    </div>
+                    <div class="footer-highlight-item">
+                        <div class="highlight-icon"><i class="ri-medal-fill text-gold"></i></div>
+                        <div class="highlight-text">
+                            <h4>Transferable E-Warranty</h4>
+                            <p>Digital gloss audit certificates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Columns -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Col 1: Brand & Bio -->
+                    <div class="footer-col footer-col-brand">
+                        <a href="index.html" class="logo">
+                            <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                            <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                        </a>
+                        <p class="footer-bio">
+                            Bespoke automotive detailing and surface protection laboratory specializing in 10H ceramic coatings, surgical paint correction, and PPF installations inside climate-controlled ISO-6 cleanrooms.
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="X (Twitter)" aria-label="X"><i class="ri-twitter-x-line"></i></a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook" aria-label="Facebook"><i class="ri-facebook-box-line"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Studio Navigation -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Studio Navigation</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="ri-arrow-right-s-line"></i> Home Studio</a></li>
+                            <li><a href="home-2.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating Focus</a></li>
+                            <li><a href="about.html"><i class="ri-arrow-right-s-line"></i> About Studio & Labs</a></li>
+                            <li><a href="packages.html"><i class="ri-arrow-right-s-line"></i> Packages & Pricing</a></li>
+                            <li><a href="before-after.html"><i class="ri-arrow-right-s-line"></i> Before & After Sliders</a></li>
+                            <li><a href="gallery.html"><i class="ri-arrow-right-s-line"></i> Showroom Gallery</a></li>
+                            <li><a href="blog.html"><i class="ri-arrow-right-s-line"></i> Studio Journal</a></li>
+                            <li><a href="contact.html"><i class="ri-arrow-right-s-line"></i> Contact & Directions</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Bespoke Services -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Bespoke Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="ceramic-coating.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating (10H)</a></li>
+                            <li><a href="paint-correction.html"><i class="ri-arrow-right-s-line"></i> Paint Correction</a></li>
+                            <li><a href="paint-protection-film.html"><i class="ri-arrow-right-s-line"></i> Paint Protection Film (PPF)</a></li>
+                            <li><a href="interior-deep-cleaning.html"><i class="ri-arrow-right-s-line"></i> Interior Deep Cleaning</a></li>
+                            <li><a href="graphene-coating.html"><i class="ri-arrow-right-s-line"></i> Graphene Coating</a></li>
+                            <li><a href="full-car-detailing.html"><i class="ri-arrow-right-s-line"></i> Full Car Detailing</a></li>
+                            <li><a href="engine-bay-detailing.html"><i class="ri-arrow-right-s-line"></i> Engine Bay Detailing</a></li>
+                            <li><a href="services.html" class="footer-all-services-link"><i class="ri-grid-fill text-gold"></i> View All 20 Services</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 4: VIP Client Portal & Support -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Client Concierge</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#booking-section"><i class="ri-calendar-check-line text-gold"></i> Reserve Detailing Slot</a></li>
+                            <li><a href="cart.html"><i class="ri-shopping-cart-2-line text-gold"></i> View Cart & Checkout</a></li>
+                            <li><a href="dashboard/index.html"><i class="ri-dashboard-line text-gold"></i> Live Telemetry Portal</a></li>
+                            <li><a href="dashboard/bookings.html"><i class="ri-time-line text-gold"></i> Booking History</a></li>
+                            <li><a href="dashboard/loyalty-points.html"><i class="ri-copper-diamond-line text-gold"></i> Apex Gloss Club</a></li>
+                            <li><a href="dashboard/invoices.html"><i class="ri-file-shield-line text-gold"></i> Digital Warranties</a></li>
+                            <li><a href="login.html"><i class="ri-user-line text-gold"></i> Customer Sign In</a></li>
+                            <li><a href="register.html"><i class="ri-user-add-line text-gold"></i> Register Account</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 5: Contact & Newsletter -->
+                    <div class="footer-col footer-col-contact">
+                        <h4 class="footer-title">Studio Contact & Hours</h4>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <i class="ri-map-pin-2-fill text-gold"></i>
+                                <div>
+                                    <strong>Beverly Hills Cleanroom:</strong>
+                                    <span>9400 Wilshire Blvd, Beverly Hills, CA 90212</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-phone-fill text-gold"></i>
+                                <div>
+                                    <strong>Concierge Desk:</strong>
+                                    <a href="tel:+18005552739">+1 (800) 555-APEX / (310) 555-0192</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-mail-fill text-gold"></i>
+                                <div>
+                                    <strong>Private Inquiries:</strong>
+                                    <a href="mailto:concierge@apexobsidian.com">concierge@apexobsidian.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-time-fill text-gold"></i>
+                                <div>
+                                    <strong>Operational Bay Hours:</strong>
+                                    <span>Mon – Sat: 8:00 AM – 7:00 PM<br><small style="color: var(--text-muted);">Sun: VIP Private Slots By Appointment</small></span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="footer-newsletter">
+                            <span class="newsletter-label">Studio Journal Newsletter</span>
+                            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showToast) { window.showToast('Thank you for subscribing to Apex Obsidian Journals!'); } this.reset();">
+                                <div class="newsletter-input-group">
+                                    <input type="email" placeholder="Enter your email" required class="form-control newsletter-input">
+                                    <button type="submit" class="btn btn-gold btn-sm newsletter-btn" title="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Sub-Footer -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <div class="footer-copyright">
+                        &copy; 2024 <strong class="text-gold">APEX OBSIDIAN Automotive Studio</strong>. All Rights Reserved. ISO-6 Cleanroom Certified.
+                    </div>
+                    <div class="footer-legal-links">
+                        <a href="contact.html">Privacy Policy</a>
+                        <span class="divider">•</span>
+                        <a href="contact.html">Terms & Conditions</a>
+                        <span class="divider">•</span>
+                        <a href="packages.html">Transferable Warranty</a>
+                        <span class="divider">•</span>
+                        <a href="services.html">Cleanroom Protocols</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/audio-feedback.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/command-palette.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

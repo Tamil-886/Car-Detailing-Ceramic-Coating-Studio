@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Deep Cleaning | APEX OBSIDIAN Automotive Studio</title>
+    <meta name="description" content="Hospital-grade steam extraction of upholstery, leather conditioning, AC vent disinfection, deep carpet shampoo, and non-greasy factory matte UV dressing.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li class="has-dropdown">
+                        <a href="index.html">Home <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html"><i class="ri-sparkling-2-line"></i> Home 1 - Detailing Studio</a></li>
+                            <li><a href="home-2.html"><i class="ri-shield-flash-line"></i> Home 2 - Ceramic Coating Focus</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Studio</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html" class="active">Services <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
+                            <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="before-after.html">Before & After</a></li>
+                    <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="blog.html">Journal</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="palette-trigger-btn" title="Search Spotlight (Ctrl+K)">
+                    <i class="ri-search-line"></i>
+                </button>
+                <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+                    <i class="ri-sun-line theme-icon-light"></i>
+                    <i class="ri-moon-line theme-icon-dark"></i>
+                </button>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
+                    <i class="ri-translate-2"></i>
+                </button>
+                <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span class="nav-cart-text">Cart</span>
+                    <span class="cart-count-badge" id="cart-count-badge">0</span>
+                </a>
+                <a href="login.html" class="btn btn-outline btn-sm"><i class="ri-user-line"></i> Sign In</a>
+                <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+                    <i class="ri-menu-4-line"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </div>
+            <button class="drawer-close" id="drawer-close-btn">&times;</button>
+        </div>
+        <div class="drawer-body">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home 1 - Detailing Studio</a></li>
+                <li><a href="home-2.html">Home 2 - Ceramic Coating</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">All 20 Services</a></li>
+                <li><a href="packages.html">Packages & Pricing</a></li>
+                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
+                <li><a href="before-after.html">Before & After Sliders</a></li>
+                <li><a href="gallery.html">Showroom Gallery</a></li>
+                <li><a href="dashboard/index.html">Customer Dashboard</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="contact.html">Contact Studio</a></li>
+            </ul>
+            <div style="margin-top: 25px; display: flex; flex-direction: column; gap: 10px;">
+                <a href="login.html" class="btn btn-outline w-100"><i class="ri-user-3-line"></i> Customer Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Service Details Container -->
+    <div id="service-detail-view">
+        <!-- Hero Header -->
+        <section style="padding: 90px 0 50px; background: radial-gradient(circle at center, rgba(212,175,55,0.08) 0%, transparent 70%), var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div style="display: flex; gap: 10px; align-items: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">
+                    <a href="services.html" style="color: var(--text-secondary);"><i class="ri-arrow-left-line"></i> All 20 Services</a>
+                    <span>/</span>
+                    <a href="services.html?category=interior" style="color: var(--text-secondary);">Interior</a>
+                    <span>/</span>
+                    <span class="text-gold">Interior Deep Cleaning</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+                    <div>
+                        <span class="badge badge-gold"><i class="ri-shield-star-fill"></i> Sanitized Cabin</span>
+                        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-top: 12px; margin-bottom: 18px;">
+                            Interior Deep Cleaning
+                        </h1>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;">
+                            Restore your vehicle cabin to pristine showroom condition. Our Interior Deep Cleaning eradicates embedded dust mites, allergens, stubborn stains, and bacteria using high-pressure 180°C dry vapor steam and Swissvax natural nourishment agents.
+                        </p>
+                        
+                        <div style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap;">
+                            <div>
+                                <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; display: block;">Starting Investment:</span>
+                                <h3 id="detail-hero-price" class="text-gold" style="font-size: 2.2rem; margin: 0;">₹3,499</h3>
+                            </div>
+                            <div style="height: 35px; width: 1px; background: var(--border-color);"></div>
+                            <div>
+                                <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; display: block;">Cleanroom Duration:</span>
+                                <h4 style="font-size: 1.2rem; margin: 0; color: var(--text-primary);">4 to 5 Hours</h4>
+                            </div>
+                            <div style="height: 35px; width: 1px; background: var(--border-color);"></div>
+                            <div>
+                                <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; display: block;">Studio Warranty:</span>
+                                <h4 style="font-size: 1.2rem; margin: 0; color: var(--primary-cyan);">Anti-Bacterial Shield</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="glass-card" style="padding: 10px; border-radius: 20px; border-color: rgba(212,175,55,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80" alt="Interior Deep Cleaning" style="width: 100%; height: 340px; object-fit: cover; border-radius: 14px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service In-Depth Details & Sticky Booking Sidebar -->
+        <section class="section" style="padding-top: 40px;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 360px; gap: 50px;">
+                    <div>
+                        <!-- What's Included Section -->
+                        <h2 style="font-size: 1.8rem; margin-bottom: 20px;">What Is Included In This Service</h2>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 45px;">
+                            
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">High-velocity compressed air purge of seat seams, crevices & air ducts</span>
+    </div>
+  
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">180°C Dry vapor steam sterilization of HVAC vents and dashboard panels</span>
+    </div>
+  
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">Deep hot-water injection extraction on all carpet flooring and floor mats</span>
+    </div>
+  
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">Gentle pH-balanced leather scrub with horsehair brushes</span>
+    </div>
+  
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">Swissvax natural lipid leather conditioning & anti-dye transfer barrier</span>
+    </div>
+  
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">Headliner spot cleaning & sun visor de-greasing</span>
+    </div>
+  
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">Crystal-clear interior glass streak-free cleaning</span>
+    </div>
+  
+    <div class="glass-card" style="padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px;">
+        <i class="ri-checkbox-circle-fill text-gold" style="font-size: 1.3rem; flex-shrink: 0;"></i>
+        <span style="color: var(--text-primary); font-size: 0.95rem;">Natural fragrance neutralizer leaving a fresh, authentic clean scent</span>
+    </div>
+  
+                        </div>
+
+                        <!-- 4-Stage Execution Process -->
+                        <h2 style="font-size: 1.8rem; margin-bottom: 20px;">The Cleanroom Execution Process</h2>
+                        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 45px;">
+                            
+    <div class="glass-card" style="padding: 20px; border-radius: 14px; display: flex; gap: 18px; align-items: flex-start;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-gold); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;">1</div>
+        <div>
+            <h4 style="margin: 0 0 6px; font-size: 1.1rem;">Air Purge & Deep Vacuum</h4>
+            <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Evacuating sand and debris from deep carpet fibers and seat seams.</p>
+        </div>
+    </div>
+  
+    <div class="glass-card" style="padding: 20px; border-radius: 14px; display: flex; gap: 18px; align-items: flex-start;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-gold); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;">2</div>
+        <div>
+            <h4 style="margin: 0 0 6px; font-size: 1.1rem;">180°C Vapor Steam Sanitization</h4>
+            <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Thermal sterilization of air vents, cup holders, and high-touch areas.</p>
+        </div>
+    </div>
+  
+    <div class="glass-card" style="padding: 20px; border-radius: 14px; display: flex; gap: 18px; align-items: flex-start;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-gold); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;">3</div>
+        <div>
+            <h4 style="margin: 0 0 6px; font-size: 1.1rem;">Hot Water Extraction</h4>
+            <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Injecting heated enzyme shampoo and vacuuming deep ground-in dirt.</p>
+        </div>
+    </div>
+  
+    <div class="glass-card" style="padding: 20px; border-radius: 14px; display: flex; gap: 18px; align-items: flex-start;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-gold); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;">4</div>
+        <div>
+            <h4 style="margin: 0 0 6px; font-size: 1.1rem;">Leather Feed & UV Dressing</h4>
+            <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Nourishing hides with matte non-greasy lipids and UV blockers.</p>
+        </div>
+    </div>
+  
+                        </div>
+
+                        <!-- FAQ Accordion Section -->
+                        <h3 style="font-size: 1.6rem; margin-bottom: 20px;">Frequently Asked Questions</h3>
+                        <div class="accordion-group" style="margin-bottom: 45px;">
+                            
+    <div class="accordion-item glass-card" style="margin-bottom: 12px; border-radius: 12px; overflow: hidden;">
+        <button class="accordion-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'" style="width: 100%; text-align: left; padding: 18px 20px; background: none; border: none; color: var(--text-primary); font-weight: 600; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <span>Will my seats remain wet after the interior cleaning?</span>
+            <i class="ri-arrow-down-s-line text-gold"></i>
+        </button>
+        <div class="accordion-content" style="padding: 0 20px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; display: block;">
+            No, our commercial extraction equipment removes 95% of moisture, and heated air movers ensure seats are completely dry within 1 hour.
+        </div>
+    </div>
+  
+    <div class="accordion-item glass-card" style="margin-bottom: 12px; border-radius: 12px; overflow: hidden;">
+        <button class="accordion-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'" style="width: 100%; text-align: left; padding: 18px 20px; background: none; border: none; color: var(--text-primary); font-weight: 600; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <span>Can this service remove severe smoke or pet odors?</span>
+            <i class="ri-arrow-down-s-line text-gold"></i>
+        </button>
+        <div class="accordion-content" style="padding: 0 20px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; display: none;">
+            Yes, our steam extraction and antibacterial treatment eliminate the source of odors. For extreme cases, we also offer our dedicated Ozone Odor Removal Treatment.
+        </div>
+    </div>
+  
+    <div class="accordion-item glass-card" style="margin-bottom: 12px; border-radius: 12px; overflow: hidden;">
+        <button class="accordion-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'" style="width: 100%; text-align: left; padding: 18px 20px; background: none; border: none; color: var(--text-primary); font-weight: 600; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <span>Are your cleaning chemicals safe for children and pets?</span>
+            <i class="ri-arrow-down-s-line text-gold"></i>
+        </button>
+        <div class="accordion-content" style="padding: 0 20px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; display: none;">
+            Yes, we use 100% biodegradable, non-toxic, and hypoallergenic enzymatic cleaners.
+        </div>
+    </div>
+  
+                        </div>
+
+                        <!-- Verified Testimonial -->
+                        <div class="glass-card" style="padding: 25px; border-radius: 16px; border-color: rgba(212,175,55,0.25);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <div class="rating-stars" style="color: var(--primary-gold);">
+                                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                                    <strong style="margin-left: 6px; color: var(--text-primary); font-size: 0.9rem;">5.0 Studio Rating</strong>
+                                </div>
+                                <span class="badge badge-gold" style="font-size: 0.75rem;">Verified VIP Client</span>
+                            </div>
+                            <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6;">
+                                "The level of precision on my vehicle was beyond anything I have seen. The Interior Deep Cleaning completely elevated the gloss and protected it from daily grime."
+                            </p>
+                            <div style="font-size: 0.85rem; font-weight: 700;">Marcus V. • Beverly Hills Studio Client</div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Booking Action Card -->
+                    <div>
+                        <div class="glass-card" style="padding: 30px; border-radius: 20px; position: sticky; top: 100px; border-color: rgba(212,175,55,0.4); box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Book This Service</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 20px;">
+                                Select your vehicle type to customize your pricing and lock in an ISO-6 cleanroom bay slot.
+                            </p>
+
+                            <!-- Vehicle Class Selector -->
+                            <div style="margin-bottom: 20px;">
+                                <label class="form-label" style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Select Vehicle Class:</label>
+                                <div class="size-pill-group" style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                    <button class="btn-size" data-size="hatchback" onclick="selectServiceSize('hatchback')">Hatchback</button>
+                                    <button class="btn-size active" data-size="sedan" onclick="selectServiceSize('sedan')">Sedan</button>
+                                    <button class="btn-size" data-size="suv" onclick="selectServiceSize('suv')">SUV</button>
+                                    <button class="btn-size" data-size="luxury" onclick="selectServiceSize('luxury')">Luxury</button>
+                                    <button class="btn-size" data-size="sports" onclick="selectServiceSize('sports')">Sports</button>
+                                </div>
+                            </div>
+
+                            <!-- Investment Price Display -->
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Service Investment:</span>
+                                    <strong class="text-gold" id="sticky-service-price" style="font-size: 1.6rem; font-weight: 800;">₹3,999</strong>
+                                </div>
+                                <span class="badge badge-gold" id="sticky-size-label">Sedan Class</span>
+                            </div>
+
+                            <!-- CTA Buttons -->
+                            <button type="button" class="btn btn-gold w-100" id="btn-service-add-cart" style="margin-bottom: 12px; padding: 14px; font-weight: 800;" onclick="addCurrentServiceToCart()">
+                                <i class="ri-shopping-bag-3-line"></i> Add to Cart
+                            </button>
+                            
+                            <a href="index.html#booking-section" id="btn-service-book-now" class="btn btn-outline w-100" style="margin-bottom: 12px; padding: 12px;" onclick="prefillBookingService('Interior Deep Cleaning')">
+                                <i class="ri-calendar-check-line"></i> Book Now & Reserve Bay
+                            </a>
+
+                            <a href="cart.html" class="btn btn-outline w-100" style="margin-bottom: 15px; padding: 10px; font-size: 0.85rem;">
+                                <i class="ri-shopping-cart-line"></i> View Cart & Checkout
+                            </a>
+
+                            <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                                <a href="services.html" style="font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">
+                                    <i class="ri-arrow-left-line"></i> Back to All 20 Services
+                                </a>
+                            </div>
+
+                            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;">
+                            
+                            <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+                                <div><i class="ri-checkbox-circle-fill text-gold"></i> Free 48-Point Digital Paint Scan</div>
+                                <div><i class="ri-checkbox-circle-fill text-gold"></i> Live 7-Stage Customer Portal</div>
+                                <div><i class="ri-checkbox-circle-fill text-gold"></i> Certified Transferable Warranty</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Related Services Section -->
+        <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 35px; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <span class="badge badge-gold">Studio Recommendations</span>
+                        <h2 style="font-size: 2rem; margin-top: 8px; margin-bottom: 0;">Recommended Related Treatments</h2>
+                    </div>
+                    <a href="services.html" class="btn btn-outline btn-sm">Explore All 20 Services <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    
+    <div class="service-card glass-card" style="border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+        <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1200&q=80" alt="Leather Cleaning & Conditioning" style="width: 100%; height: 180px; object-fit: cover;">
+        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
+            <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 8px; font-size: 0.75rem;">Interior</span>
+            <h4 style="margin: 0 0 8px; font-size: 1.15rem;">Leather Cleaning & Conditioning</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; flex-grow: 1;">pH-balanced cleaning of fine Connolly, Nappa, and semi-aniline hides followed by deep natural l...</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px;">
+                <span class="text-gold" style="font-weight: 800;">₹2,899</span>
+                <a href="leather-cleaning-conditioning.html" class="btn btn-sm btn-outline">Explore <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </div>
+  
+    <div class="service-card glass-card" style="border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" alt="Fabric & Upholstery Cleaning" style="width: 100%; height: 180px; object-fit: cover;">
+        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
+            <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 8px; font-size: 0.75rem;">Interior</span>
+            <h4 style="margin: 0 0 8px; font-size: 1.15rem;">Fabric & Upholstery Cleaning</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; flex-grow: 1;">Eliminate stubborn coffee, food, and water stains with hot-water injection extraction, antimicr...</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px;">
+                <span class="text-gold" style="font-weight: 800;">₹2,499</span>
+                <a href="fabric-upholstery-cleaning.html" class="btn btn-sm btn-outline">Explore <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </div>
+  
+    <div class="service-card glass-card" style="border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+        <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1200&q=80" alt="Odor Removal Treatment" style="width: 100%; height: 180px; object-fit: cover;">
+        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
+            <span class="badge badge-gold" style="align-self: flex-start; margin-bottom: 8px; font-size: 0.75rem;">Interior</span>
+            <h4 style="margin: 0 0 8px; font-size: 1.15rem;">Odor Removal Treatment</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; flex-grow: 1;">Completely eliminate cigarette smoke, pet odors, food spills, and mold at a molecular level wit...</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 12px;">
+                <span class="text-gold" style="font-weight: 800;">₹1,899</span>
+                <a href="odor-removal-treatment.html" class="btn btn-sm btn-outline">Explore <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </div>
+  
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer" id="main-site-footer">
+    <!-- Top Highlights Bar -->
+    <div class="footer-highlights">
+        <div class="container">
+            <div class="footer-highlights-grid">
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-shield-star-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>ISO-6 Cleanroom Facility</h4>
+                        <p>HEPA-filtered climate & dust-free bays</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-award-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Certified Master Detailers</h4>
+                        <p>XPEL, Gtechniq & Swissvax verified</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-dashboard-3-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Live 7-Stage Telemetry</h4>
+                        <p>Real-time customer progress portal</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-medal-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Transferable E-Warranty</h4>
+                        <p>Digital gloss audit certificates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer Columns -->
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Bio -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                        <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                    </a>
+                    <p class="footer-bio">
+                        Bespoke automotive detailing and surface protection laboratory specializing in 10H ceramic coatings, surgical paint correction, and PPF installations inside climate-controlled ISO-6 cleanrooms.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="X (Twitter)" aria-label="X"><i class="ri-twitter-x-line"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook" aria-label="Facebook"><i class="ri-facebook-box-line"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Studio Navigation -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Studio Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="ri-arrow-right-s-line"></i> Home Studio</a></li>
+                        <li><a href="home-2.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating Focus</a></li>
+                        <li><a href="about.html"><i class="ri-arrow-right-s-line"></i> About Studio & Labs</a></li>
+                        <li><a href="packages.html"><i class="ri-arrow-right-s-line"></i> Packages & Pricing</a></li>
+                        <li><a href="before-after.html"><i class="ri-arrow-right-s-line"></i> Before & After Sliders</a></li>
+                        <li><a href="gallery.html"><i class="ri-arrow-right-s-line"></i> Showroom Gallery</a></li>
+                        <li><a href="blog.html"><i class="ri-arrow-right-s-line"></i> Studio Journal</a></li>
+                        <li><a href="contact.html"><i class="ri-arrow-right-s-line"></i> Contact & Directions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Bespoke Services -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Bespoke Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="ceramic-coating.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating (10H)</a></li>
+                        <li><a href="paint-correction.html"><i class="ri-arrow-right-s-line"></i> Paint Correction</a></li>
+                        <li><a href="paint-protection-film.html"><i class="ri-arrow-right-s-line"></i> Paint Protection Film (PPF)</a></li>
+                        <li><a href="interior-deep-cleaning.html"><i class="ri-arrow-right-s-line"></i> Interior Deep Cleaning</a></li>
+                        <li><a href="graphene-coating.html"><i class="ri-arrow-right-s-line"></i> Graphene Coating</a></li>
+                        <li><a href="full-car-detailing.html"><i class="ri-arrow-right-s-line"></i> Full Car Detailing</a></li>
+                        <li><a href="engine-bay-detailing.html"><i class="ri-arrow-right-s-line"></i> Engine Bay Detailing</a></li>
+                        <li><a href="services.html" class="footer-all-services-link"><i class="ri-grid-fill text-gold"></i> View All 20 Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: VIP Client Portal & Support -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Client Concierge</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#booking-section"><i class="ri-calendar-check-line text-gold"></i> Reserve Detailing Slot</a></li>
+                        <li><a href="cart.html"><i class="ri-shopping-cart-2-line text-gold"></i> View Cart & Checkout</a></li>
+                        <li><a href="dashboard/index.html"><i class="ri-dashboard-line text-gold"></i> Live Telemetry Portal</a></li>
+                        <li><a href="dashboard/bookings.html"><i class="ri-time-line text-gold"></i> Booking History</a></li>
+                        <li><a href="dashboard/loyalty-points.html"><i class="ri-copper-diamond-line text-gold"></i> Apex Gloss Club</a></li>
+                        <li><a href="dashboard/invoices.html"><i class="ri-file-shield-line text-gold"></i> Digital Warranties</a></li>
+                        <li><a href="login.html"><i class="ri-user-line text-gold"></i> Customer Sign In</a></li>
+                        <li><a href="register.html"><i class="ri-user-add-line text-gold"></i> Register Account</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Contact & Newsletter -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Studio Contact & Hours</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="ri-map-pin-2-fill text-gold"></i>
+                            <div>
+                                <strong>Beverly Hills Cleanroom:</strong>
+                                <span>9400 Wilshire Blvd, Beverly Hills, CA 90212</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-phone-fill text-gold"></i>
+                            <div>
+                                <strong>Concierge Desk:</strong>
+                                <a href="tel:+18005552739">+1 (800) 555-APEX / (310) 555-0192</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-mail-fill text-gold"></i>
+                            <div>
+                                <strong>Private Inquiries:</strong>
+                                <a href="mailto:concierge@apexobsidian.com">concierge@apexobsidian.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-time-fill text-gold"></i>
+                            <div>
+                                <strong>Operational Bay Hours:</strong>
+                                <span>Mon – Sat: 8:00 AM – 7:00 PM<br><small style="color: var(--text-muted);">Sun: VIP Private Slots By Appointment</small></span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="footer-newsletter">
+                        <span class="newsletter-label">Studio Journal Newsletter</span>
+                        <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showToast) { window.showToast('Thank you for subscribing to Apex Obsidian Journals!'); } this.reset();">
+                            <div class="newsletter-input-group">
+                                <input type="email" placeholder="Enter your email" required class="form-control newsletter-input">
+                                <button type="submit" class="btn btn-gold btn-sm newsletter-btn" title="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Sub-Footer -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-inner">
+                <div class="footer-copyright">
+                    &copy; 2024 <strong class="text-gold">APEX OBSIDIAN Automotive Studio</strong>. All Rights Reserved. ISO-6 Cleanroom Certified.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="contact.html">Privacy Policy</a>
+                    <span class="divider">•</span>
+                    <a href="contact.html">Terms & Conditions</a>
+                    <span class="divider">•</span>
+                    <a href="packages.html">Transferable Warranty</a>
+                    <span class="divider">•</span>
+                    <a href="services.html">Cleanroom Protocols</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Page Specific Interactive Script -->
+    <script>
+      const SERVICE_PRICES = {"hatchback":3499,"sedan":3999,"suv":4799,"luxury":5999,"sports":6499};
+      let currentSelectedSize = 'sedan';
+
+      function selectServiceSize(size) {
+        currentSelectedSize = size;
+        document.querySelectorAll('.size-pill-group .btn-size').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-size') === size);
+        });
+
+        const price = SERVICE_PRICES[size] || SERVICE_PRICES.sedan;
+        const labels = {
+          hatchback: 'Hatchback Class',
+          sedan: 'Sedan Class',
+          suv: 'SUV Class',
+          luxury: 'Luxury Class',
+          sports: 'Sports / Supercar'
+        };
+
+        const stickyPrice = document.getElementById('sticky-service-price');
+        const heroPrice = document.getElementById('detail-hero-price');
+        const sizeLabel = document.getElementById('sticky-size-label');
+
+        if (stickyPrice) stickyPrice.textContent = '₹' + price.toLocaleString();
+        if (heroPrice) heroPrice.textContent = '₹' + price.toLocaleString();
+        if (sizeLabel) sizeLabel.textContent = labels[size] || size;
+      }
+
+      function addCurrentServiceToCart() {
+        const price = SERVICE_PRICES[currentSelectedSize] || SERVICE_PRICES.sedan;
+        if (window.ApexCart && typeof window.ApexCart.addItem === 'function') {
+          window.ApexCart.addItem({
+            id: 'srv-interior-deep-cleaning',
+            name: 'Interior Deep Cleaning',
+            tier: 'Sanitized Cabin',
+            price: price,
+            size: currentSelectedSize,
+            image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80',
+            duration: '4 to 5 Hours',
+            warranty: 'Anti-Bacterial Shield'
+          });
+        } else {
+          try {
+            const cart = JSON.parse(localStorage.getItem('apex_cart') || '[]');
+            cart.push({
+              id: 'srv-interior-deep-cleaning',
+              name: 'Interior Deep Cleaning',
+              tier: 'Sanitized Cabin',
+              price: price,
+              size: currentSelectedSize,
+              image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80',
+              duration: '4 to 5 Hours',
+              warranty: 'Anti-Bacterial Shield',
+              quantity: 1
+            });
+            localStorage.setItem('apex_cart', JSON.stringify(cart));
+            if (window.showToast) window.showToast('Interior Deep Cleaning added to cart!');
+          } catch(e) {
+            console.error(e);
+          }
+        }
+      }
+
+      function prefillBookingService(serviceName) {
+        try {
+          localStorage.setItem('apex_prefill_service', serviceName);
+        } catch(e) {}
+      }
+    </script>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/audio-feedback.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/command-palette.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/services.js"></script>
+
+</body>
+</html>

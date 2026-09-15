@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Stage Real-Time Service Tracker | APEX OBSIDIAN Portal</title>
+    <meta name="description" content="Proprietary 7-Stage studio cleanroom service tracker with live optical gloss readings, technician notes, and status telemetry.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/simulator.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+                <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar" id="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">
+                    <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                    <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                </a>
+                <button class="sidebar-close-btn" id="sidebar-close-btn" title="Close Menu">&times;</button>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar dashboard-user-avatar">AV</div>
+                <div class="user-info">
+                    <h4 class="user-name dashboard-user-name">Alexander Vance</h4>
+                    <span class="user-badge"><i class="ri-vip-crown-fill text-gold"></i> Obsidian VIP</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Client Portal</span>
+                <ul class="sidebar-links">
+                    <li><a href="index.html" class=""><span class="link-content"><i class="ri-dashboard-3-line"></i> <span>Overview</span></span></a></li>
+                    <li><a href="services-status.html" class="active"><span class="link-content"><i class="ri-sparkling-fill text-gold"></i> <span>Live 7-Stage Tracker</span></span> <span class="badge badge-gold" style="font-size:0.65rem; padding: 2px 6px;">Live</span></a></li>
+                    <li><a href="bookings.html" class=""><span class="link-content"><i class="ri-calendar-check-line"></i> <span>My Bookings</span></span></a></li>
+                    <li><a href="before-after.html" class=""><span class="link-content"><i class="ri-contrast-drop-line"></i> <span>Photo Vault</span></span></a></li>
+                    <li><a href="loyalty-points.html" class=""><span class="link-content"><i class="ri-copper-diamond-line text-cyan"></i> <span>Apex Gloss Club</span></span></a></li>
+                    <li><a href="invoices.html" class=""><span class="link-content"><i class="ri-file-text-line"></i> <span>Invoices & Warranties</span></span></a></li>
+                </ul>
+
+                <span class="menu-label">Account</span>
+                <ul class="sidebar-links">
+                    <li><a href="profile.html" class=""><span class="link-content"><i class="ri-user-settings-line"></i> <span>Garage & Profile</span></span></a></li>
+                    <li><a href="settings.html" class=""><span class="link-content"><i class="ri-settings-4-line"></i> <span>Preferences</span></span></a></li>
+                    <li><a href="../index.html"><span class="link-content"><i class="ri-home-4-line"></i> <span>Back to Main Site</span></span></a></li>
+                    <li><a href="../login.html" class="text-danger logout-btn"><span class="link-content"><i class="ri-logout-box-r-line"></i> <span>Sign Out</span></span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Dashboard Content Area -->
+        <main class="dashboard-main">
+<header class="dashboard-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="mobile-toggle d-lg-none" id="sidebar-toggle-btn" title="Toggle Menu">
+                        <i class="ri-menu-2-line"></i>
+                    </button>
+                    <div>
+                        <h2 style="font-size: 1.4rem; margin: 0;">Live 7-Stage Service Tracker</h2>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Real-time ISO Class 10,000 cleanroom telemetry</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+                        <i class="ri-sun-line theme-icon-light"></i>
+                        <i class="ri-moon-line theme-icon-dark"></i>
+                    </button>
+                    <a href="../cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                        <i class="ri-shopping-bag-3-line"></i>
+                        <span class="nav-cart-text">Cart</span>
+                        <span class="cart-count-badge" id="cart-count-badge">0</span>
+                    </a>
+                    <button class="btn btn-sm btn-outline" onclick="ApexDashboard.advanceServiceStage()"><i class="ri-play-line"></i> Advance Stage (Demo)</button>
+                    <button class="btn btn-sm btn-outline" onclick="ApexDashboard.resetServiceStage()"><i class="ri-refresh-line"></i> Reset (Demo)</button>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Vehicle & Bay Header Card -->
+                <div class="glass-card" style="padding: 25px; border-radius: 20px; border-color: rgba(212,175,55,0.4); margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--primary-gold); color: #000; font-size: 1.6rem; display: flex; align-items: center; justify-content: center;">
+                                <i class="ri-car-fill"></i>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.3rem;">2024 Porsche 911 GT3 RS</h3>
+                                <span style="font-size: 0.85rem; color: var(--text-secondary);">CA-911-APX • Obsidian Black Metallic • Bay 02 Cleanroom</span>
+                            </div>
+                        </div>
+
+                        <div style="text-align: right;">
+                            <span class="badge" style="background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid #22c55e; font-size: 0.85rem;" id="tracker-current-stage-name">
+                                Stage 4: Detailing & Multi-Stage Correction
+                            </span>
+                            <span style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Est. Completion: Today, 05:45 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Overall Progress Bar -->
+                    <div style="margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px;">
+                            <span style="color: var(--text-secondary);">Overall Service Progress</span>
+                            <span class="text-gold" style="font-weight: 700;" id="tracker-progress-percent">70% Completed</span>
+                        </div>
+                        <div style="height: 10px; background: rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden;">
+                            <div id="tracker-progress-bar" style="height: 100%; width: 70%; background: linear-gradient(90deg, var(--primary-gold), var(--primary-cyan)); border-radius: 10px; transition: width 0.4s ease;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Cleanroom Telemetry Bar -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; font-size: 0.85rem;">
+                        <div style="background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color);">
+                            <span style="color: var(--text-muted); font-size: 0.75rem; display: block;">Lead Detailer:</span>
+                            <strong>Marcus Vance (Master)</strong>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color);">
+                            <span style="color: var(--text-muted); font-size: 0.75rem; display: block;">Current Optical Gloss:</span>
+                            <strong class="text-gold" style="font-size: 1.05rem;">98.6 GU</strong>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color);">
+                            <span style="color: var(--text-muted); font-size: 0.75rem; display: block;">Target Final Gloss:</span>
+                            <strong class="text-cyan" style="font-size: 1.05rem;">99.8 GU</strong>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border-color);">
+                            <span style="color: var(--text-muted); font-size: 0.75rem; display: block;">Cleanroom Atmosphere:</span>
+                            <strong>22.5 °C | 42% RH</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Multi-Spectrum Cleanroom Bay Camera -->
+                <div class="bay-cam-wrapper" style="margin-bottom: 30px;">
+                    <div class="cam-viewscreen" id="bayCamView">
+                        <div class="cam-scanlines"></div>
+                        <div class="cam-hud-header">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span class="cam-rec-dot"></span>
+                                <span style="font-family: monospace; font-size: 0.8rem; letter-spacing: 1px; color: #fff; background: rgba(0,0,0,0.6); padding: 2px 8px; border-radius: 4px;">
+                                    LIVE • BAY 02 CAM • <span id="camClock">11:24:45 PST</span>
+                                </span>
+                            </div>
+                            <span class="hud-badge hud-badge-cyan" id="camFilterBadge">
+                                <i class="ri-eye-line"></i> Optical HD Spectrum
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="cam-controls-bar">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Camera Spectrum:</span>
+                            <div class="spectrum-toggles">
+                                <button class="cam-btn active" data-mode="normal"><i class="ri-camera-lens-fill"></i> Optical HD</button>
+                                <button class="cam-btn" data-mode="ir"><i class="ri-temp-hot-line"></i> Thermal IR (65°C Curing)</button>
+                                <button class="cam-btn" data-mode="uv"><i class="ri-flashlight-fill"></i> UV Flaw Inspector</button>
+                            </div>
+                        </div>
+
+                        <div style="font-size: 0.78rem; color: var(--text-secondary); display: flex; gap: 15px;">
+                            <span><i class="ri-bubble-chart-line text-cyan"></i> ISO 10k Air Purity: 99.99%</span>
+                            <span><i class="ri-rfid-line text-gold"></i> RFID Paint Sensor: Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7-Stage Pipeline Container (Rendered dynamically by dashboard.js) -->
+                <div class="glass-card" style="padding: 30px; border-radius: 20px;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 25px;">7-Stage Precision Cleanroom Pipeline</h3>
+                    <div class="service-timeline" id="apex-service-timeline">
+                        <!-- Populated by assets/js/dashboard.js -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+            <!-- Core Scripts -->
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

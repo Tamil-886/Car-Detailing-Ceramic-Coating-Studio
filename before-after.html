@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before & After Transformations | APEX OBSIDIAN</title>
+    <meta name="description" content="Interactive before and after comparison sliders demonstrating multi-stage swirl removal, gloss meter elevation, and ceramic hydrophobic protection.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/simulator.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+
+
+    <!-- Main Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li class="has-dropdown">
+                        <a href="index.html">Home <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html"><i class="ri-sparkling-2-line"></i> Home 1 - Detailing Studio</a></li>
+                            <li><a href="home-2.html"><i class="ri-shield-flash-line"></i> Home 2 - Ceramic Coating Focus</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Studio</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
+                            <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="before-after.html" class="active">Before & After</a></li>
+                    <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="blog.html">Journal</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="palette-trigger-btn" title="Search Spotlight (Ctrl+K)">
+                    <i class="ri-search-line"></i>
+                </button>
+                <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+                    <i class="ri-sun-line theme-icon-light"></i>
+                    <i class="ri-moon-line theme-icon-dark"></i>
+                </button>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
+                    <i class="ri-translate-2"></i>
+                </button>
+                <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span class="nav-cart-text">Cart</span>
+                    <span class="cart-count-badge" id="cart-count-badge">0</span>
+                </a>
+                <a href="login.html" class="btn btn-outline btn-sm"><i class="ri-user-line"></i> Sign In</a>
+                <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+                    <i class="ri-menu-4-line"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </div>
+            <button class="drawer-close" id="drawer-close-btn">&times;</button>
+        </div>
+        <div class="drawer-body">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home 1 - Detailing Studio</a></li>
+                <li><a href="home-2.html">Home 2 - Ceramic Coating</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">All 20 Services</a></li>
+                <li><a href="packages.html">Packages & Pricing</a></li>
+                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
+                <li><a href="before-after.html" class="active">Before & After Sliders</a></li>
+                <li><a href="gallery.html">Showroom Gallery</a></li>
+                <li><a href="dashboard/index.html">Customer Dashboard</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="contact.html">Contact Studio</a></li>
+            </ul>
+            <div style="margin-top: 25px; display: flex; flex-direction: column; gap: 10px;">
+                <a href="login.html" class="btn btn-outline w-100"><i class="ri-user-3-line"></i> Customer Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title Banner -->
+    <section style="padding: 90px 0 50px; background: radial-gradient(circle at center, rgba(212,175,55,0.06) 0%, transparent 70%), var(--bg-secondary); border-bottom: 1px solid var(--border-color); text-align: center;">
+        <div class="container">
+            <span class="badge badge-gold"><i class="ri-contrast-drop-line"></i> Interactive Defect Comparison</span>
+            <h1 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-top: 12px; margin-bottom: 15px;">Microscopic Swirl & Gloss Transformations</h1>
+            <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto;">
+                Drag the interactive sliders below to examine the clearcoat before and after multi-stage correction and 10H ceramic bonding.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sliders Grid Section -->
+    <section class="section">
+        <div class="container">
+            <div style="display: flex; flex-direction: column; gap: 60px;">
+                
+                <!-- Transformation 1: Porsche 911 GT3 RS Swirl Removal -->
+                <div class="glass-card" style="padding: 30px; border-radius: 24px;">
+                    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
+                        <div class="before-after-container" style="height: 380px; border-radius: 16px;">
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80" alt="Ceramic 10H Porsche 911 GT3 RS" class="img-after">
+                            <div class="img-before-wrapper" style="width: 50%;">
+                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Swirled Porsche Paint">
+                                <span class="badge" style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); color: #fff;">Before: Dealership Swirls (64.2 GU)</span>
+                            </div>
+                            <span class="badge badge-gold" style="position: absolute; bottom: 15px; right: 15px;">After: 10H Obsidian Cured (99.8 GU)</span>
+                            <div class="slider-handle" style="left: 50%;">
+                                <i class="ri-arrow-left-right-line"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="badge badge-gold">Case Study 01</span>
+                            <h3 style="font-size: 1.6rem; margin: 10px 0 15px;">2024 Porsche 911 GT3 RS</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                                Delivered brand new with heavy dealer wash scratches and buffer trails across the carbon fiber hood and rear wing.
+                            </p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Pre-Correction Gloss:</span>
+                                    <strong style="color: #ef4444; font-size: 1.1rem;">64.2 GU</strong> (Heavy haze)
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Post-Ceramic Gloss:</span>
+                                    <strong class="text-gold" style="font-size: 1.1rem;">99.8 GU</strong> (+55% depth)
+                                </div>
+                            </div>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
+                                <li><i class="ri-check-line text-gold"></i> 2-Stage rotary & DA correction with Menzerna micro-polish</li>
+                                <li><i class="ri-check-line text-gold"></i> 2 Layers of 10H Obsidian SiO2 ceramic matrix</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation 2: Audi R8 V10 Paint Correction -->
+                <div class="glass-card" style="padding: 30px; border-radius: 24px;">
+                    <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center;">
+                        <div>
+                            <span class="badge badge-cyan">Case Study 02</span>
+                            <h3 style="font-size: 1.6rem; margin: 10px 0 15px;">Audi R8 V10 Performance</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                                5-year-old Daytona Grey metallic suffering from automatic brush wash marring, acid rain etching, and oxidized clearcoat.
+                            </p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Pre-Correction Gloss:</span>
+                                    <strong style="color: #ef4444; font-size: 1.1rem;">58.4 GU</strong> (Micro-swirled)
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Post-Correction Gloss:</span>
+                                    <strong class="text-cyan" style="font-size: 1.1rem;">99.4 GU</strong> (Mirror clarity)
+                                </div>
+                            </div>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
+                                <li><i class="ri-check-line text-cyan"></i> 3-Stage compounding with wool and microfibre cutting pads</li>
+                                <li><i class="ri-check-line text-cyan"></i> Full front clip PPF + complete ceramic topcoat</li>
+                            </ul>
+                        </div>
+
+                        <div class="before-after-container" style="height: 380px; border-radius: 16px;">
+                            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80" alt="Ceramic Coated Audi R8" class="img-after">
+                            <div class="img-before-wrapper" style="width: 50%;">
+                                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80" alt="Swirled Audi R8 Paint">
+                                <span class="badge" style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); color: #fff;">Before: 58.4 GU Scratched</span>
+                            </div>
+                            <span class="badge badge-cyan" style="position: absolute; bottom: 15px; right: 15px;">After: 99.4 GU Restored</span>
+                            <div class="slider-handle" style="left: 50%;">
+                                <i class="ri-arrow-left-right-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation 3: Ferrari Leather & Interior Restoration -->
+                <div class="glass-card" style="padding: 30px; border-radius: 24px;">
+                    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
+                        <div class="before-after-container" style="height: 380px; border-radius: 16px;">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80" alt="Restored Matte Swissvax Leather" class="img-after">
+                            <div class="img-before-wrapper" style="width: 50%;">
+                                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80" alt="Shiny Greasy Leather Seat">
+                                <span class="badge" style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); color: #fff;">Before: Oily / Body Soil</span>
+                            </div>
+                            <span class="badge badge-gold" style="position: absolute; bottom: 15px; right: 15px;">After: Swissvax Factory Matte</span>
+                            <div class="slider-handle" style="left: 50%;">
+                                <i class="ri-arrow-left-right-line"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="badge badge-gold">Case Study 03</span>
+                            <h3 style="font-size: 1.6rem; margin: 10px 0 15px;">Ferrari 296 GTB Crema Leather</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                                Natural semi-aniline Italian leather had developed an unnatural greasy shine from body oils and blue jean dye transfer.
+                            </p>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px;">
+                                Cleaned with 180°C dry vapor steam and conditioned with Swissvax Elephant Leather Fat, returning the seats to a supple, non-slip factory OEM satin-matte finish.
+                            </p>
+                            <a href="index.html#booking-section" class="btn btn-gold"><i class="ri-calendar-check-line"></i> Book Leather Treatment</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="main-site-footer">
+    <!-- Top Highlights Bar -->
+    <div class="footer-highlights">
+        <div class="container">
+            <div class="footer-highlights-grid">
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-shield-star-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>ISO-6 Cleanroom Facility</h4>
+                        <p>HEPA-filtered climate & dust-free bays</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-award-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Certified Master Detailers</h4>
+                        <p>XPEL, Gtechniq & Swissvax verified</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-dashboard-3-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Live 7-Stage Telemetry</h4>
+                        <p>Real-time customer progress portal</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-medal-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Transferable E-Warranty</h4>
+                        <p>Digital gloss audit certificates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer Columns -->
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Bio -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                        <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                    </a>
+                    <p class="footer-bio">
+                        Bespoke automotive detailing and surface protection laboratory specializing in 10H ceramic coatings, surgical paint correction, and PPF installations inside climate-controlled ISO-6 cleanrooms.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="X (Twitter)" aria-label="X"><i class="ri-twitter-x-line"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook" aria-label="Facebook"><i class="ri-facebook-box-line"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Studio Navigation -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Studio Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="ri-arrow-right-s-line"></i> Home Studio</a></li>
+                        <li><a href="home-2.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating Focus</a></li>
+                        <li><a href="about.html"><i class="ri-arrow-right-s-line"></i> About Studio & Labs</a></li>
+                        <li><a href="packages.html"><i class="ri-arrow-right-s-line"></i> Packages & Pricing</a></li>
+                        <li><a href="before-after.html"><i class="ri-arrow-right-s-line"></i> Before & After Sliders</a></li>
+                        <li><a href="gallery.html"><i class="ri-arrow-right-s-line"></i> Showroom Gallery</a></li>
+                        <li><a href="blog.html"><i class="ri-arrow-right-s-line"></i> Studio Journal</a></li>
+                        <li><a href="contact.html"><i class="ri-arrow-right-s-line"></i> Contact & Directions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Bespoke Services -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Bespoke Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="ceramic-coating.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating (10H)</a></li>
+                        <li><a href="paint-correction.html"><i class="ri-arrow-right-s-line"></i> Paint Correction</a></li>
+                        <li><a href="paint-protection-film.html"><i class="ri-arrow-right-s-line"></i> Paint Protection Film (PPF)</a></li>
+                        <li><a href="interior-deep-cleaning.html"><i class="ri-arrow-right-s-line"></i> Interior Deep Cleaning</a></li>
+                        <li><a href="graphene-coating.html"><i class="ri-arrow-right-s-line"></i> Graphene Coating</a></li>
+                        <li><a href="full-car-detailing.html"><i class="ri-arrow-right-s-line"></i> Full Car Detailing</a></li>
+                        <li><a href="engine-bay-detailing.html"><i class="ri-arrow-right-s-line"></i> Engine Bay Detailing</a></li>
+                        <li><a href="services.html" class="footer-all-services-link"><i class="ri-grid-fill text-gold"></i> View All 20 Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: VIP Client Portal & Support -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Client Concierge</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#booking-section"><i class="ri-calendar-check-line text-gold"></i> Reserve Detailing Slot</a></li>
+                        <li><a href="cart.html"><i class="ri-shopping-cart-2-line text-gold"></i> View Cart & Checkout</a></li>
+                        <li><a href="dashboard/index.html"><i class="ri-dashboard-line text-gold"></i> Live Telemetry Portal</a></li>
+                        <li><a href="dashboard/bookings.html"><i class="ri-time-line text-gold"></i> Booking History</a></li>
+                        <li><a href="dashboard/loyalty-points.html"><i class="ri-copper-diamond-line text-gold"></i> Apex Gloss Club</a></li>
+                        <li><a href="dashboard/invoices.html"><i class="ri-file-shield-line text-gold"></i> Digital Warranties</a></li>
+                        <li><a href="login.html"><i class="ri-user-line text-gold"></i> Customer Sign In</a></li>
+                        <li><a href="register.html"><i class="ri-user-add-line text-gold"></i> Register Account</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Contact & Newsletter -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Studio Contact & Hours</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="ri-map-pin-2-fill text-gold"></i>
+                            <div>
+                                <strong>Beverly Hills Cleanroom:</strong>
+                                <span>9400 Wilshire Blvd, Beverly Hills, CA 90212</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-phone-fill text-gold"></i>
+                            <div>
+                                <strong>Concierge Desk:</strong>
+                                <a href="tel:+18005552739">+1 (800) 555-APEX / (310) 555-0192</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-mail-fill text-gold"></i>
+                            <div>
+                                <strong>Private Inquiries:</strong>
+                                <a href="mailto:concierge@apexobsidian.com">concierge@apexobsidian.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-time-fill text-gold"></i>
+                            <div>
+                                <strong>Operational Bay Hours:</strong>
+                                <span>Mon – Sat: 8:00 AM – 7:00 PM<br><small style="color: var(--text-muted);">Sun: VIP Private Slots By Appointment</small></span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="footer-newsletter">
+                        <span class="newsletter-label">Studio Journal Newsletter</span>
+                        <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showToast) { window.showToast('Thank you for subscribing to Apex Obsidian Journals!'); } this.reset();">
+                            <div class="newsletter-input-group">
+                                <input type="email" placeholder="Enter your email" required class="form-control newsletter-input">
+                                <button type="submit" class="btn btn-gold btn-sm newsletter-btn" title="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Sub-Footer -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-inner">
+                <div class="footer-copyright">
+                    &copy; 2024 <strong class="text-gold">APEX OBSIDIAN Automotive Studio</strong>. All Rights Reserved. ISO-6 Cleanroom Certified.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="contact.html">Privacy Policy</a>
+                    <span class="divider">•</span>
+                    <a href="contact.html">Terms & Conditions</a>
+                    <span class="divider">•</span>
+                    <a href="packages.html">Transferable Warranty</a>
+                    <span class="divider">•</span>
+                    <a href="services.html">Cleanroom Protocols</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/audio-feedback.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/command-palette.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/auth.js"></script>
+
+</body>
+</html>

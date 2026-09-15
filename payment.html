@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment & Studio Bay Allocation | APEX OBSIDIAN</title>
+    <meta name="description" content="Finalize your vehicle detailing reservation, cleanroom bay assignment, and digital e-warranty certificate.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li class="has-dropdown">
+                        <a href="index.html">Home <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html"><i class="ri-sparkling-2-line"></i> Home 1 - Detailing Studio</a></li>
+                            <li><a href="home-2.html"><i class="ri-shield-flash-line"></i> Home 2 - Ceramic Coating Focus</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Studio</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services <i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
+                            <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="before-after.html">Before & After</a></li>
+                    <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="blog.html">Journal</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="palette-trigger-btn" title="Search Spotlight (Ctrl+K)">
+                    <i class="ri-search-line"></i>
+                </button>
+                <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+                    <i class="ri-sun-line theme-icon-light"></i>
+                    <i class="ri-moon-line theme-icon-dark"></i>
+                </button>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
+                    <i class="ri-translate-2"></i>
+                </button>
+                <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span class="nav-cart-text">Cart</span>
+                    <span class="cart-count-badge" id="cart-count-badge">0</span>
+                </a>
+                <a href="login.html" class="btn btn-outline btn-sm"><i class="ri-user-line"></i> Sign In</a>
+                <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+                    <i class="ri-menu-4-line"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+            </div>
+            <button class="drawer-close" id="drawer-close-btn">&times;</button>
+        </div>
+        <div class="drawer-body">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home 1 - Detailing Studio</a></li>
+                <li><a href="home-2.html">Home 2 - Ceramic Coating</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">All 20 Services</a></li>
+                <li><a href="packages.html">Packages & Pricing</a></li>
+                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
+                <li><a href="before-after.html">Before & After Sliders</a></li>
+                <li><a href="gallery.html">Showroom Gallery</a></li>
+                <li><a href="dashboard/index.html">Customer Dashboard</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="contact.html">Contact Studio</a></li>
+            </ul>
+            <div style="margin-top: 25px; display: flex; flex-direction: column; gap: 10px;">
+                <a href="login.html" class="btn btn-outline w-100"><i class="ri-user-3-line"></i> Customer Login</a>
+                <a href="cart.html" class="btn btn-gold w-100"><i class="ri-shopping-bag-3-line"></i> Return to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title Banner with Step Progression -->
+    <section style="padding: 60px 0 35px; background: radial-gradient(circle at center, rgba(212,175,55,0.06) 0%, transparent 70%), var(--bg-secondary); border-bottom: 1px solid var(--border-color); text-align: center;">
+        <div class="container">
+            <span class="badge badge-gold"><i class="ri-shield-check-line"></i> 256-Bit SSL Encrypted Bay Checkout</span>
+            <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-top: 10px; margin-bottom: 8px;">Finalize Reservation & Payment</h1>
+            
+            <!-- 3-Step Breadcrumb Progress -->
+            <div style="display: inline-flex; align-items: center; gap: 12px; margin-top: 15px; font-size: 0.85rem; background: var(--bg-card); padding: 8px 18px; border-radius: 30px; border: 1px solid var(--border-color);">
+                <a href="packages.html" style="color: var(--text-muted);"><i class="ri-checkbox-circle-fill text-gold"></i> 1. Packages</a>
+                <i class="ri-arrow-right-s-line text-muted"></i>
+                <a href="cart.html" style="color: var(--text-muted);"><i class="ri-checkbox-circle-fill text-gold"></i> 2. Cart</a>
+                <i class="ri-arrow-right-s-line text-muted"></i>
+                <span class="text-gold" style="font-weight: 700;"><i class="ri-secure-payment-line"></i> 3. Payment & Bay Assignment</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Payment Content Section -->
+    <section class="section" style="padding-top: 45px; min-height: 60vh;">
+        <div class="container">
+
+            <!-- Checkout Form View -->
+            <div id="checkout-active-view" class="payment-grid">
+                
+                <!-- Left Column: Customer, Vehicle & Payment Form -->
+                <div>
+                    <form id="apex-payment-form" novalidate onsubmit="handlePaymentSubmit(event)">
+                        
+                        <!-- Client & Vehicle Details Box -->
+                        <div class="glass-card" style="padding: 25px; border-radius: 18px; margin-bottom: 25px;">
+                            <h3 style="font-size: 1.15rem; margin-top: 0; margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
+                                <i class="ri-user-star-line text-gold"></i> 1. Client & Supercar Information
+                            </h3>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                                <div>
+                                    <label class="form-label" for="client-name">Full Name *</label>
+                                    <input type="text" id="client-name" class="form-control" placeholder="e.g. Alexander Vance" required>
+                                    <span class="field-error-msg" id="err-client-name" style="display: none;">Full name is required.</span>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="client-email">Email Address *</label>
+                                    <input type="email" id="client-email" class="form-control" placeholder="vance@exoticmotors.com" required>
+                                    <span class="field-error-msg" id="err-client-email" style="display: none;">Valid email is required.</span>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                                <div>
+                                    <label class="form-label" for="client-phone">Phone Number *</label>
+                                    <input type="tel" id="client-phone" class="form-control" placeholder="+1 (310) 555-0199" required value="+1 (310) 555-0199">
+                                    <span class="field-error-msg" id="err-client-phone" style="display: none;">Phone number is required.</span>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="client-vehicle">Vehicle Year, Make & Model *</label>
+                                    <input type="text" id="client-vehicle" class="form-control" placeholder="e.g. 2024 Porsche 911 GT3 RS" required value="2024 Porsche 911 GT3 RS">
+                                    <span class="field-error-msg" id="err-client-vehicle" style="display: none;">Vehicle model is required.</span>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div>
+                                    <label class="form-label" for="studio-location">Preferred Studio Lab *</label>
+                                    <select id="studio-location" class="form-control">
+                                        <option value="Beverly Hills Cleanroom Studio 02" selected>Beverly Hills HQ (Studio Bay 02)</option>
+                                        <option value="London Mayfair Cleanroom Bay">London Mayfair Cleanroom Lab</option>
+                                        <option value="Dubai Supercar Cleanroom Vault">Dubai Supercar Vault</option>
+                                        <option value="Tokyo Ginza Optical Cleanroom">Tokyo Ginza Studio</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="client-plate">License Plate / VIN (Optional)</label>
+                                    <input type="text" id="client-plate" class="form-control" placeholder="CA-911-APX" value="CA-911-APX">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Billing Information -->
+                        <div class="glass-card" style="padding: 25px; border-radius: 18px; margin-bottom: 25px;">
+                            <h3 style="font-size: 1.15rem; margin-top: 0; margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
+                                <i class="ri-map-pin-user-line text-cyan"></i> 2. Billing Address
+                            </h3>
+
+                            <div style="margin-bottom: 16px;">
+                                <label class="form-label" for="bill-address">Street Address *</label>
+                                <input type="text" id="bill-address" class="form-control" placeholder="742 Rodeo Drive" required value="742 Rodeo Drive">
+                                <span class="field-error-msg" id="err-bill-address" style="display: none;">Billing address is required.</span>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 14px;">
+                                <div>
+                                    <label class="form-label" for="bill-city">City *</label>
+                                    <input type="text" id="bill-city" class="form-control" placeholder="Beverly Hills" required value="Beverly Hills">
+                                    <span class="field-error-msg" id="err-bill-city" style="display: none;">City is required.</span>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="bill-state">State / Province *</label>
+                                    <input type="text" id="bill-state" class="form-control" placeholder="CA" required value="CA">
+                                    <span class="field-error-msg" id="err-bill-state" style="display: none;">State is required.</span>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="bill-zip">ZIP / Postal *</label>
+                                    <input type="text" id="bill-zip" class="form-control" placeholder="90210" required value="90210">
+                                    <span class="field-error-msg" id="err-bill-zip" style="display: none;">ZIP is required.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method Section -->
+                        <div class="glass-card" style="padding: 25px; border-radius: 18px; border-color: rgba(212,175,55,0.4); margin-bottom: 25px;">
+                            <h3 style="font-size: 1.15rem; margin-top: 0; margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
+                                <i class="ri-bank-card-line text-gold"></i> 3. Payment Method & Authorization
+                            </h3>
+
+                            <!-- Payment Option Buttons -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 20px;">
+                                <button type="button" class="payment-tab-btn active" id="tab-card" onclick="selectPaymentMethod('card')">
+                                    <i class="ri-bank-card-fill text-gold"></i> Credit Card
+                                </button>
+                                <button type="button" class="payment-tab-btn" id="tab-apple" onclick="selectPaymentMethod('apple')">
+                                    <i class="ri-apple-fill"></i> Apple Pay
+                                </button>
+                                <button type="button" class="payment-tab-btn" id="tab-crypto" onclick="selectPaymentMethod('crypto')">
+                                    <i class="ri-qr-code-line text-cyan"></i> UPI / Crypto
+                                </button>
+                                <button type="button" class="payment-tab-btn" id="tab-wire" onclick="selectPaymentMethod('wire')">
+                                    <i class="ri-shield-keyhole-line text-gold"></i> VIP Invoicing
+                                </button>
+                            </div>
+
+                            <!-- Card Form Container -->
+                            <div id="card-fields-group">
+                                <div style="margin-bottom: 16px;">
+                                    <label class="form-label" for="card-name">Cardholder Name *</label>
+                                    <input type="text" id="card-name" class="form-control" placeholder="ALEXANDER VANCE" required value="ALEXANDER VANCE">
+                                    <span class="field-error-msg" id="err-card-name" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;">Cardholder name is required.</span>
+                                </div>
+
+                                <div style="margin-bottom: 16px;">
+                                    <label class="form-label" for="card-number">Card Number *</label>
+                                    <div style="position: relative;">
+                                        <input type="text" id="card-number" class="form-control" placeholder="4532 8821 0092 3411" maxlength="19" required value="4532 8821 0092 3411" style="padding-left: 42px;">
+                                        <i id="card-brand-icon" class="ri-visa-line" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--primary-gold);"></i>
+                                    </div>
+                                    <span class="field-error-msg" id="err-card-number" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;">Valid 16-digit card number is required.</span>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div>
+                                        <label class="form-label" for="card-expiry">Expiration (MM/YY) *</label>
+                                        <input type="text" id="card-expiry" class="form-control" placeholder="08/28" maxlength="5" required value="08/28">
+                                        <span class="field-error-msg" id="err-card-expiry" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;">Valid MM/YY is required.</span>
+                                    </div>
+                                    <div>
+                                        <label class="form-label" for="card-cvv">Security Code (CVV) *</label>
+                                        <input type="password" id="card-cvv" class="form-control" placeholder="882" maxlength="4" required value="882">
+                                        <span class="field-error-msg" id="err-card-cvv" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;">CVV is required.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Alternative Payment Message -->
+                            <div id="alt-payment-msg" style="display: none; padding: 22px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 14px; text-align: center; margin-top: 10px;">
+                                <i class="ri-shield-star-line text-gold" id="alt-payment-icon" style="font-size: 2.2rem;"></i>
+                                <h4 style="margin: 10px 0 4px;" id="alt-payment-title">Biometric Authorization Active</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;" id="alt-payment-desc">Clicking confirm will authorize reservation via secure biometric enclave.</p>
+                            </div>
+                        </div>
+
+                        <!-- Confirm & Pay Now Button -->
+                        <button type="submit" id="btn-pay-now" class="btn btn-gold btn-lg w-100" style="padding: 16px; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.5px; box-shadow: 0 10px 30px rgba(212,175,55,0.4);">
+                            <i class="ri-lock-2-line"></i> Confirm Reservation & Authorize <span id="btn-pay-amount">$0</span>
+                        </button>
+
+                        <div style="text-align: center; margin-top: 14px; font-size: 0.78rem; color: var(--text-muted);">
+                            By confirming, your cleanroom bay slot is reserved and an official transferable E-Warranty is generated.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Column: Sticky Order Review Card -->
+                <div>
+                    <div class="glass-card" style="padding: 26px; border-radius: 20px; border-color: rgba(212,175,55,0.4); position: sticky; top: 85px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                            <h3 style="font-size: 1.15rem; margin: 0;">Order Review</h3>
+                            <a href="cart.html" style="font-size: 0.8rem; color: var(--primary-gold); font-weight: 600;"><i class="ri-edit-line"></i> Edit Cart</a>
+                        </div>
+
+                        <!-- Itemized Cart Products List -->
+                        <div id="checkout-items-summary" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; max-height: 260px; overflow-y: auto;">
+                            <!-- Injected by JS -->
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div style="border-top: 1px solid var(--border-color); padding-top: 15px; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+                            <div style="display: flex; justify-content: space-between; color: var(--text-secondary);">
+                                <span>Packages Subtotal:</span>
+                                <strong id="pay-subtotal" style="color: var(--text-primary);">$0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; color: var(--text-secondary);">
+                                <span>Cleanroom Prep Fee:</span>
+                                <strong id="pay-prep-fee" style="color: var(--text-primary);">$45</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; color: var(--text-secondary);">
+                                <span>Estimated Studio Tax (8%):</span>
+                                <strong id="pay-tax" style="color: var(--text-primary);">$0</strong>
+                            </div>
+                            <div id="pay-discount-row" style="display: none; justify-content: space-between; color: #22c55e;">
+                                <span>VIP Promo Discount:</span>
+                                <strong id="pay-discount">-$0</strong>
+                            </div>
+                            <div style="border-top: 1px solid var(--border-color); padding-top: 14px; margin-top: 4px; display: flex; justify-content: space-between; align-items: baseline;">
+                                <span style="font-weight: 700; font-size: 1.05rem;">Total Investment:</span>
+                                <strong id="pay-final-total" class="text-gold" style="font-size: 1.45rem; font-weight: 800;">$0</strong>
+                            </div>
+                        </div>
+
+                        <!-- VIP Perks Callout -->
+                        <div style="margin-top: 20px; padding: 12px 14px; background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; font-size: 0.82rem;">
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--primary-gold); font-weight: 700; margin-bottom: 2px;">
+                                <i class="ri-copper-diamond-fill"></i> Apex Gloss Club Rewards
+                            </div>
+                            <span style="color: var(--text-secondary);">You will earn <strong class="text-gold" id="vip-points-earned">+1,450 Points</strong> on this studio booking.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty Checkout State -->
+            <div id="checkout-empty-view" class="cart-empty-box" style="display: none; max-width: 600px; margin: 30px auto; text-align: center;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(212,175,55,0.1); border: 1px solid var(--primary-gold); color: var(--primary-gold); font-size: 2.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 0 30px rgba(212,175,55,0.2);">
+                    <i class="ri-secure-payment-line"></i>
+                </div>
+                <h2 style="font-size: 1.6rem; margin-bottom: 10px;">No Pending Reservation Or Items</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 440px; margin: 0 auto 25px; line-height: 1.6;">
+                    Please select a signature ceramic coating package or make a studio reservation to finalize your cleanroom bay allocation.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                    <a href="packages.html" class="btn btn-gold btn-lg"><i class="ri-price-tag-3-line"></i> View Packages</a>
+                    <a href="index.html#booking-section" class="btn btn-outline btn-lg"><i class="ri-calendar-check-line"></i> Reserve Studio Bay</a>
+                </div>
+            </div>
+
+            <!-- Order Success Confirmation State (Dedicated In-Page Screen) -->
+            <div id="order-success-view" class="glass-card" style="display: none; max-width: 740px; margin: 30px auto; padding: 45px 35px; border-radius: 24px; border: 2px solid #22c55e; box-shadow: 0 25px 60px rgba(0,0,0,0.6); text-align: center;">
+                <div style="width: 85px; height: 85px; border-radius: 50%; background: rgba(34,197,94,0.12); border: 2px solid #22c55e; color: #22c55e; font-size: 2.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 0 35px rgba(34,197,94,0.35);">
+                    <i class="ri-checkbox-circle-fill"></i>
+                </div>
+
+                <span class="badge" style="background: rgba(34,197,94,0.18); color: #22c55e; font-size: 0.85rem; padding: 5px 16px; border: 1px solid rgba(34,197,94,0.3); border-radius: 20px;">
+                    <i class="ri-shield-check-fill"></i> Payment Successful & Bay Confirmed
+                </span>
+                <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-top: 14px; margin-bottom: 8px;">Studio Cleanroom Bay Secured!</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px; max-width: 580px; margin-left: auto; margin-right: auto;">
+                    An official digital transaction receipt and transferable E-Warranty certificate have been generated and synchronized with your Customer Dashboard.
+                </p>
+
+                <!-- Receipt Summary Box -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; text-align: left; font-size: 0.9rem; margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; display: block;">Booking Reference</span>
+                            <strong class="text-gold" style="font-family: var(--font-mono, monospace); font-size: 1.25rem;" id="confirmed-order-id">APX-BK-88912</strong>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; display: block;">Payment ID</span>
+                            <strong class="text-cyan" style="font-family: var(--font-mono, monospace); font-size: 1.1rem;" id="confirmed-payment-id">APX-PAY-74910</strong>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 15px;">
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.8rem; display: block;">Client Name:</span>
+                            <strong id="confirmed-client-name">Alexander Vance</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.8rem; display: block;">Registered Vehicle:</span>
+                            <strong id="confirmed-vehicle">2024 Porsche 911 GT3 RS</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.8rem; display: block;">Assigned Cleanroom Bay:</span>
+                            <strong id="confirmed-bay">Beverly Hills Cleanroom Studio 02</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.8rem; display: block;">Payment Method:</span>
+                            <strong id="confirmed-payment-method">Credit Card (Obsidian Shield)</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.8rem; display: block;">Authorized On:</span>
+                            <strong id="confirmed-date-time">Today</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.8rem; display: block;">Payment Status:</span>
+                            <span class="badge" style="background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid #22c55e; font-size: 0.75rem;"><i class="ri-check-line"></i> Paid in Full</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border-color); padding-top: 14px; margin-top: 8px;">
+                        <span style="font-weight: 700; font-size: 1.05rem;">Total Investment Paid:</span>
+                        <strong class="text-gold" style="font-size: 1.5rem; font-weight: 800;" id="confirmed-total">$1,450</strong>
+                    </div>
+                </div>
+
+                <!-- Navigation Action Buttons -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                    <a href="dashboard/index.html" class="btn btn-gold btn-lg"><i class="ri-dashboard-3-line"></i> View My Dashboard</a>
+                    <a href="dashboard/bookings.html" class="btn btn-outline btn-lg"><i class="ri-calendar-check-line"></i> My Bookings</a>
+                    <a href="dashboard/invoices.html" class="btn btn-outline btn-lg"><i class="ri-file-shield-line"></i> Invoices & Warranties</a>
+                    <button type="button" class="btn btn-outline btn-lg" onclick="window.print()"><i class="ri-printer-line"></i> Print Receipt</button>
+                    <a href="index.html" class="btn btn-outline btn-lg"><i class="ri-home-4-line"></i> Back to Home</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="main-site-footer">
+    <!-- Top Highlights Bar -->
+    <div class="footer-highlights">
+        <div class="container">
+            <div class="footer-highlights-grid">
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-shield-star-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>ISO-6 Cleanroom Facility</h4>
+                        <p>HEPA-filtered climate & dust-free bays</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-award-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Certified Master Detailers</h4>
+                        <p>XPEL, Gtechniq & Swissvax verified</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-dashboard-3-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Live 7-Stage Telemetry</h4>
+                        <p>Real-time customer progress portal</p>
+                    </div>
+                </div>
+                <div class="footer-highlight-item">
+                    <div class="highlight-icon"><i class="ri-medal-fill text-gold"></i></div>
+                    <div class="highlight-text">
+                        <h4>Transferable E-Warranty</h4>
+                        <p>Digital gloss audit certificates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer Columns -->
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Bio -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                        <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                    </a>
+                    <p class="footer-bio">
+                        Bespoke automotive detailing and surface protection laboratory specializing in 10H ceramic coatings, surgical paint correction, and PPF installations inside climate-controlled ISO-6 cleanrooms.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="X (Twitter)" aria-label="X"><i class="ri-twitter-x-line"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook" aria-label="Facebook"><i class="ri-facebook-box-line"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Studio Navigation -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Studio Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="ri-arrow-right-s-line"></i> Home Studio</a></li>
+                        <li><a href="home-2.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating Focus</a></li>
+                        <li><a href="about.html"><i class="ri-arrow-right-s-line"></i> About Studio & Labs</a></li>
+                        <li><a href="packages.html"><i class="ri-arrow-right-s-line"></i> Packages & Pricing</a></li>
+                        <li><a href="before-after.html"><i class="ri-arrow-right-s-line"></i> Before & After Sliders</a></li>
+                        <li><a href="gallery.html"><i class="ri-arrow-right-s-line"></i> Showroom Gallery</a></li>
+                        <li><a href="blog.html"><i class="ri-arrow-right-s-line"></i> Studio Journal</a></li>
+                        <li><a href="contact.html"><i class="ri-arrow-right-s-line"></i> Contact & Directions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Bespoke Services -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Bespoke Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="ceramic-coating.html"><i class="ri-arrow-right-s-line"></i> Ceramic Coating (10H)</a></li>
+                        <li><a href="paint-correction.html"><i class="ri-arrow-right-s-line"></i> Paint Correction</a></li>
+                        <li><a href="paint-protection-film.html"><i class="ri-arrow-right-s-line"></i> Paint Protection Film (PPF)</a></li>
+                        <li><a href="interior-deep-cleaning.html"><i class="ri-arrow-right-s-line"></i> Interior Deep Cleaning</a></li>
+                        <li><a href="graphene-coating.html"><i class="ri-arrow-right-s-line"></i> Graphene Coating</a></li>
+                        <li><a href="full-car-detailing.html"><i class="ri-arrow-right-s-line"></i> Full Car Detailing</a></li>
+                        <li><a href="engine-bay-detailing.html"><i class="ri-arrow-right-s-line"></i> Engine Bay Detailing</a></li>
+                        <li><a href="services.html" class="footer-all-services-link"><i class="ri-grid-fill text-gold"></i> View All 20 Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: VIP Client Portal & Support -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Client Concierge</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#booking-section"><i class="ri-calendar-check-line text-gold"></i> Reserve Detailing Slot</a></li>
+                        <li><a href="cart.html"><i class="ri-shopping-cart-2-line text-gold"></i> View Cart & Checkout</a></li>
+                        <li><a href="dashboard/index.html"><i class="ri-dashboard-line text-gold"></i> Live Telemetry Portal</a></li>
+                        <li><a href="dashboard/bookings.html"><i class="ri-time-line text-gold"></i> Booking History</a></li>
+                        <li><a href="dashboard/loyalty-points.html"><i class="ri-copper-diamond-line text-gold"></i> Apex Gloss Club</a></li>
+                        <li><a href="dashboard/invoices.html"><i class="ri-file-shield-line text-gold"></i> Digital Warranties</a></li>
+                        <li><a href="login.html"><i class="ri-user-line text-gold"></i> Customer Sign In</a></li>
+                        <li><a href="register.html"><i class="ri-user-add-line text-gold"></i> Register Account</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Contact & Newsletter -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Studio Contact & Hours</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="ri-map-pin-2-fill text-gold"></i>
+                            <div>
+                                <strong>Beverly Hills Cleanroom:</strong>
+                                <span>9400 Wilshire Blvd, Beverly Hills, CA 90212</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-phone-fill text-gold"></i>
+                            <div>
+                                <strong>Concierge Desk:</strong>
+                                <a href="tel:+18005552739">+1 (800) 555-APEX / (310) 555-0192</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-mail-fill text-gold"></i>
+                            <div>
+                                <strong>Private Inquiries:</strong>
+                                <a href="mailto:concierge@apexobsidian.com">concierge@apexobsidian.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-time-fill text-gold"></i>
+                            <div>
+                                <strong>Operational Bay Hours:</strong>
+                                <span>Mon – Sat: 8:00 AM – 7:00 PM<br><small style="color: var(--text-muted);">Sun: VIP Private Slots By Appointment</small></span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="footer-newsletter">
+                        <span class="newsletter-label">Studio Journal Newsletter</span>
+                        <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showToast) { window.showToast('Thank you for subscribing to Apex Obsidian Journals!'); } this.reset();">
+                            <div class="newsletter-input-group">
+                                <input type="email" placeholder="Enter your email" required class="form-control newsletter-input">
+                                <button type="submit" class="btn btn-gold btn-sm newsletter-btn" title="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Sub-Footer -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-inner">
+                <div class="footer-copyright">
+                    &copy; 2024 <strong class="text-gold">APEX OBSIDIAN Automotive Studio</strong>. All Rights Reserved. ISO-6 Cleanroom Certified.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="contact.html">Privacy Policy</a>
+                    <span class="divider">•</span>
+                    <a href="contact.html">Terms & Conditions</a>
+                    <span class="divider">•</span>
+                    <a href="packages.html">Transferable Warranty</a>
+                    <span class="divider">•</span>
+                    <a href="services.html">Cleanroom Protocols</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/audio-feedback.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/command-palette.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+
+    <!-- Checkout Page Controller -->
+    <script>
+    let currentPaymentMethod = 'card';
+    let linkedBooking = null;
+
+    function initPaymentPage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookingIdParam = urlParams.get('bookingId') || urlParams.get('id');
+
+        // 1. Check if linked to an existing booking
+        if (bookingIdParam) {
+            try {
+                const storedBookings = JSON.parse(localStorage.getItem('apex_studio_bookings_list') || '[]');
+                linkedBooking = storedBookings.find(b => b.code === bookingIdParam || b.id === bookingIdParam || b.orderId === bookingIdParam);
+                if (!linkedBooking) {
+                    const storedOrders = JSON.parse(localStorage.getItem('apex_orders') || '[]');
+                    linkedBooking = storedOrders.find(o => o.orderId === bookingIdParam || o.code === bookingIdParam);
+                }
+            } catch (e) {
+                console.warn('Could not parse bookings list', e);
+            }
+        }
+
+        const cart = ApexCart.getCart();
+
+        // 2. If neither booking nor cart exists, show empty view
+        if (!linkedBooking && (!cart || cart.length === 0)) {
+            const activeView = document.getElementById('checkout-active-view');
+            const emptyView = document.getElementById('checkout-empty-view');
+            if (activeView) activeView.style.display = 'none';
+            if (emptyView) emptyView.style.display = 'block';
+            return;
+        }
+
+        // 3. Pre-populate user details from booking or active user session
+        populateUserDetails();
+
+        // 4. Setup card formatting listeners
+        initCardInputFormatting();
+
+        // 5. Render order review
+        renderPaymentSummary();
+    }
+
+    function populateUserDetails() {
+        const nameEl = document.getElementById('client-name');
+        const emailEl = document.getElementById('client-email');
+        const phoneEl = document.getElementById('client-phone');
+        const vehEl = document.getElementById('client-vehicle');
+        const locEl = document.getElementById('studio-location');
+        const cardNameEl = document.getElementById('card-name');
+
+        if (linkedBooking) {
+            if (nameEl) nameEl.value = linkedBooking.clientName || (linkedBooking.customer && linkedBooking.customer.name) || '';
+            if (emailEl) emailEl.value = linkedBooking.clientEmail || (linkedBooking.customer && linkedBooking.customer.email) || '';
+            if (phoneEl) phoneEl.value = linkedBooking.clientPhone || (linkedBooking.customer && linkedBooking.customer.phone) || '';
+            if (vehEl) vehEl.value = linkedBooking.vehicleModel || (linkedBooking.customer && linkedBooking.customer.vehicle) || '';
+            if (locEl && linkedBooking.studioLocation) {
+                locEl.value = linkedBooking.studioLocation;
+            }
+            if (cardNameEl && nameEl && nameEl.value) cardNameEl.value = nameEl.value.toUpperCase();
+        } else if (window.ApexAuth && window.ApexAuth.getCurrentUser) {
+            const user = window.ApexAuth.getCurrentUser();
+            if (user) {
+                if (nameEl && !nameEl.value) nameEl.value = user.name || '';
+                if (emailEl && !emailEl.value) emailEl.value = user.email || '';
+                if (phoneEl && !phoneEl.value && user.phone) phoneEl.value = user.phone;
+                if (vehEl && !vehEl.value && user.vehicle) vehEl.value = user.vehicle;
+                if (cardNameEl && !cardNameEl.value) cardNameEl.value = (user.name || '').toUpperCase();
+            }
+        }
+    }
+
+    function initCardInputFormatting() {
+        const cardNumInput = document.getElementById('card-number');
+        const cardExpInput = document.getElementById('card-expiry');
+        const cardCvvInput = document.getElementById('card-cvv');
+        const brandIcon = document.getElementById('card-brand-icon');
+
+        if (cardNumInput) {
+            cardNumInput.addEventListener('input', function (e) {
+                let val = this.value.replace(/\D/g, '').substring(0, 16);
+                let formatted = val.match(/.{1,4}/g)?.join(' ') || val;
+                this.value = formatted;
+
+                // Card brand detection
+                if (brandIcon) {
+                    if (val.startsWith('4')) {
+                        brandIcon.className = 'ri-visa-line';
+                        brandIcon.style.color = 'var(--primary-gold)';
+                    } else if (val.startsWith('5')) {
+                        brandIcon.className = 'ri-mastercard-line';
+                        brandIcon.style.color = '#f97316';
+                    } else if (val.startsWith('3')) {
+                        brandIcon.className = 'ri-bank-card-2-line';
+                        brandIcon.style.color = 'var(--primary-cyan)';
+                    } else {
+                        brandIcon.className = 'ri-bank-card-line';
+                        brandIcon.style.color = 'var(--text-muted)';
+                    }
+                }
+            });
+        }
+
+        if (cardExpInput) {
+            cardExpInput.addEventListener('input', function (e) {
+                let val = this.value.replace(/\D/g, '').substring(0, 4);
+                if (val.length >= 3) {
+                    this.value = val.substring(0, 2) + '/' + val.substring(2, 4);
+                } else {
+                    this.value = val;
+                }
+            });
+        }
+
+        if (cardCvvInput) {
+            cardCvvInput.addEventListener('input', function (e) {
+                this.value = this.value.replace(/\D/g, '').substring(0, 4);
+            });
+        }
+    }
+
+    function renderPaymentSummary() {
+        const format = window.formatPrice || ((val) => '$' + Number(val).toLocaleString());
+        const summaryContainer = document.getElementById('checkout-items-summary');
+
+        if (linkedBooking && (!ApexCart.getCart() || ApexCart.getCart().length === 0)) {
+            // Render from linked booking
+            const bookingPrice = Number(linkedBooking.totalPrice) || 3499;
+            const prepFee = 45;
+            const tax = Math.round(bookingPrice * 0.08);
+            const total = bookingPrice + prepFee + tax;
+
+            if (summaryContainer) {
+                summaryContainer.innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 0.85rem;">
+                    <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+                        <div style="width: 42px; height: 35px; border-radius: 6px; background: rgba(212,175,55,0.15); border: 1px solid var(--primary-gold); display: flex; align-items: center; justify-content: center; color: var(--primary-gold); font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="ri-car-fill"></i>
+                        </div>
+                        <div style="overflow: hidden;">
+                            <strong style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px;">${linkedBooking.servicePackage || 'Studio Reservation'}</strong>
+                            <span style="color: var(--text-muted); font-size: 0.75rem;">${linkedBooking.code || 'Reservation'} • ${linkedBooking.vehicleClassification || 'Standard'}</span>
+                        </div>
+                    </div>
+                    <span style="font-weight: 700; color: var(--primary-gold); white-space: nowrap;">${format(bookingPrice)}</span>
+                </div>
+                `;
+            }
+
+            document.getElementById('pay-subtotal').textContent = format(bookingPrice);
+            document.getElementById('pay-prep-fee').textContent = format(prepFee);
+            document.getElementById('pay-tax').textContent = format(tax);
+            document.getElementById('pay-final-total').textContent = format(total);
+            document.getElementById('btn-pay-amount').textContent = format(total);
+            document.getElementById('vip-points-earned').textContent = '+' + total.toLocaleString() + ' Points';
+            return;
+        }
+
+        // Render from active cart
+        const cart = ApexCart.getCart();
+        if (summaryContainer) {
+            summaryContainer.innerHTML = cart.map(item => {
+                const itemTotal = (Number(item.price) || 0) * (Number(item.quantity) || 1);
+                return `
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 0.85rem;">
+                    <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+                        <img src="${item.image || 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80'}" alt="${item.name}" style="width: 42px; height: 35px; border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+                        <div style="overflow: hidden;">
+                            <strong style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px;">${item.name}</strong>
+                            <span style="color: var(--text-muted); font-size: 0.75rem;">Qty: ${item.quantity || 1} • ${item.tier || 'Tier'}</span>
+                        </div>
+                    </div>
+                    <span style="font-weight: 700; color: var(--primary-gold); white-space: nowrap;">${format(itemTotal)}</span>
+                </div>
+                `;
+            }).join('');
+        }
+
+        const subtotal = ApexCart.getSubtotal();
+        const prepFee = ApexCart.getPrepFee();
+        const tax = ApexCart.getTaxAmount();
+        const discount = ApexCart.getDiscountAmount();
+        const total = ApexCart.getTotal();
+
+        const subtotalEl = document.getElementById('pay-subtotal');
+        if (subtotalEl) subtotalEl.textContent = format(subtotal);
+
+        const prepFeeEl = document.getElementById('pay-prep-fee');
+        if (prepFeeEl) prepFeeEl.textContent = format(prepFee);
+
+        const taxEl = document.getElementById('pay-tax');
+        if (taxEl) taxEl.textContent = format(tax);
+
+        const discountRow = document.getElementById('pay-discount-row');
+        const discountEl = document.getElementById('pay-discount');
+        if (discount > 0) {
+            if (discountRow) discountRow.style.display = 'flex';
+            if (discountEl) discountEl.textContent = '-' + format(discount);
+        } else {
+            if (discountRow) discountRow.style.display = 'none';
+        }
+
+        const totalEl = document.getElementById('pay-final-total');
+        if (totalEl) totalEl.textContent = format(total);
+
+        const btnAmountEl = document.getElementById('btn-pay-amount');
+        if (btnAmountEl) btnAmountEl.textContent = format(total);
+
+        const pointsEl = document.getElementById('vip-points-earned');
+        if (pointsEl) pointsEl.textContent = '+' + total.toLocaleString() + ' Points';
+    }
+
+    function selectPaymentMethod(method) {
+        currentPaymentMethod = method;
+        document.querySelectorAll('.payment-tab-btn').forEach(b => b.classList.remove('active'));
+
+        const cardFields = document.getElementById('card-fields-group');
+        const altMsg = document.getElementById('alt-payment-msg');
+        const altTitle = document.getElementById('alt-payment-title');
+        const altDesc = document.getElementById('alt-payment-desc');
+        const altIcon = document.getElementById('alt-payment-icon');
+
+        const tabBtn = document.getElementById(`tab-${method}`);
+        if (tabBtn) tabBtn.classList.add('active');
+
+        if (method === 'card') {
+            if (cardFields) cardFields.style.display = 'block';
+            if (altMsg) altMsg.style.display = 'none';
+        } else {
+            if (cardFields) cardFields.style.display = 'none';
+            if (altMsg) altMsg.style.display = 'block';
+
+            if (method === 'apple') {
+                if (altIcon) altIcon.className = 'ri-apple-fill text-gold';
+                if (altTitle) altTitle.textContent = 'Apple Pay / Biometric Enclave Active';
+                if (altDesc) altDesc.textContent = 'Clicking confirm will authorize reservation via secure biometric Touch ID / Face ID.';
+            } else if (method === 'crypto') {
+                if (altIcon) altIcon.className = 'ri-qr-code-line text-cyan';
+                if (altTitle) altTitle.textContent = 'Instant UPI / Crypto Web3 Checkout Active';
+                if (altDesc) altDesc.textContent = 'Direct instant payment confirmation via secure multi-chain protocol.';
+            } else if (method === 'wire') {
+                if (altIcon) altIcon.className = 'ri-shield-keyhole-line text-gold';
+                if (altTitle) altTitle.textContent = 'VIP Concierge Studio Invoicing Active';
+                if (altDesc) altDesc.textContent = 'A verified invoice will be delivered directly to your customer dashboard account.';
+            }
+        }
+    }
+
+    function handlePaymentSubmit(event) {
+        event.preventDefault();
+
+        // Validate client fields
+        let isValid = true;
+        let firstInvalid = null;
+
+        const validateField = (id, errId, minLen = 1) => {
+            const input = document.getElementById(id);
+            const err = document.getElementById(errId);
+            if (!input || !input.value.trim() || input.value.trim().length < minLen) {
+                isValid = false;
+                if (input) {
+                    input.style.borderColor = '#ef4444';
+                    input.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.25)';
+                }
+                if (err) err.style.display = 'block';
+                if (!firstInvalid) firstInvalid = input;
+            } else {
+                if (input) {
+                    input.style.borderColor = '';
+                    input.style.boxShadow = '';
+                }
+                if (err) err.style.display = 'none';
+            }
+        };
+
+        validateField('client-name', 'err-client-name', 2);
+        validateField('client-email', 'err-client-email', 4);
+        validateField('client-phone', 'err-client-phone', 7);
+        validateField('client-vehicle', 'err-client-vehicle', 2);
+        validateField('bill-address', 'err-bill-address', 3);
+        validateField('bill-city', 'err-bill-city', 2);
+        validateField('bill-state', 'err-bill-state', 2);
+        validateField('bill-zip', 'err-bill-zip', 3);
+
+        if (currentPaymentMethod === 'card') {
+            validateField('card-name', 'err-card-name', 2);
+            
+            const cardNumInput = document.getElementById('card-number');
+            const cardNumClean = cardNumInput ? cardNumInput.value.replace(/\D/g, '') : '';
+            if (cardNumClean.length < 15) {
+                validateField('card-number', 'err-card-number', 999);
+            } else {
+                validateField('card-number', 'err-card-number', 1);
+            }
+
+            const cardExpInput = document.getElementById('card-expiry');
+            const expVal = cardExpInput ? cardExpInput.value.trim() : '';
+            if (!expVal.match(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/)) {
+                validateField('card-expiry', 'err-card-expiry', 999);
+            } else {
+                validateField('card-expiry', 'err-card-expiry', 1);
+            }
+
+            const cardCvvInput = document.getElementById('card-cvv');
+            const cvvVal = cardCvvInput ? cardCvvInput.value.trim() : '';
+            if (cvvVal.length < 3) {
+                validateField('card-cvv', 'err-card-cvv', 999);
+            } else {
+                validateField('card-cvv', 'err-card-cvv', 1);
+            }
+        }
+
+        if (!isValid) {
+            if (firstInvalid && firstInvalid.scrollIntoView) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalid.focus();
+            }
+            if (window.showToast) {
+                window.showToast('Please correct the highlighted reservation fields.');
+            }
+            return;
+        }
+
+        // Processing spinner state
+        const btn = document.getElementById('btn-pay-now');
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="ri-loader-4-line spin"></i> Authorizing Cleanroom Bay Allocation...';
+        }
+
+        // Simulate 1.2s luxury payment processing
+        setTimeout(() => {
+            const paymentMethodLabel = currentPaymentMethod === 'card' ? 'Credit Card (Obsidian Shield 10H)' :
+                                      (currentPaymentMethod === 'apple' ? 'Apple Pay Biometric' :
+                                      (currentPaymentMethod === 'crypto' ? 'Instant Web3 Protocol' : 'VIP Studio Wire Invoicing'));
+
+            const orderPayload = {
+                bookingId: linkedBooking ? linkedBooking.code : null,
+                name: document.getElementById('client-name').value.trim(),
+                email: document.getElementById('client-email').value.trim(),
+                phone: document.getElementById('client-phone').value.trim(),
+                vehicle: document.getElementById('client-vehicle').value.trim(),
+                plate: document.getElementById('client-plate') ? document.getElementById('client-plate').value.trim() : 'CA-911-APX',
+                bayLocation: document.getElementById('studio-location') ? document.getElementById('studio-location').value : 'Beverly Hills Cleanroom Studio 02',
+                address: document.getElementById('bill-address').value.trim(),
+                city: document.getElementById('bill-city').value.trim(),
+                state: document.getElementById('bill-state').value.trim(),
+                zip: document.getElementById('bill-zip').value.trim(),
+                paymentMethod: paymentMethodLabel
+            };
+
+            let finalOrder;
+            if (ApexCart.getCart().length > 0) {
+                finalOrder = ApexCart.createOrder(orderPayload);
+            } else if (linkedBooking) {
+                // If paying for a pre-created booking
+                const randomNum = Math.floor(10000 + Math.random() * 90000);
+                const paymentId = 'APX-PAY-' + randomNum;
+                const invoiceNo = 'INV-2024-' + Math.floor(100 + Math.random() * 900);
+                const warrantyCode = 'WAR-10H-' + randomNum;
+                const now = new Date();
+                const dateFormatted = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+                finalOrder = Object.assign({}, linkedBooking, {
+                    orderId: linkedBooking.code,
+                    status: 'Confirmed',
+                    paymentStatus: 'Paid',
+                    paymentId: paymentId,
+                    invoiceNo: invoiceNo,
+                    warrantyCode: warrantyCode,
+                    paymentMethod: paymentMethodLabel,
+                    paidAt: now.toISOString(),
+                    pricing: {
+                        total: Number(linkedBooking.totalPrice) || 3499
+                    }
+                });
+
+                // Update in storage
+                try {
+                    const bookingsKey = 'apex_studio_bookings_list';
+                    const list = JSON.parse(localStorage.getItem(bookingsKey) || '[]');
+                    const idx = list.findIndex(b => b.code === linkedBooking.code || b.id === linkedBooking.id);
+                    if (idx > -1) {
+                        list[idx] = finalOrder;
+                    } else {
+                        list.unshift(finalOrder);
+                    }
+                    localStorage.setItem(bookingsKey, JSON.stringify(list));
+
+                    // Add invoice
+                    const invKey = 'apex_user_invoices';
+                    const allInvoices = JSON.parse(localStorage.getItem(invKey) || '[]');
+                    allInvoices.unshift({
+                        invoiceNo: invoiceNo,
+                        bookingCode: finalOrder.code,
+                        date: dateFormatted,
+                        vehicle: finalOrder.vehicleModel,
+                        vin: orderPayload.plate,
+                        service: finalOrder.servicePackage,
+                        amount: finalOrder.totalPrice,
+                        status: 'Paid',
+                        paymentMethod: paymentMethodLabel,
+                        paymentId: paymentId,
+                        warrantyCode: warrantyCode,
+                        warrantyTerm: '7-Year Transferable Studio Warranty',
+                        cureDate: dateFormatted,
+                        expiryDate: new Date(now.getFullYear() + 7, now.getMonth(), now.getDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                        batchNo: `APX-SIO2-10H-BATCH-${randomNum.toString().slice(-3)}A`,
+                        items: [{ name: finalOrder.servicePackage, price: finalOrder.totalPrice }]
+                    });
+                    localStorage.setItem(invKey, JSON.stringify(allInvoices));
+
+                    // Add loyalty points
+                    const currentPts = parseInt(localStorage.getItem('apex_loyalty_points') || '2450', 10);
+                    localStorage.setItem('apex_loyalty_points', (currentPts + finalOrder.totalPrice).toString());
+                } catch (e) {}
+            }
+
+            // Transition views
+            const activeView = document.getElementById('checkout-active-view');
+            const successView = document.getElementById('order-success-view');
+
+            if (activeView) activeView.style.display = 'none';
+            if (successView) successView.style.display = 'block';
+
+            // Populate Success View
+            const orderIdEl = document.getElementById('confirmed-order-id');
+            if (orderIdEl) orderIdEl.textContent = finalOrder.code || finalOrder.orderId;
+
+            const paymentIdEl = document.getElementById('confirmed-payment-id');
+            if (paymentIdEl) paymentIdEl.textContent = finalOrder.paymentId || ('APX-PAY-' + Math.floor(10000 + Math.random() * 90000));
+
+            const clientEl = document.getElementById('confirmed-client-name');
+            if (clientEl) clientEl.textContent = finalOrder.clientName || (finalOrder.customer && finalOrder.customer.name) || orderPayload.name;
+
+            const vehicleEl = document.getElementById('confirmed-vehicle');
+            if (vehicleEl) vehicleEl.textContent = finalOrder.vehicleModel || (finalOrder.customer && finalOrder.customer.vehicle) || orderPayload.vehicle;
+
+            const bayEl = document.getElementById('confirmed-bay');
+            if (bayEl) bayEl.textContent = finalOrder.studioLocation || (finalOrder.customer && finalOrder.customer.bayLocation) || orderPayload.bayLocation;
+
+            const methodEl = document.getElementById('confirmed-payment-method');
+            if (methodEl) methodEl.textContent = paymentMethodLabel;
+
+            const dateEl = document.getElementById('confirmed-date-time');
+            if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' (' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ')';
+
+            const format = window.formatPrice || ((val) => '$' + Number(val).toLocaleString());
+            const totalEl = document.getElementById('confirmed-total');
+            const finalAmt = (finalOrder.pricing && finalOrder.pricing.total) || finalOrder.totalPrice || 0;
+            if (totalEl) totalEl.textContent = format(finalAmt);
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (window.showToast) {
+                window.showToast('Reservation & Payment Confirmed! Studio Bay 02 Allocated.');
+            }
+        }, 1200);
+    }
+
+    document.addEventListener('DOMContentLoaded', initPaymentPage);
+    </script>
+
+</body>
+</html>

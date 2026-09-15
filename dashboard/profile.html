@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Garage & Profile | APEX OBSIDIAN Portal</title>
+    <meta name="description" content="Manage your vehicle fleet, registration plates, contact details, and cleanroom concierge preferences.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+                <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar" id="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">
+                    <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                    <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                </a>
+                <button class="sidebar-close-btn" id="sidebar-close-btn" title="Close Menu">&times;</button>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar dashboard-user-avatar">AV</div>
+                <div class="user-info">
+                    <h4 class="user-name dashboard-user-name">Alexander Vance</h4>
+                    <span class="user-badge"><i class="ri-vip-crown-fill text-gold"></i> Obsidian VIP</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Client Portal</span>
+                <ul class="sidebar-links">
+                    <li><a href="index.html" class=""><span class="link-content"><i class="ri-dashboard-3-line"></i> <span>Overview</span></span></a></li>
+                    <li><a href="services-status.html" class=""><span class="link-content"><i class="ri-sparkling-fill text-gold"></i> <span>Live 7-Stage Tracker</span></span> <span class="badge badge-gold" style="font-size:0.65rem; padding: 2px 6px;">Live</span></a></li>
+                    <li><a href="bookings.html" class=""><span class="link-content"><i class="ri-calendar-check-line"></i> <span>My Bookings</span></span></a></li>
+                    <li><a href="before-after.html" class=""><span class="link-content"><i class="ri-contrast-drop-line"></i> <span>Photo Vault</span></span></a></li>
+                    <li><a href="loyalty-points.html" class=""><span class="link-content"><i class="ri-copper-diamond-line text-cyan"></i> <span>Apex Gloss Club</span></span></a></li>
+                    <li><a href="invoices.html" class=""><span class="link-content"><i class="ri-file-text-line"></i> <span>Invoices & Warranties</span></span></a></li>
+                </ul>
+
+                <span class="menu-label">Account</span>
+                <ul class="sidebar-links">
+                    <li><a href="profile.html" class="active"><span class="link-content"><i class="ri-user-settings-line"></i> <span>Garage & Profile</span></span></a></li>
+                    <li><a href="settings.html" class=""><span class="link-content"><i class="ri-settings-4-line"></i> <span>Preferences</span></span></a></li>
+                    <li><a href="../index.html"><span class="link-content"><i class="ri-home-4-line"></i> <span>Back to Main Site</span></span></a></li>
+                    <li><a href="../login.html" class="text-danger logout-btn"><span class="link-content"><i class="ri-logout-box-r-line"></i> <span>Sign Out</span></span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Dashboard Content Area -->
+        <main class="dashboard-main">
+<header class="dashboard-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="mobile-toggle d-lg-none" id="sidebar-toggle-btn" title="Toggle Menu">
+                        <i class="ri-menu-2-line"></i>
+                    </button>
+                    <div>
+                        <h2 style="font-size: 1.4rem; margin: 0;">Garage & Profile</h2>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Manage registered vehicles and concierge preferences</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+                        <i class="ri-sun-line theme-icon-light"></i>
+                        <i class="ri-moon-line theme-icon-dark"></i>
+                    </button>
+                    <a href="../cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                        <i class="ri-shopping-bag-3-line"></i>
+                        <span class="nav-cart-text">Cart</span>
+                        <span class="cart-count-badge" id="cart-count-badge">0</span>
+                    </a>
+                    <a href="../index.html#booking-section" class="btn btn-gold btn-sm"><i class="ri-calendar-check-line"></i> Book Service</a>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Vehicle Garage Fleet -->
+                <div class="glass-card" style="padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 style="font-size: 1.25rem; margin: 0 0 5px;">Your Registered Supercars (3)</h3>
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">Pre-configured for 1-click bay booking</span>
+                        </div>
+                        <button class="btn btn-gold btn-sm" onclick="ApexNotifications.show('New vehicle onboarding modal opened.', 'info')">
+                            <i class="ri-add-line"></i> Add Vehicle
+                        </button>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <!-- Vehicle 1 -->
+                        <div class="glass-card" style="padding: 20px; border-radius: 14px; border-color: var(--primary-gold);">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                                <div>
+                                    <span class="badge badge-gold" style="font-size: 0.7rem;">In-Bay Active</span>
+                                    <h4 style="margin: 8px 0 2px; font-size: 1.1rem;">2024 Porsche 911 GT3 RS</h4>
+                                </div>
+                                <i class="ri-car-fill text-gold" style="font-size: 1.6rem;"></i>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 15px;">
+                                Plate: <strong>CA-911-APX</strong> • Obsidian Black Metallic<br>
+                                Protection: <strong>10H Ceramic (Bay 02)</strong>
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="services-status.html" class="btn btn-sm btn-gold w-100"><i class="ri-scan-2-line"></i> Track Bay</a>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 2 -->
+                        <div class="glass-card" style="padding: 20px; border-radius: 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                                <div>
+                                    <span class="badge badge-cyan" style="font-size: 0.7rem;">Verified Garage</span>
+                                    <h4 style="margin: 8px 0 2px; font-size: 1.1rem;">2023 Ferrari 296 GTB</h4>
+                                </div>
+                                <i class="ri-car-fill text-cyan" style="font-size: 1.6rem;"></i>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 15px;">
+                                Plate: <strong>SC-296-GTB</strong> • Rosso Corsa<br>
+                                Protection: <strong>Interior Swissvax Certified</strong>
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="../index.html#booking-section" class="btn btn-sm btn-outline w-100">Book Service</a>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 3 -->
+                        <div class="glass-card" style="padding: 20px; border-radius: 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                                <div>
+                                    <span class="badge" style="background: rgba(255,255,255,0.1); font-size: 0.7rem;">Verified Garage</span>
+                                    <h4 style="margin: 8px 0 2px; font-size: 1.1rem;">2022 Mercedes-AMG G63</h4>
+                                </div>
+                                <i class="ri-car-fill" style="font-size: 1.6rem; color: var(--text-muted);"></i>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 15px;">
+                                Plate: <strong>BH-G63-AMX</strong> • Matte Magno Night Black<br>
+                                Protection: <strong>Upcoming Cryo Bay (Jun 24)</strong>
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="booking-details.html" class="btn btn-sm btn-outline w-100">View Booking</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Profile Form -->
+                <div class="glass-card" style="padding: 30px; border-radius: 20px;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 20px;">Personal & Concierge Contact</h3>
+
+                    <form id="apex-profile-edit-form" onsubmit="handleProfileUpdate(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div>
+                                <label class="form-label" for="profile-name">Full Legal Name</label>
+                                <input type="text" id="profile-name" class="form-control" value="Alexander Vance" required>
+                            </div>
+                            <div>
+                                <label class="form-label" for="profile-email">Email Address</label>
+                                <input type="email" id="profile-email" class="form-control" value="vance@exoticmotors.com" readonly style="opacity: 0.8; cursor: not-allowed;">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div>
+                                <label class="form-label" for="profile-phone">Primary Concierge Phone</label>
+                                <input type="tel" id="profile-phone" class="form-control" value="+1 (310) 555-0192">
+                            </div>
+                            <div>
+                                <label class="form-label" for="profile-location">Default Studio Location</label>
+                                <select id="profile-location" class="form-control">
+                                    <option selected>Beverly Hills HQ (Wilshire Blvd)</option>
+                                    <option>Scottsdale Airpark Lab</option>
+                                    <option>Miami Wynwood Studio</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-end;">
+                            <button type="submit" id="profile-save-btn" class="btn btn-gold"><i class="ri-save-line"></i> Save Profile Updates</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+            <!-- Core Scripts -->
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Studio Bookings | APEX OBSIDIAN Portal</title>
+    <meta name="description" content="View and manage active, upcoming, and past detailing studio bookings.">
+    
+        <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+                <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar" id="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="logo">
+                    <span class="logo-mark"><i class="ri-car-fill"></i></span>
+                    <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
+                </a>
+                <button class="sidebar-close-btn" id="sidebar-close-btn" title="Close Menu">&times;</button>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar dashboard-user-avatar">AV</div>
+                <div class="user-info">
+                    <h4 class="user-name dashboard-user-name">Alexander Vance</h4>
+                    <span class="user-badge"><i class="ri-vip-crown-fill text-gold"></i> Obsidian VIP</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Client Portal</span>
+                <ul class="sidebar-links">
+                    <li><a href="index.html" class=""><span class="link-content"><i class="ri-dashboard-3-line"></i> <span>Overview</span></span></a></li>
+                    <li><a href="services-status.html" class=""><span class="link-content"><i class="ri-sparkling-fill text-gold"></i> <span>Live 7-Stage Tracker</span></span> <span class="badge badge-gold" style="font-size:0.65rem; padding: 2px 6px;">Live</span></a></li>
+                    <li><a href="bookings.html" class="active"><span class="link-content"><i class="ri-calendar-check-line"></i> <span>My Bookings</span></span></a></li>
+                    <li><a href="before-after.html" class=""><span class="link-content"><i class="ri-contrast-drop-line"></i> <span>Photo Vault</span></span></a></li>
+                    <li><a href="loyalty-points.html" class=""><span class="link-content"><i class="ri-copper-diamond-line text-cyan"></i> <span>Apex Gloss Club</span></span></a></li>
+                    <li><a href="invoices.html" class=""><span class="link-content"><i class="ri-file-text-line"></i> <span>Invoices & Warranties</span></span></a></li>
+                </ul>
+
+                <span class="menu-label">Account</span>
+                <ul class="sidebar-links">
+                    <li><a href="profile.html" class=""><span class="link-content"><i class="ri-user-settings-line"></i> <span>Garage & Profile</span></span></a></li>
+                    <li><a href="settings.html" class=""><span class="link-content"><i class="ri-settings-4-line"></i> <span>Preferences</span></span></a></li>
+                    <li><a href="../index.html"><span class="link-content"><i class="ri-home-4-line"></i> <span>Back to Main Site</span></span></a></li>
+                    <li><a href="../login.html" class="text-danger logout-btn"><span class="link-content"><i class="ri-logout-box-r-line"></i> <span>Sign Out</span></span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="mobile-toggle d-lg-none" id="sidebar-toggle-btn" title="Toggle Menu">
+                        <i class="ri-menu-2-line"></i>
+                    </button>
+                    <div>
+                        <h2 style="font-size: 1.4rem; margin: 0;">My Studio Bookings</h2>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Manage in-bay reservations and service histories</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+                        <i class="ri-sun-line theme-icon-light"></i>
+                        <i class="ri-moon-line theme-icon-dark"></i>
+                    </button>
+                    <a href="../cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                        <i class="ri-shopping-bag-3-line"></i>
+                        <span class="nav-cart-text">Cart</span>
+                        <span class="cart-count-badge" id="cart-count-badge">0</span>
+                    </a>
+                    <a href="../index.html#booking-section" class="btn btn-gold btn-sm"><i class="ri-add-line"></i> New Reservation</a>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Filter Tabs -->
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-sm btn-outline booking-filter-btn active" data-filter="all">All Bookings (3)</button>
+                        <button class="btn btn-sm btn-outline booking-filter-btn" data-filter="in-progress">In-Bay Active (1)</button>
+                        <button class="btn btn-sm btn-outline booking-filter-btn" data-filter="upcoming">Upcoming (1)</button>
+                        <button class="btn btn-sm btn-outline booking-filter-btn" data-filter="completed">Completed (1)</button>
+                    </div>
+                </div>
+
+                <!-- Bookings Table Card -->
+                <div class="glass-card" style="border-radius: 20px; overflow: hidden; padding: 10px 20px;">
+                    <div style="overflow-x: auto;">
+                        <div class="table-responsive-wrapper">
+<table class="table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-muted);">
+                                    <th style="padding: 15px 10px;">Booking Code</th>
+                                    <th style="padding: 15px 10px;">Vehicle & Specs</th>
+                                    <th style="padding: 15px 10px;">Package / Service</th>
+                                    <th style="padding: 15px 10px;">Studio Bay</th>
+                                    <th style="padding: 15px 10px;">Scheduled Date</th>
+                                    <th style="padding: 15px 10px;">Status</th>
+                                    <th style="padding: 15px 10px;">Payment</th>
+                                    <th style="padding: 15px 10px; text-align: right;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboard-bookings-tbody">
+                                <!-- Booking 1: In Progress -->
+                                <tr class="booking-table-row" data-status="in-progress" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 15px 10px; font-weight: 700; color: var(--primary-gold);">APX-8924</td>
+                                    <td style="padding: 15px 10px;">
+                                        <strong>2024 Porsche 911 GT3 RS</strong><br>
+                                        <span style="font-size: 0.8rem; color: var(--text-muted);">Plate: CA-911-APX</span>
+                                    </td>
+                                    <td style="padding: 15px 10px;">Ceramic Pro 10H Obsidian Shield + 3-Stage</td>
+                                    <td style="padding: 15px 10px;"><span class="badge badge-gold" style="font-size: 0.75rem;">Cleanroom Bay 02</span></td>
+                                    <td style="padding: 15px 10px;">Today (Drop-off 08:30 AM)</td>
+                                    <td style="padding: 15px 10px;">
+                                        <span class="badge" style="background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid #22c55e;">
+                                            <i class="ri-loader-4-line spin"></i> Stage 4 / 7 Live
+                                        </span>
+                                    </td>
+                                    <td style="padding: 15px 10px; text-align: right;">
+                                        <a href="booking-details.html" class="btn btn-sm btn-gold" style="padding: 5px 12px; font-size: 0.8rem;"><i class="ri-scan-2-line"></i> Telemetry</a>
+                                    </td>
+                                </tr>
+
+                                <!-- Booking 2: Upcoming -->
+                                <tr class="booking-table-row" data-status="upcoming" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 15px 10px; font-weight: 700; color: var(--primary-cyan);">APX-9140</td>
+                                    <td style="padding: 15px 10px;">
+                                        <strong>2022 Mercedes-AMG G63</strong><br>
+                                        <span style="font-size: 0.8rem; color: var(--text-muted);">Plate: BH-G63-AMX</span>
+                                    </td>
+                                    <td style="padding: 15px 10px;">Dry Ice Engine Cryo-Clean & Annual Boost</td>
+                                    <td style="padding: 15px 10px;"><span class="badge badge-cyan" style="font-size: 0.75rem;">Cryo Bay 04</span></td>
+                                    <td style="padding: 15px 10px;">Jun 24, 2024 (10:00 AM)</td>
+                                    <td style="padding: 15px 10px;">
+                                        <span class="badge" style="background: rgba(0,229,255,0.15); color: var(--primary-cyan);">
+                                            <i class="ri-calendar-check-line"></i> Confirmed
+                                        </span>
+                                    </td>
+                                    <td style="padding: 15px 10px; text-align: right;">
+                                        <a href="booking-details.html" class="btn btn-sm btn-outline" style="padding: 5px 12px; font-size: 0.8rem;">Details</a>
+                                    </td>
+                                </tr>
+
+                                <!-- Booking 3: Completed -->
+                                <tr class="booking-table-row" data-status="completed" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 15px 10px; font-weight: 700; color: var(--text-muted);">APX-7412</td>
+                                    <td style="padding: 15px 10px;">
+                                        <strong>2023 Ferrari 296 GTB</strong><br>
+                                        <span style="font-size: 0.8rem; color: var(--text-muted);">Plate: SC-296-GTB</span>
+                                    </td>
+                                    <td style="padding: 15px 10px;">Bespoke Interior Leather Re-Feed (Swissvax)</td>
+                                    <td style="padding: 15px 10px;"><span class="badge" style="background: rgba(255,255,255,0.05); font-size: 0.75rem;">Studio Bay 01</span></td>
+                                    <td style="padding: 15px 10px;">May 04, 2024</td>
+                                    <td style="padding: 15px 10px;">
+                                        <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text-secondary);">
+                                            <i class="ri-checkbox-circle-fill"></i> Completed
+                                        </span>
+                                    </td>
+                                    <td style="padding: 15px 10px; text-align: right;">
+                                        <a href="invoices.html" class="btn btn-sm btn-outline" style="padding: 5px 12px; font-size: 0.8rem;"><i class="ri-file-text-line"></i> Invoice</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+            <!-- Core Scripts -->
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/booking.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,818 @@
+/* ==========================================================================
+   APEX OBSIDIAN | Studio Simulators, Calculators & Luxury Tools Suite
+   assets/css/simulator.css
+   ========================================================================== */
+
+/* 1. Paint Correction & Ceramic Coating Simulator */
+.simulator-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.simulator-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .simulator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.canvas-viewport-wrapper {
+  position: relative;
+  background: #030406;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9);
+}
+
+.simulator-canvas {
+  width: 100%;
+  height: 340px;
+  display: block;
+  cursor: crosshair;
+}
+
+.canvas-overlay-hud {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hud-badge {
+  background: rgba(6, 7, 9, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-badge-gold {
+  border-color: var(--primary-gold);
+  color: var(--primary-gold);
+}
+
+.hud-badge-cyan {
+  border-color: var(--primary-cyan);
+  color: var(--primary-cyan);
+}
+
+.simulator-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.defect-selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.defect-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.defect-chip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.defect-chip:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--primary-gold);
+  color: #fff;
+}
+
+.defect-chip.active {
+  background: var(--primary-gold);
+  color: #000;
+  border-color: var(--primary-gold);
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Stage Timeline Buttons */
+.stage-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stage-btn {
+  background: rgba(12, 15, 23, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-btn:hover {
+  border-color: var(--primary-cyan);
+  transform: translateY(-2px);
+}
+
+.stage-btn.active {
+  border-color: var(--primary-gold);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, rgba(12, 15, 23, 0.95) 100%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.stage-btn-num {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.stage-btn-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Telemetry Gauges */
+.telemetry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 15px;
+}
+
+.telemetry-gauge {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gauge-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gauge-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+.gauge-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.gauge-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gauge-bar-gold {
+  background: linear-gradient(90deg, #ffc837, #d4af37);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.gauge-bar-cyan {
+  background: linear-gradient(90deg, #00f0ff, #00a3ff);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* 2. Interactive 48-Point Paint Depth Vehicle Inspector */
+.inspector-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 30px;
+}
+
+.inspector-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .inspector-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vehicle-schematic-view {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%), #040507;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vehicle-svg-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.panel-node {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.panel-node:hover circle {
+  fill: var(--primary-gold) !important;
+  r: 12 !important;
+  filter: drop-shadow(0 0 8px #d4af37);
+}
+
+.panel-node.active circle {
+  fill: var(--primary-cyan) !important;
+  r: 14 !important;
+  filter: drop-shadow(0 0 12px #00f0ff);
+}
+
+.cross-section-card {
+  background: rgba(12, 15, 23, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.layer-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 20px 0;
+}
+
+.paint-layer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.layer-ceramic {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: rgba(0, 240, 255, 0.4);
+  color: var(--primary-cyan);
+}
+
+.layer-clearcoat {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+  color: var(--primary-gold);
+}
+
+.layer-basecoat {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.layer-primer {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+}
+
+.layer-metal {
+  background: rgba(100, 116, 139, 0.2);
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+/* 3. Custom Package Configurator & Quote Builder */
+.builder-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 35px;
+}
+
+.builder-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 35px;
+}
+
+@media (max-width: 991px) {
+  .builder-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.addon-card {
+  background: rgba(12, 15, 23, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+}
+
+.addon-card:hover {
+  border-color: var(--primary-gold);
+  transform: translateY(-2px);
+}
+
+.addon-card.selected {
+  border-color: var(--primary-cyan);
+  background: rgba(0, 240, 255, 0.06);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.addon-card input[type="checkbox"] {
+  accent-color: var(--primary-cyan);
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+.addon-info h5 {
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+}
+
+.addon-info p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.addon-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+/* Sticky Quotation Summary */
+.quote-summary-card {
+  background: rgba(10, 12, 18, 0.95);
+  border: 1px solid var(--primary-gold);
+  border-radius: var(--radius-lg);
+  padding: 25px;
+  position: sticky;
+  top: 100px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.summary-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary-item-row.total-row {
+  border-top: 1px solid var(--border-color);
+  border-bottom: none;
+  padding-top: 15px;
+  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-gold);
+}
+
+/* 4. Longevity & ROI Cost Comparison */
+.roi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 35px;
+}
+
+.roi-slider-group {
+  margin: 25px 0 35px;
+}
+
+.roi-slider-input {
+  width: 100%;
+  accent-color: var(--primary-gold);
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.roi-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.roi-stat-box {
+  background: rgba(12, 15, 23, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: center;
+}
+
+.roi-stat-box.highlight {
+  border-color: var(--primary-gold);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, rgba(12, 15, 23, 0.95) 100%);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* 5. Multi-Spectrum Live Bay Camera (Dashboard) */
+.bay-cam-wrapper {
+  background: #000;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.cam-viewscreen {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  transition: filter 0.4s ease;
+}
+
+.cam-viewscreen.mode-ir {
+  filter: contrast(180%) hue-rotate(180deg) saturate(250%) invert(20%);
+}
+
+.cam-viewscreen.mode-uv {
+  filter: contrast(220%) hue-rotate(270deg) saturate(300%) brightness(85%);
+}
+
+.cam-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+}
+
+.cam-hud-header {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.cam-rec-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff3333;
+  box-shadow: 0 0 10px #ff3333;
+  animation: pulseRec 1s infinite alternate;
+}
+
+@keyframes pulseRec {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0.3; transform: scale(0.85); }
+}
+
+.cam-controls-bar {
+  background: rgba(10, 12, 18, 0.95);
+  backdrop-filter: blur(15px);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.spectrum-toggles {
+  display: flex;
+  gap: 8px;
+}
+
+.cam-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cam-btn.active {
+  background: var(--primary-cyan);
+  color: #000;
+  border-color: var(--primary-cyan);
+}
+
+/* 6. Gold-Foil Digital Transferable Warranty Certificate */
+.warranty-modal-body {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.warranty-certificate {
+  width: 100%;
+  max-width: 650px;
+  background: radial-gradient(circle at center, #151822 0%, #080a0f 100%);
+  border: 3px solid #d4af37;
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.3), inset 0 0 30px rgba(212, 175, 55, 0.1);
+  color: #fff;
+  font-family: var(--font-body);
+}
+
+.warranty-certificate::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.warranty-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.warranty-gold-seal {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd700, #b8860b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 2rem;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.warranty-cert-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #d4af37;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.warranty-table {
+  width: 100%;
+  margin: 25px 0;
+  border-collapse: collapse;
+}
+
+.warranty-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  font-size: 0.85rem;
+}
+
+.warranty-table td.label {
+  color: #a0aec0;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 35%;
+}
+
+.warranty-table td.val {
+  color: #fff;
+  font-weight: 600;
+}
+
+.warranty-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.qr-code-box {
+  width: 75px;
+  height: 75px;
+  background: #fff;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 7. Command Palette Modal (Ctrl + K) */
+.command-palette-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 99999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.command-palette-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.command-palette-dialog {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(12, 15, 23, 0.98);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.15);
+  overflow: hidden;
+  transform: translateY(-20px) scale(0.98);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.command-palette-backdrop.active .command-palette-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.palette-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.palette-input-wrapper i {
+  font-size: 1.3rem;
+  color: var(--primary-gold);
+}
+
+.palette-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.05rem;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.palette-shortcut-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.palette-results-list {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.palette-group-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 12px 4px;
+}
+
+.palette-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.palette-item:hover, .palette-item.focused {
+  background: rgba(212, 175, 55, 0.12);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.palette-item.focused {
+  border-left: 3px solid var(--primary-gold);
+}
+
+.palette-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.palette-item-left i {
+  font-size: 1.15rem;
+  color: var(--primary-cyan);
+}
+
+.palette-footer {
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
