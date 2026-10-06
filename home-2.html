@@ -54,10 +54,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
                             <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                            <li><a href="before-after.html"><i class="ri-sparkling-fill"></i> Before & After</a></li>
                         </ul>
                     </li>
-                    <li><a href="before-after.html">Before & After</a></li>
                     <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="dashboard/index.html">Dashboard</a></li>
                     <li><a href="blog.html">Journal</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -71,8 +72,8 @@
                     <i class="ri-sun-line theme-icon-light"></i>
                     <i class="ri-moon-line theme-icon-dark"></i>
                 </button>
-                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
-                    <i class="ri-translate-2"></i>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle Layout Direction (LTR/RTL)">
+                    <span class="rtl-toggle-text">LTR</span>
                 </button>
                 <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
                     <i class="ri-shopping-bag-3-line"></i>
@@ -116,56 +117,236 @@
         </div>
     </div>
 
-    <!-- Ceramic Hero Showcase -->
-    <section class="hero-section" style="padding: 130px 0 100px; background: radial-gradient(circle at 60% 40%, rgba(0,229,255,0.08) 0%, transparent 60%), radial-gradient(circle at 10% 70%, rgba(212,175,55,0.07) 0%, transparent 50%), var(--bg-primary);">
+    <!-- Advanced Nanotech & Ceramic Architecture Hero Section -->
+    <section class="hero-ceramic-section">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center;">
-                <div>
-                    <div class="badge badge-cyan" style="margin-bottom: 20px;">
-                        <i class="ri-test-tube-fill"></i> 10H High-Density Inorganic Matrix
-                    </div>
-                    <h1 style="font-size: clamp(2.4rem, 5vw, 4.3rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px;">
-                        PERMANENT 10H<br>
-                        <span class="text-cyan">CERAMIC SHIELD.</span>
-                    </h1>
-                    <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 540px; margin-bottom: 35px; line-height: 1.7;">
-                        A covalent molecular bond that fuses directly into factory polyurethane clearcoats. Repels road salts, acidic bird droppings, UV oxidation, and wash swirls for up to 7 years.
-                    </p>
-                    
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
-                        <a href="ceramic-coating.html" class="btn btn-cyan btn-lg"><i class="ri-microscope-line"></i> Coating Architecture</a>
-                        <a href="packages.html" class="btn btn-outline btn-lg"><i class="ri-price-tag-3-line"></i> View 3-Year to 7-Year Plans</a>
+            <!-- Top Command Header -->
+            <div style="max-width: 920px; margin-bottom: 35px;">
+                <div class="hero-ceramic-header-badge">
+                    <span class="pulse-dot-cyan"></span>
+                    <span>ISO Class 10,000 Cleanroom • 10H Covalent Matrix • Graphene Platelet Shield</span>
+                </div>
+                <h1 class="hero-ceramic-title">
+                    MOLECULAR CERAMIC GLASS.<br>
+                    <span class="text-cyan-glow">PERMANENT 10H COVALENT ARMOR.</span>
+                </h1>
+                <p class="hero-ceramic-lead">
+                    Enter an aerospace-grade positive-pressure cleanroom laboratory engineered for exotic and luxury supercars. Covalent silicon dioxide (SiO2) and graphene lattices fuse permanently into factory clearcoats—delivering 118° hydrophobic contact tension, 99.8 GU optical depth, and 7 years of chemical immunity.
+                </p>
+                <div class="hero-ceramic-actions">
+                    <a href="ceramic-coating.html" class="btn btn-cyan btn-lg"><i class="ri-shield-flash-fill"></i> 10H Architecture Specs</a>
+                    <a href="index.html#booking-section" class="btn btn-gold btn-lg"><i class="ri-calendar-check-fill"></i> Reserve Cleanroom Bay</a>
+                    <a href="#ceramic-matrix-table" class="btn btn-outline btn-lg"><i class="ri-table-line"></i> Compare 3-Yr to 7-Yr Plans</a>
+                </div>
+            </div>
+
+            <!-- Nanotech Interactive Lab Console -->
+            <div class="nanotech-console-grid">
+                <!-- Left Panel: Interactive 4-Stage Matrix Inspector -->
+                <div class="console-glass-card card-cyan-accent">
+                    <div>
+                        <div class="console-card-top">
+                            <h3 class="console-card-title">
+                                <i class="ri-microscope-line text-cyan"></i>
+                                <span>Interactive 4-Stage Coating Matrix Inspector</span>
+                            </h3>
+                            <span class="badge badge-cyan" id="layer-active-badge">Layer 02 Active</span>
+                        </div>
+
+                        <div class="layer-matrix-container" id="layerMatrixList">
+                            <!-- Layer 4 -->
+                            <div class="layer-matrix-row" data-layer="4" onclick="selectLayer(4)">
+                                <div class="layer-row-left">
+                                    <div class="layer-index-badge">04</div>
+                                    <div>
+                                        <div class="layer-info-title">Superhydrophobic Fluoropolymer Topcoat</div>
+                                        <div class="layer-info-subtitle">Ultra-slick 118° contact angle bead release & self-cleaning tension</div>
+                                    </div>
+                                </div>
+                                <div class="layer-row-metric">
+                                    <div class="layer-metric-val text-cyan">118°</div>
+                                    <div class="layer-metric-label">Hydrophobic</div>
+                                </div>
+                            </div>
+
+                            <!-- Layer 3 -->
+                            <div class="layer-matrix-row" data-layer="3" onclick="selectLayer(3)">
+                                <div class="layer-row-left">
+                                    <div class="layer-index-badge">03</div>
+                                    <div>
+                                        <div class="layer-info-title">Graphene Platelet Thermal Matrix</div>
+                                        <div class="layer-info-subtitle">Thermal dissipation up to 850°C, zero water spot etching & anti-static</div>
+                                    </div>
+                                </div>
+                                <div class="layer-row-metric">
+                                    <div class="layer-metric-val text-gold">850°C</div>
+                                    <div class="layer-metric-label">Heat Barrier</div>
+                                </div>
+                            </div>
+
+                            <!-- Layer 2 (Default Active) -->
+                            <div class="layer-matrix-row active" data-layer="2" onclick="selectLayer(2)">
+                                <div class="layer-row-left">
+                                    <div class="layer-index-badge">02</div>
+                                    <div>
+                                        <div class="layer-info-title">10H Diamond Nanoceramic SiO2 Core</div>
+                                        <div class="layer-info-subtitle">High-density crystal lattice with 99.8 GU optical refraction clarity</div>
+                                    </div>
+                                </div>
+                                <div class="layer-row-metric">
+                                    <div class="layer-metric-val text-cyan">10H</div>
+                                    <div class="layer-metric-label">Mohs Hardness</div>
+                                </div>
+                            </div>
+
+                            <!-- Layer 1 -->
+                            <div class="layer-matrix-row" data-layer="1" onclick="selectLayer(1)">
+                                <div class="layer-row-left">
+                                    <div class="layer-index-badge">01</div>
+                                    <div>
+                                        <div class="layer-info-title">Covalent Micro-Pore Anchor Primer</div>
+                                        <div class="layer-info-subtitle">Deep atomic cross-link penetration into OEM polyurethane pores</div>
+                                    </div>
+                                </div>
+                                <div class="layer-row-metric">
+                                    <div class="layer-metric-val text-gold">9H</div>
+                                    <div class="layer-metric-label">Anchor Bond</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 1px solid var(--border-color); padding-top: 25px;">
-                        <div>
-                            <h3 class="stat-number text-cyan">118°</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Water Contact Angle</p>
+                    <!-- Dynamic Layer Telemetry Readout -->
+                    <div class="layer-telemetry-box" id="layerTelemetryDisplay">
+                        <div class="layer-telemetry-desc" id="layerTelemetryDesc">
+                            <strong class="text-cyan">Layer 02: 10H Diamond Nanoceramic Core</strong> — High-purity 99.9% inorganic silicon dioxide creates an indestructible 3D glass matrix that resists swirl scuffs, key scrapes, and high-velocity road grit.
                         </div>
-                        <div>
-                            <h3 class="stat-number text-gold">10H</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Mohs Scale Hardness</p>
-                        </div>
-                        <div>
-                            <h3 class="stat-number text-primary">7 Years</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Studio Warranty</p>
+                        <div class="layer-telemetry-grid">
+                            <div class="telemetry-spec-item">
+                                <span class="telemetry-spec-label">Layer Thickness</span>
+                                <span class="telemetry-spec-value text-cyan" id="layerSpecThickness">1.5 μm</span>
+                            </div>
+                            <div class="telemetry-spec-item">
+                                <span class="telemetry-spec-label">Mohs Rating</span>
+                                <span class="telemetry-spec-value text-gold" id="layerSpecHardness">10H Diamond</span>
+                            </div>
+                            <div class="telemetry-spec-item">
+                                <span class="telemetry-spec-label">Chemical Limit</span>
+                                <span class="telemetry-spec-value text-emerald" id="layerSpecChemical">pH 2 – 13</span>
+                            </div>
+                            <div class="telemetry-spec-item">
+                                <span class="telemetry-spec-label">Gloss Refraction</span>
+                                <span class="telemetry-spec-value text-primary" id="layerSpecGloss">99.8 GU</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <div class="glass-card" style="padding: 12px; border-radius: 20px; border-color: rgba(0,229,255,0.3);">
-                        <div class="before-after-container" style="height: 420px; border-radius: 14px;">
-                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=80" alt="Hydrophobic Water Beads Ceramic" class="img-after">
-                            <div class="img-before-wrapper" style="width: 50%;">
-                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Uncoated Flat Paint Surface">
-                                <span class="badge" style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); color: #fff;">Unprotected: Flat Wetting</span>
+                <!-- Right Panel: Live Cleanroom Diagnostics & Telemetry -->
+                <div class="console-glass-card card-gold-accent">
+                    <div>
+                        <div class="console-card-top">
+                            <h3 class="console-card-title">
+                                <i class="ri-dashboard-3-fill text-gold"></i>
+                                <span>Cleanroom Bay Live Diagnostics</span>
+                            </h3>
+                            <span class="badge badge-emerald"><i class="ri-pulse-line"></i> Bay 01 Active</span>
+                        </div>
+
+                        <!-- Live Chamber Environmental Telemetry -->
+                        <div class="bay-telemetry-status">
+                            <div class="bay-sensor-pill">
+                                <div class="bay-sensor-icon icon-cyan"><i class="ri-temp-hot-line"></i></div>
+                                <div class="bay-sensor-data">
+                                    <strong id="liveBayTemp">21.8°C (71.2°F)</strong>
+                                    <span>Optimal Curing Temp</span>
+                                </div>
                             </div>
-                            <span class="badge badge-cyan" style="position: absolute; bottom: 15px; right: 15px;">10H Ceramic: 118° Hydrophobic</span>
-                            <div class="slider-handle" style="left: 50%;">
-                                <i class="ri-arrow-left-right-line"></i>
+                            <div class="bay-sensor-pill">
+                                <div class="bay-sensor-icon icon-gold"><i class="ri-water-percent-line"></i></div>
+                                <div class="bay-sensor-data">
+                                    <strong id="liveBayHumidity">48% RH</strong>
+                                    <span>Controlled Humidity</span>
+                                </div>
+                            </div>
+                            <div class="bay-sensor-pill">
+                                <div class="bay-sensor-icon icon-emerald"><i class="ri-wind-line"></i></div>
+                                <div class="bay-sensor-data">
+                                    <strong>ISO Class 6</strong>
+                                    <span>Positive Air Pressure</span>
+                                </div>
+                            </div>
+                            <div class="bay-sensor-pill">
+                                <div class="bay-sensor-icon icon-cyan"><i class="ri-fire-line"></i></div>
+                                <div class="bay-sensor-data">
+                                    <strong>Short-Wave IR 65°C</strong>
+                                    <span>14 min curing cycle</span>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- 4 Nanotech Key Defenses -->
+                        <div class="nanotech-feature-cards">
+                            <div class="nanotech-feature-item">
+                                <h5><i class="ri-drop-line text-cyan"></i> Self-Cleaning Lotus</h5>
+                                <p>Water sheets off at 35+ mph, taking abrasive dust with it.</p>
+                            </div>
+                            <div class="nanotech-feature-item">
+                                <h5><i class="ri-shield-keyhole-line text-gold"></i> Covalent Fusion</h5>
+                                <p>Cannot wash off or peel; bonds directly into OEM clearcoat.</p>
+                            </div>
+                            <div class="nanotech-feature-item">
+                                <h5><i class="ri-sun-line text-gold"></i> 100% UV Rejection</h5>
+                                <p>Prevents clearcoat chalking and pigment fading under solar heat.</p>
+                            </div>
+                            <div class="nanotech-feature-item">
+                                <h5><i class="ri-flask-line text-cyan"></i> Acid & Salt Defense</h5>
+                                <p>Total immunity to bird droppings, acid rain & magnesium chloride.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Warranty Strip -->
+                    <div class="warranty-banner-strip">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="ri-medal-fill text-gold" style="font-size: 1.2rem;"></i>
+                            <span>7-Year Transferable Studio Warranty</span>
+                        </div>
+                        <span class="badge badge-gold" style="font-size: 0.72rem;">CARFAX Verified</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom 4 Science Metric Pillars -->
+            <div class="hero-science-pillars">
+                <div class="science-pillar-card">
+                    <div>
+                        <div class="science-pillar-val text-cyan">118°</div>
+                        <div class="science-pillar-title">Hydrophobic Contact Angle</div>
+                        <p class="science-pillar-desc">Forces surface water into spherical beads with zero drag resistance.</p>
+                    </div>
+                </div>
+                <div class="science-pillar-card">
+                    <div>
+                        <div class="science-pillar-val text-gold">10H</div>
+                        <div class="science-pillar-title">Mohs Mineral Hardness</div>
+                        <p class="science-pillar-desc">Exceeds standard 3H-4H clearcoats for supreme wash marring resistance.</p>
+                    </div>
+                </div>
+                <div class="science-pillar-card">
+                    <div>
+                        <div class="science-pillar-val text-emerald">850°C</div>
+                        <div class="science-pillar-title">Thermal Dissipation</div>
+                        <p class="science-pillar-desc">Prevents hot track brake dust and exhaust soot from baking into wheels and paint.</p>
+                    </div>
+                </div>
+                <div class="science-pillar-card">
+                    <div>
+                        <div class="science-pillar-val text-primary">7 Yrs</div>
+                        <div class="science-pillar-title">Digital E-Warranty</div>
+                        <p class="science-pillar-desc">Transferable digital warranty card linked to your customer portal and VIN.</p>
                     </div>
                 </div>
             </div>
@@ -185,7 +366,7 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px;">
                 <div class="glass-card" style="padding: 30px; border-radius: 18px;">
-                    <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(0,229,255,0.1); border: 1px solid var(--primary-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-cyan); margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--accent-cyan-subtle); border: 1px solid var(--primary-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-cyan); margin-bottom: 20px;">
                         <i class="ri-drop-fill"></i>
                     </div>
                     <h4>Extreme Hydrophobicity</h4>
@@ -195,7 +376,7 @@
                 </div>
 
                 <div class="glass-card" style="padding: 30px; border-radius: 18px;">
-                    <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(212,175,55,0.1); border: 1px solid var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--accent-gold-subtle); border: 1px solid var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 20px;">
                         <i class="ri-sun-fill"></i>
                     </div>
                     <h4>UV & Thermal Barrier</h4>
@@ -205,7 +386,7 @@
                 </div>
 
                 <div class="glass-card" style="padding: 30px; border-radius: 18px;">
-                    <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(0,229,255,0.1); border: 1px solid var(--primary-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-cyan); margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--accent-cyan-subtle); border: 1px solid var(--primary-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-cyan); margin-bottom: 20px;">
                         <i class="ri-shield-cross-fill"></i>
                     </div>
                     <h4>Chemical & Acid Resistance</h4>
@@ -215,7 +396,7 @@
                 </div>
 
                 <div class="glass-card" style="padding: 30px; border-radius: 18px;">
-                    <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(212,175,55,0.1); border: 1px solid var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--accent-gold-subtle); border: 1px solid var(--primary-gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 20px;">
                         <i class="ri-sparkling-2-fill"></i>
                     </div>
                     <h4>Deep Candy-Gloss Mirror</h4>
@@ -551,5 +732,93 @@
     <script src="assets/js/simulator.js"></script>
     <script src="assets/js/forms.js"></script>
 
+    <!-- Home 2 Hero Interactive Layer Matrix Controller -->
+    <script>
+    (function() {
+        const layerData = {
+            1: {
+                name: 'Layer 01: Covalent Micro-Pore Anchor Primer',
+                badge: 'Layer 01 Active',
+                desc: '<strong class="text-gold">Layer 01: Covalent Micro-Pore Anchor Primer</strong> — Deep-penetrating 9H nanoscale silane molecules infiltrate the microscopic pores of factory clearcoats, establishing an unbreakable chemical anchor for subsequent ceramic glass builds.',
+                thickness: '0.8 μm',
+                hardness: '9H Silane',
+                chemical: 'pH 2 – 12',
+                gloss: '94.5 GU'
+            },
+            2: {
+                name: 'Layer 02: 10H Diamond Nanoceramic SiO2 Core',
+                badge: 'Layer 02 Active',
+                desc: '<strong class="text-cyan">Layer 02: 10H Diamond Nanoceramic Core</strong> — High-purity 99.9% inorganic silicon dioxide creates an indestructible 3D glass matrix that resists swirl scuffs, key scrapes, and high-velocity road grit.',
+                thickness: '1.5 μm',
+                hardness: '10H Diamond',
+                chemical: 'pH 2 – 13',
+                gloss: '99.8 GU'
+            },
+            3: {
+                name: 'Layer 03: Graphene Platelet Thermal Matrix',
+                badge: 'Layer 03 Active',
+                desc: '<strong class="text-gold">Layer 03: Graphene Platelet Thermal Matrix</strong> — Single-atom carbon honeycomb lattice provides exceptional electrical conductivity to discharge static cling, dissipates heat up to 850°C, and eliminates stubborn water spot etching.',
+                thickness: '0.8 μm',
+                hardness: '10H+ Graphene',
+                chemical: 'pH 1 – 14',
+                gloss: '99.2 GU'
+            },
+            4: {
+                name: 'Layer 04: Superhydrophobic Fluoropolymer Topcoat',
+                badge: 'Layer 04 Active',
+                desc: '<strong class="text-cyan">Layer 04: Superhydrophobic Fluoropolymer Topcoat</strong> — Ultra-slick fluoropolymer matrix reduces surface tension to 118° contact angle, causing road grime, bug residues, and water to cascade off effortlessly.',
+                thickness: '0.6 μm',
+                hardness: '9H Hydrophobic',
+                chemical: 'pH 2 – 13',
+                gloss: '99.9 GU'
+            }
+        };
+
+        window.selectLayer = function(layerNum) {
+            const data = layerData[layerNum];
+            if (!data) return;
+
+            document.querySelectorAll('.layer-matrix-row').forEach(row => {
+                row.classList.toggle('active', parseInt(row.getAttribute('data-layer')) === layerNum);
+            });
+
+            const badge = document.getElementById('layer-active-badge');
+            if (badge) badge.textContent = data.badge;
+
+            const desc = document.getElementById('layerTelemetryDesc');
+            if (desc) desc.innerHTML = data.desc;
+
+            const th = document.getElementById('layerSpecThickness');
+            if (th) th.textContent = data.thickness;
+
+            const hd = document.getElementById('layerSpecHardness');
+            if (hd) hd.textContent = data.hardness;
+
+            const ch = document.getElementById('layerSpecChemical');
+            if (ch) ch.textContent = data.chemical;
+
+            const gl = document.getElementById('layerSpecGloss');
+            if (gl) gl.textContent = data.gloss;
+
+            if (window.playAudioFeedback) {
+                window.playAudioFeedback('click');
+            }
+        };
+
+        // Live Environmental Micro-Fluctuations (Subtle Realism)
+        setInterval(function() {
+            const tempEl = document.getElementById('liveBayTemp');
+            const humEl = document.getElementById('liveBayHumidity');
+            if (tempEl) {
+                const baseTemp = 21.8 + (Math.random() * 0.4 - 0.2);
+                tempEl.textContent = `${baseTemp.toFixed(1)}°C (${(baseTemp * 1.8 + 32).toFixed(1)}°F)`;
+            }
+            if (humEl) {
+                const baseHum = Math.round(48 + (Math.random() * 2 - 1));
+                humEl.textContent = `${baseHum}% RH`;
+            }
+        }, 4000);
+    })();
+    </script>
 </body>
 </html>

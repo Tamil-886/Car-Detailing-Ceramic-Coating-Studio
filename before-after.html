@@ -50,14 +50,15 @@
                     </li>
                     <li><a href="about.html">About Studio</a></li>
                     <li class="has-dropdown">
-                        <a href="services.html">Services <i class="ri-arrow-down-s-line"></i></a>
+                        <a href="services.html" class="active">Services <i class="ri-arrow-down-s-line"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
                             <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                            <li><a href="before-after.html" class="active"><i class="ri-sparkling-fill"></i> Before & After</a></li>
                         </ul>
                     </li>
-                    <li><a href="before-after.html" class="active">Before & After</a></li>
                     <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="dashboard/index.html">Dashboard</a></li>
                     <li><a href="blog.html">Journal</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -71,8 +72,8 @@
                     <i class="ri-sun-line theme-icon-light"></i>
                     <i class="ri-moon-line theme-icon-dark"></i>
                 </button>
-                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
-                    <i class="ri-translate-2"></i>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle Layout Direction (LTR/RTL)">
+                    <span class="rtl-toggle-text">LTR</span>
                 </button>
                 <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
                     <i class="ri-shopping-bag-3-line"></i>
@@ -121,37 +122,51 @@
         <div class="container">
             <span class="badge badge-gold"><i class="ri-contrast-drop-line"></i> Interactive Defect Comparison</span>
             <h1 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-top: 12px; margin-bottom: 15px;">Microscopic Swirl & Gloss Transformations</h1>
-            <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto;">
-                Drag the interactive sliders below to examine the clearcoat before and after multi-stage correction and 10H ceramic bonding.
+            <p style="color: var(--text-secondary); max-width: 680px; margin: 0 auto; line-height: 1.7;">
+                Drag the interactive sliders below to examine the clearcoat, leather, headlights, forged wheels, and engine bay before and after multi-stage correction and 10H ceramic bonding.
             </p>
+
+            <!-- Filter Category Tabs -->
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 35px;" id="case-study-filters">
+                <button class="btn btn-sm btn-gold filter-btn active" data-filter="all" onclick="filterCaseStudies('all', this)"><i class="ri-grid-fill"></i> All Transformations</button>
+                <button class="btn btn-sm btn-outline filter-btn" data-filter="paint" onclick="filterCaseStudies('paint', this)"><i class="ri-paint-brush-line"></i> Paint Correction</button>
+                <button class="btn btn-sm btn-outline filter-btn" data-filter="ceramic" onclick="filterCaseStudies('ceramic', this)"><i class="ri-shield-flash-line"></i> Hydrophobic Ceramic</button>
+                <button class="btn btn-sm btn-outline filter-btn" data-filter="interior" onclick="filterCaseStudies('interior', this)"><i class="ri-armchair-line"></i> Leather Restoration</button>
+                <button class="btn btn-sm btn-outline filter-btn" data-filter="headlight" onclick="filterCaseStudies('headlight', this)"><i class="ri-flashlight-line"></i> Headlight Optics</button>
+                <button class="btn btn-sm btn-outline filter-btn" data-filter="wheels" onclick="filterCaseStudies('wheels', this)"><i class="ri-disc-line"></i> Forged Wheels & Calipers</button>
+                <button class="btn btn-sm btn-outline filter-btn" data-filter="engine" onclick="filterCaseStudies('engine', this)"><i class="ri-cpu-line"></i> Cryogenic Engine Bay</button>
+            </div>
         </div>
     </section>
 
     <!-- Sliders Grid Section -->
     <section class="section">
         <div class="container">
-            <div style="display: flex; flex-direction: column; gap: 60px;">
+            <div style="display: flex; flex-direction: column; gap: 50px;" id="case-study-list">
                 
                 <!-- Transformation 1: Porsche 911 GT3 RS Swirl Removal -->
-                <div class="glass-card" style="padding: 30px; border-radius: 24px;">
+                <div class="glass-card case-study-item" data-category="paint" style="padding: 30px; border-radius: 24px;">
                     <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
                         <div class="before-after-container" style="height: 380px; border-radius: 16px;">
-                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80" alt="Ceramic 10H Porsche 911 GT3 RS" class="img-after">
+                            <img src="assets/images/before-after/swirl-after.jpg" alt="10H Obsidian Cured Paint" class="img-after">
                             <div class="img-before-wrapper" style="width: 50%;">
-                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Swirled Porsche Paint">
-                                <span class="badge" style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); color: #fff;">Before: Dealership Swirls (64.2 GU)</span>
+                                <img src="assets/images/before-after/swirl-before.jpg" alt="Dealership Swirls Scangrip Inspection">
+                                <span class="badge"><i class="ri-close-circle-fill"></i> Before: Dealership Swirls (64.2 GU)</span>
                             </div>
-                            <span class="badge badge-gold" style="position: absolute; bottom: 15px; right: 15px;">After: 10H Obsidian Cured (99.8 GU)</span>
+                            <span class="badge badge-gold"><i class="ri-checkbox-circle-fill"></i> After: 10H Obsidian Cured (99.8 GU)</span>
                             <div class="slider-handle" style="left: 50%;">
                                 <i class="ri-arrow-left-right-line"></i>
                             </div>
                         </div>
 
                         <div>
-                            <span class="badge badge-gold">Case Study 01</span>
-                            <h3 style="font-size: 1.6rem; margin: 10px 0 15px;">2024 Porsche 911 GT3 RS</h3>
-                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
-                                Delivered brand new with heavy dealer wash scratches and buffer trails across the carbon fiber hood and rear wing.
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <span class="badge badge-gold">Case Study 01</span>
+                                <span class="badge badge-outline"><i class="ri-microscope-line"></i> Paint Correction</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; margin: 8px 0 12px;">2024 Porsche 911 GT3 RS</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+                                Delivered brand new with heavy dealership wash scratches, buffer halos, and spiderwebs across the Obsidian Black metallic fender and hood under Scangrip inspection lighting.
                             </p>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
                                 <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
@@ -163,46 +178,53 @@
                                     <strong class="text-gold" style="font-size: 1.1rem;">99.8 GU</strong> (+55% depth)
                                 </div>
                             </div>
-                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
-                                <li><i class="ri-check-line text-gold"></i> 2-Stage rotary & DA correction with Menzerna micro-polish</li>
-                                <li><i class="ri-check-line text-gold"></i> 2 Layers of 10H Obsidian SiO2 ceramic matrix</li>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                                <li><i class="ri-check-line text-gold"></i> 2-Stage rotary & DA micro-compound with Rupes BigFoot & Menzerna</li>
+                                <li><i class="ri-check-line text-gold"></i> 2 Coats of 10H Obsidian Diamond SiO2 ceramic matrix</li>
+                                <li><i class="ri-check-line text-gold"></i> 138 &mu;m clearcoat thickness safely preserved</li>
                             </ul>
+                            <a href="paint-correction.html" class="btn btn-outline btn-sm"><i class="ri-arrow-right-line"></i> View Paint Correction Details</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Transformation 2: Audi R8 V10 Paint Correction -->
-                <div class="glass-card" style="padding: 30px; border-radius: 24px;">
+                <!-- Transformation 2: Hydrophobic Water Beading -->
+                <div class="glass-card case-study-item" data-category="ceramic" style="padding: 30px; border-radius: 24px;">
                     <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center;">
                         <div>
-                            <span class="badge badge-cyan">Case Study 02</span>
-                            <h3 style="font-size: 1.6rem; margin: 10px 0 15px;">Audi R8 V10 Performance</h3>
-                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
-                                5-year-old Daytona Grey metallic suffering from automatic brush wash marring, acid rain etching, and oxidized clearcoat.
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <span class="badge badge-cyan">Case Study 02</span>
+                                <span class="badge badge-outline"><i class="ri-drop-line"></i> Hydrophobic Shield</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; margin: 8px 0 12px;">Audi R8 V10 Performance</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+                                Unprotected metallic bonnet prone to water spotting and flat puddle wetting transformed into an extreme 118° hydrophobic contact angle with self-cleaning roll-off dynamics.
                             </p>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
                                 <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Pre-Correction Gloss:</span>
-                                    <strong style="color: #ef4444; font-size: 1.1rem;">58.4 GU</strong> (Micro-swirled)
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Water Contact Angle:</span>
+                                    <strong style="color: #ef4444; font-size: 1.1rem;">38.0°</strong> (Flat wetting)
                                 </div>
                                 <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Post-Correction Gloss:</span>
-                                    <strong class="text-cyan" style="font-size: 1.1rem;">99.4 GU</strong> (Mirror clarity)
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">10H Hydrophobic Angle:</span>
+                                    <strong class="text-cyan" style="font-size: 1.1rem;">118.5°</strong> (Spherical bead)
                                 </div>
                             </div>
-                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
-                                <li><i class="ri-check-line text-cyan"></i> 3-Stage compounding with wool and microfibre cutting pads</li>
-                                <li><i class="ri-check-line text-cyan"></i> Full front clip PPF + complete ceramic topcoat</li>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                                <li><i class="ri-check-line text-cyan"></i> 4-Layer Graphene & Nanoceramic molecular crosslink bonding</li>
+                                <li><i class="ri-check-line text-cyan"></i> Self-shedding roll-off angle below 10° for rainwater repelling</li>
+                                <li><i class="ri-check-line text-cyan"></i> UV chemical barrier against acid rain & bird etching</li>
                             </ul>
+                            <a href="ceramic-coating.html" class="btn btn-outline btn-sm"><i class="ri-arrow-right-line"></i> View Ceramic Coating Details</a>
                         </div>
 
                         <div class="before-after-container" style="height: 380px; border-radius: 16px;">
-                            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80" alt="Ceramic Coated Audi R8" class="img-after">
+                            <img src="assets/images/before-after/beading-after.jpg" alt="10H Ceramic Hydrophobic Water Beading" class="img-after">
                             <div class="img-before-wrapper" style="width: 50%;">
-                                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80" alt="Swirled Audi R8 Paint">
-                                <span class="badge" style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); color: #fff;">Before: 58.4 GU Scratched</span>
+                                <img src="assets/images/before-after/beading-before.jpg" alt="Unprotected Paint Flat Water Sheeting">
+                                <span class="badge"><i class="ri-close-circle-fill"></i> Before: Flat Water Sheeting (38°)</span>
                             </div>
-                            <span class="badge badge-cyan" style="position: absolute; bottom: 15px; right: 15px;">After: 99.4 GU Restored</span>
+                            <span class="badge badge-cyan"><i class="ri-checkbox-circle-fill"></i> After: 118° Spherical Beading</span>
                             <div class="slider-handle" style="left: 50%;">
                                 <i class="ri-arrow-left-right-line"></i>
                             </div>
@@ -211,30 +233,177 @@
                 </div>
 
                 <!-- Transformation 3: Ferrari Leather & Interior Restoration -->
-                <div class="glass-card" style="padding: 30px; border-radius: 24px;">
+                <div class="glass-card case-study-item" data-category="interior" style="padding: 30px; border-radius: 24px;">
                     <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
                         <div class="before-after-container" style="height: 380px; border-radius: 16px;">
-                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80" alt="Restored Matte Swissvax Leather" class="img-after">
+                            <img src="assets/images/before-after/leather-after.jpg" alt="Swissvax Factory OEM Matte Leather" class="img-after">
                             <div class="img-before-wrapper" style="width: 50%;">
-                                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80" alt="Shiny Greasy Leather Seat">
-                                <span class="badge" style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.85); color: #fff;">Before: Oily / Body Soil</span>
+                                <img src="assets/images/before-after/leather-before.jpg" alt="Shiny Greasy Soiled Leather Seat">
+                                <span class="badge"><i class="ri-close-circle-fill"></i> Before: Body Oil Shine & Dye Grime</span>
                             </div>
-                            <span class="badge badge-gold" style="position: absolute; bottom: 15px; right: 15px;">After: Swissvax Factory Matte</span>
+                            <span class="badge badge-gold"><i class="ri-checkbox-circle-fill"></i> After: Swissvax OEM Factory Matte</span>
                             <div class="slider-handle" style="left: 50%;">
                                 <i class="ri-arrow-left-right-line"></i>
                             </div>
                         </div>
 
                         <div>
-                            <span class="badge badge-gold">Case Study 03</span>
-                            <h3 style="font-size: 1.6rem; margin: 10px 0 15px;">Ferrari 296 GTB Crema Leather</h3>
-                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
-                                Natural semi-aniline Italian leather had developed an unnatural greasy shine from body oils and blue jean dye transfer.
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <span class="badge badge-gold">Case Study 03</span>
+                                <span class="badge badge-outline"><i class="ri-armchair-line"></i> Interior Leather</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; margin: 8px 0 12px;">Ferrari 296 GTB Crema Leather</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+                                Natural semi-aniline Italian leather bolster suffered from an unnatural oily shine, denim dye stains, and seam grime, fully rejuvenated to factory satin-matte.
                             </p>
-                            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px;">
-                                Cleaned with 180°C dry vapor steam and conditioned with Swissvax Elephant Leather Fat, returning the seats to a supple, non-slip factory OEM satin-matte finish.
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Leather Finish State:</span>
+                                    <strong style="color: #ef4444; font-size: 1.1rem;">High Glaze</strong> (Body oils)
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Restored Condition:</span>
+                                    <strong class="text-gold" style="font-size: 1.1rem;">OEM Matte</strong> (0% Oil shine)
+                                </div>
+                            </div>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                                <li><i class="ri-check-line text-gold"></i> 180°C dry vapor steam decontamination across bolsters & stitchlines</li>
+                                <li><i class="ri-check-line text-gold"></i> Swissvax Elephant Leather Fat nourishing & conditioning</li>
+                                <li><i class="ri-check-line text-gold"></i> Hydrophobic UV nano-barrier to block future denim dye transfer</li>
+                            </ul>
+                            <a href="interior-deep-cleaning.html" class="btn btn-outline btn-sm"><i class="ri-arrow-right-line"></i> View Leather Detailing Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation 4: Headlight UV Oxidation & Optics -->
+                <div class="glass-card case-study-item" data-category="headlight" style="padding: 30px; border-radius: 24px;">
+                    <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <span class="badge badge-cyan">Case Study 04</span>
+                                <span class="badge badge-outline"><i class="ri-flashlight-line"></i> Headlight Optics</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; margin: 8px 0 12px;">Porsche Carrera GT Polycarbonate Lens</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+                                Severely oxidized, yellowed, and cloudy polycarbonate lens stripped of UV failure, wet-sanded, and sealed with high-index optical ceramic hardcoat.
                             </p>
-                            <a href="index.html#booking-section" class="btn btn-gold"><i class="ri-calendar-check-line"></i> Book Leather Treatment</a>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Lumen Output:</span>
+                                    <strong style="color: #ef4444; font-size: 1.1rem;">420 lx</strong> (Severe fogging)
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Restored Output:</span>
+                                    <strong class="text-cyan" style="font-size: 1.1rem;">1,840 lx</strong> (+338% clarity)
+                                </div>
+                            </div>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                                <li><i class="ri-check-line text-cyan"></i> 4-Stage micro-abrasive wet sanding (1000 to 3000 grit)</li>
+                                <li><i class="ri-check-line text-cyan"></i> Optical rotary diamond polishing to remove micro-crazing</li>
+                                <li><i class="ri-check-line text-cyan"></i> UV-curable SiO2 hardcoat with 5-year anti-yellowing warranty</li>
+                            </ul>
+                            <a href="headlight-restoration.html" class="btn btn-outline btn-sm"><i class="ri-arrow-right-line"></i> View Headlight Restoration Details</a>
+                        </div>
+
+                        <div class="before-after-container" style="height: 380px; border-radius: 16px;">
+                            <img src="assets/images/before-after/headlight-after.jpg" alt="100% Optically Clear Restored Headlight" class="img-after">
+                            <div class="img-before-wrapper" style="width: 50%;">
+                                <img src="assets/images/before-after/headlight-before.jpg" alt="Yellowed Foggy Oxidized Headlight Lens">
+                                <span class="badge"><i class="ri-close-circle-fill"></i> Before: Yellowed UV Fog (420 lx)</span>
+                            </div>
+                            <span class="badge badge-cyan"><i class="ri-checkbox-circle-fill"></i> After: 100% Optical Glass (1,840 lx)</span>
+                            <div class="slider-handle" style="left: 50%;">
+                                <i class="ri-arrow-left-right-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation 5: Forged Wheel & Caliper Detailing -->
+                <div class="glass-card case-study-item" data-category="wheels" style="padding: 30px; border-radius: 24px;">
+                    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
+                        <div class="before-after-container" style="height: 380px; border-radius: 16px;">
+                            <img src="assets/images/before-after/wheel-after.jpg" alt="Ceramic Coated Forged Wheel & Brembo Caliper" class="img-after">
+                            <div class="img-before-wrapper" style="width: 50%;">
+                                <img src="assets/images/before-after/wheel-before.jpg" alt="Brake Dust Caked Wheel & Caliper">
+                                <span class="badge"><i class="ri-close-circle-fill"></i> Before: Corrosive Brake Dust Film</span>
+                            </div>
+                            <span class="badge badge-gold"><i class="ri-checkbox-circle-fill"></i> After: 9H Ceramic Coated Wheel & Caliper</span>
+                            <div class="slider-handle" style="left: 50%;">
+                                <i class="ri-arrow-left-right-line"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <span class="badge badge-gold">Case Study 05</span>
+                                <span class="badge badge-outline"><i class="ri-disc-line"></i> Wheels & Brakes</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; margin: 8px 0 12px;">Porsche Center-Lock Forged Wheel & Caliper</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+                                Wheel barrels and Brembo 6-piston monobloc calipers coated in baked-on sintered metallic brake dust decontaminated and cured with 1,200°F high-temp ceramic armour.
+                            </p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Brake Dust Binding:</span>
+                                    <strong style="color: #ef4444; font-size: 1.1rem;">Severe</strong> (Baked fallout)
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Post-Ceramic Adhesion:</span>
+                                    <strong class="text-gold" style="font-size: 1.1rem;">-90%</strong> (Rinse clean)
+                                </div>
+                            </div>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                                <li><i class="ri-check-line text-gold"></i> pH-neutral acid-free iron-dissolving chemical bath</li>
+                                <li><i class="ri-check-line text-gold"></i> High-temp 9H ceramic coating across barrel, face, and caliper</li>
+                                <li><i class="ri-check-line text-gold"></i> Michelin Pilot Sport tire sidewall satin UV rejuvenation</li>
+                            </ul>
+                            <a href="alloy-wheel-detailing.html" class="btn btn-outline btn-sm"><i class="ri-arrow-right-line"></i> View Wheel Detailing Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation 6: Cryogenic CO2 Engine Bay Restoration -->
+                <div class="glass-card case-study-item" data-category="engine" style="padding: 30px; border-radius: 24px;">
+                    <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <span class="badge badge-cyan">Case Study 06</span>
+                                <span class="badge badge-outline"><i class="ri-cpu-line"></i> Cryogenic Bay</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; margin: 8px 0 12px;">Lamborghini Huracán V10 Bay Detailing</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+                                Mid-engine V10 compartment caked in road dirt, heat oxidation, and oil film restored via non-abrasive -78.5°C cryogenic CO2 dry ice blasting.
+                            </p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Surface Residue:</span>
+                                    <strong style="color: #ef4444; font-size: 1.1rem;">Heavy Grime</strong> (Grease/Dust)
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color);">
+                                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Carbon Clarity:</span>
+                                    <strong class="text-cyan" style="font-size: 1.1rem;">100% Mirror</strong> (Showroom clean)
+                                </div>
+                            </div>
+                            <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                                <li><i class="ri-check-line text-cyan"></i> -78.5°C CO2 sublimation lifts contaminants without water or abrasives</li>
+                                <li><i class="ri-check-line text-cyan"></i> Deep gloss carbon fiber intake manifold & strut tower conditioning</li>
+                                <li><i class="ri-check-line text-cyan"></i> Anti-static silicone hose coating resisting future heat grime</li>
+                            </ul>
+                            <a href="engine-bay-detailing.html" class="btn btn-outline btn-sm"><i class="ri-arrow-right-line"></i> View Engine Detailing Details</a>
+                        </div>
+
+                        <div class="before-after-container" style="height: 380px; border-radius: 16px;">
+                            <img src="assets/images/before-after/engine-after.jpg" alt="Showroom Restored Carbon Fiber V10 Engine Bay" class="img-after">
+                            <div class="img-before-wrapper" style="width: 50%;">
+                                <img src="assets/images/before-after/engine-before.jpg" alt="Dusty Grimy Engine Bay Pre-Restoration">
+                                <span class="badge"><i class="ri-close-circle-fill"></i> Before: Heat Grime & Road Dirt</span>
+                            </div>
+                            <span class="badge badge-cyan"><i class="ri-checkbox-circle-fill"></i> After: Cryogenic Showroom Restored</span>
+                            <div class="slider-handle" style="left: 50%;">
+                                <i class="ri-arrow-left-right-line"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -242,6 +411,35 @@
             </div>
         </div>
     </section>
+
+    <!-- Interactive Filter Script -->
+    <script>
+    function filterCaseStudies(category, btnElement) {
+        // Update button states
+        const buttons = document.querySelectorAll('#case-study-filters .filter-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('btn-gold', 'active');
+            btn.classList.add('btn-outline');
+        });
+        btnElement.classList.remove('btn-outline');
+        btnElement.classList.add('btn-gold', 'active');
+
+        // Filter items
+        const items = document.querySelectorAll('#case-study-list .case-study-item');
+        items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Re-sync slider sizes
+        if (window.dispatchEvent) {
+            window.dispatchEvent(new Event('resize'));
+        }
+    }
+    </script>
 
     <!-- Footer -->
     <footer class="site-footer" id="main-site-footer">

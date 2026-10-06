@@ -113,7 +113,7 @@
                         <div style="text-align: right;">
                             <h3 style="font-size: 1.4rem; color: var(--primary-gold); margin: 0;">${inv.invoiceNo}</h3>
                             <p style="color: var(--text-secondary); font-size: 0.85rem;">Date: ${inv.date}</p>
-                            <span class="badge" style="background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid #22c55e; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem;">${inv.status}</span>
+                            <span class="badge badge-emerald" style="padding: 3px 12px; font-size: 0.8rem;">${inv.status}</span>
                         </div>
                     </div>
 
@@ -182,7 +182,7 @@
                     <div class="warranty-header">
                         <div class="warranty-gold-seal"><i class="ri-shield-check-fill"></i></div>
                         <div class="warranty-cert-title">Certificate of Surface Warranty</div>
-                        <p style="font-size: 0.85rem; color: #a0aec0; letter-spacing: 1px; text-transform: uppercase;">APEX OBSIDIAN ISO CLASS 10,000 NANOTECHNOLOGY LABORATORY</p>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); letter-spacing: 1px; text-transform: uppercase;">APEX OBSIDIAN ISO CLASS 10,000 NANOTECHNOLOGY LABORATORY</p>
                     </div>
 
                     <table class="warranty-table">
@@ -222,9 +222,9 @@
 
                     <div class="warranty-footer">
                         <div>
-                            <div style="font-size: 0.8rem; color: #a0aec0; margin-bottom: 4px;">Master Detailer Sign-Off:</div>
-                            <div style="font-family: 'Outfit', cursive; font-size: 1.3rem; color: #d4af37; letter-spacing: 1px;">Marcus Vance, IDA Master</div>
-                            <div style="font-size: 0.75rem; color: #718096;">Head of Cleanroom Coating Operations</div>
+                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 4px;">Master Detailer Sign-Off:</div>
+                            <div style="font-family: 'Outfit', cursive; font-size: 1.3rem; color: var(--primary-gold); letter-spacing: 1px;">Marcus Vance, IDA Master</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Head of Cleanroom Coating Operations</div>
                         </div>
 
                         <div style="text-align: right;">
@@ -246,7 +246,7 @@
                                     <rect x="50" y="75" width="10" height="15" fill="#000" />
                                 </svg>
                             </div>
-                            <span style="font-size: 0.65rem; color: #718096; text-transform: uppercase;">Scan To Verify Authenticity</span>
+                            <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase;">Scan To Verify Authenticity</span>
                         </div>
                     </div>
                 </div>

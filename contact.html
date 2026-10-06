@@ -54,10 +54,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
                             <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                            <li><a href="before-after.html"><i class="ri-sparkling-fill"></i> Before & After</a></li>
                         </ul>
                     </li>
-                    <li><a href="before-after.html">Before & After</a></li>
                     <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="dashboard/index.html">Dashboard</a></li>
                     <li><a href="blog.html">Journal</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
@@ -71,8 +72,8 @@
                     <i class="ri-sun-line theme-icon-light"></i>
                     <i class="ri-moon-line theme-icon-dark"></i>
                 </button>
-                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
-                    <i class="ri-translate-2"></i>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle Layout Direction (LTR/RTL)">
+                    <span class="rtl-toggle-text">LTR</span>
                 </button>
                 <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
                     <i class="ri-shopping-bag-3-line"></i>
@@ -228,7 +229,7 @@
                 <div>
                     <!-- Studio Cleanroom Radar Box -->
                     <div class="glass-card" style="padding: 30px; border-radius: 24px; text-align: center; margin-bottom: 30px;">
-                        <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(0,229,255,0.1); border: 1px solid var(--primary-cyan); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: var(--primary-cyan); margin: 0 auto 20px;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--accent-cyan-subtle); border: 1px solid var(--primary-cyan); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; color: var(--primary-cyan); margin: 0 auto 20px;">
                             <i class="ri-truck-fill"></i>
                         </div>
                         <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Enclosed Supercar Transport</h4>
@@ -251,6 +252,222 @@
             </div>
         </div>
     </section>
+
+    <!-- Dedicated Interactive Studio Map & Directions Section -->
+    <section class="section studio-map-section" id="studio-map-section" style="padding-top: 20px; padding-bottom: 90px; border-top: 1px solid var(--border-color); background: radial-gradient(circle at bottom right, rgba(0,240,255,0.03) 0%, transparent 60%);">
+        <div class="container">
+            <!-- Section Header with Visual Hierarchy -->
+            <div class="text-center" style="max-width: 750px; margin: 0 auto 40px;">
+                <span class="badge badge-gold"><i class="ri-map-pin-range-fill"></i> Studio Cleanroom Locator</span>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-top: 12px; margin-bottom: 15px;">Locate Our Nationwide Facilities</h2>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+                    Experience our ISO-6 cleanroom detailing bays in person. Select your preferred studio to view live bay telemetry, security arrival protocols, and instant GPS navigation.
+                </p>
+
+                <!-- Location Selector Switcher Tabs -->
+                <div class="map-location-tabs" style="margin-top: 25px;">
+                    <button type="button" class="btn btn-sm btn-gold map-tab-btn active" data-loc="beverly" onclick="switchMapLocation('beverly', this)">
+                        <i class="ri-building-2-fill"></i> Beverly Hills HQ
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline map-tab-btn" data-loc="scottsdale" onclick="switchMapLocation('scottsdale', this)">
+                        <i class="ri-plane-fill"></i> Scottsdale Airpark
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline map-tab-btn" data-loc="miami" onclick="switchMapLocation('miami', this)">
+                        <i class="ri-sun-fill"></i> Miami Wynwood
+                    </button>
+                </div>
+            </div>
+
+            <!-- Map & Studio Details Grid -->
+            <div class="map-wrapper-card glass-card">
+                <div class="map-layout-grid">
+                    
+                    <!-- Left Column: Studio Telemetry & Protocol Card -->
+                    <div class="map-info-panel" id="map-info-panel">
+                        <div>
+                            <!-- Header & Status Pill -->
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; gap: 12px; flex-wrap: wrap;">
+                                <div>
+                                    <span class="badge badge-gold" id="loc-tag" style="font-size: 0.75rem; margin-bottom: 6px;">Flagship HQ Facility</span>
+                                    <h3 id="loc-title" style="font-size: 1.35rem; margin: 4px 0 0; color: var(--text-primary);">Beverly Hills Cleanroom</h3>
+                                </div>
+                                <span class="badge" style="background: rgba(34, 197, 94, 0.15); border: 1px solid #22c55e; color: #22c55e; font-size: 0.75rem; padding: 6px 12px; border-radius: 20px;">
+                                    <span style="width: 7px; height: 7px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e; display: inline-block; margin-right: 4px;"></span> Open Now
+                                </span>
+                            </div>
+
+                            <!-- Address Box -->
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 18px;">
+                                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                    <i class="ri-map-pin-2-fill text-gold" style="font-size: 1.25rem; margin-top: 1px; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="font-size: 0.92rem; display: block; color: var(--text-primary);" id="loc-addr-line1">9400 Wilshire Blvd, Suite 100</strong>
+                                        <span style="font-size: 0.85rem; color: var(--text-secondary);" id="loc-addr-line2">Beverly Hills, CA 90212</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Telemetry Grid -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
+                                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 12px;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">Bay Climate</span>
+                                    <strong class="text-cyan" style="font-size: 0.95rem;" id="loc-temp">21°C • 42% RH</strong>
+                                </div>
+                                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 12px;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">Cleanroom Spec</span>
+                                    <strong class="text-gold" style="font-size: 0.95rem;" id="loc-spec">ISO-6 HEPA Bay</strong>
+                                </div>
+                            </div>
+
+                            <!-- Arrival Protocol List -->
+                            <div style="margin-bottom: 20px;">
+                                <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px;">Security & Arrival Guide</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+                                    <li id="loc-protocol-1"><i class="ri-shield-check-fill text-gold"></i> Private gated access with automatic ANPR vehicle recognition</li>
+                                    <li id="loc-protocol-2"><i class="ri-parking-box-fill text-gold"></i> Subterranean climate-controlled supercar valet lounge</li>
+                                    <li id="loc-protocol-3"><i class="ri-charging-pile-2-fill text-cyan"></i> 350kW DC Ultra-Fast EV charging available for client vehicles</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                            <a href="https://maps.google.com/?q=9400+Wilshire+Blvd,+Beverly+Hills,+CA+90212" target="_blank" rel="noopener noreferrer" class="btn btn-gold w-100" id="loc-directions-btn">
+                                <i class="ri-navigation-fill"></i> Get Google Maps Directions
+                            </a>
+                            <a href="tel:+13105550192" class="btn btn-outline btn-sm w-100" id="loc-call-btn">
+                                <i class="ri-phone-fill"></i> Call Concierge: (310) 555-0192
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: High-Precision Dark Interactive Map Frame -->
+                    <div class="map-iframe-container">
+                        <iframe 
+                            id="studio-google-map"
+                            src="https://maps.google.com/maps?q=9400+Wilshire+Blvd,+Beverly+Hills,+CA+90212&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; width: 100%; height: 100%; min-height: 520px; display: block;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Apex Obsidian Studio Map">
+                        </iframe>
+
+                        <!-- Floating Cleanroom Badge on Map -->
+                        <div style="position: absolute; top: 16px; right: 16px; z-index: 5; background: rgba(8, 10, 15, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--primary-gold); padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.7);">
+                            <i class="ri-map-pin-user-fill text-gold"></i>
+                            <span style="font-size: 0.8rem; font-weight: 700; color: #fff;" id="map-pin-label">Beverly Hills HQ Bay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Switcher Script -->
+    <script>
+    const studioLocationsData = {
+        beverly: {
+            title: "Beverly Hills Cleanroom",
+            tag: "Flagship HQ Facility",
+            line1: "9400 Wilshire Blvd, Suite 100",
+            line2: "Beverly Hills, CA 90212",
+            temp: "21°C • 42% RH",
+            spec: "ISO-6 HEPA Bay",
+            protocol1: '<i class="ri-shield-check-fill text-gold"></i> Private gated access with automatic ANPR vehicle recognition',
+            protocol2: '<i class="ri-parking-box-fill text-gold"></i> Subterranean climate-controlled supercar valet lounge',
+            protocol3: '<i class="ri-charging-pile-2-fill text-cyan"></i> 350kW DC Ultra-Fast EV charging available for client vehicles',
+            directions: "https://maps.google.com/?q=9400+Wilshire+Blvd,+Beverly+Hills,+CA+90212",
+            mapSrc: "https://maps.google.com/maps?q=9400+Wilshire+Blvd,+Beverly+Hills,+CA+90212&t=&z=15&ie=UTF8&iwloc=&output=embed",
+            phone: "tel:+13105550192",
+            phoneText: '<i class="ri-phone-fill"></i> Call Concierge: (310) 555-0192',
+            pinLabel: "Beverly Hills HQ Bay"
+        },
+        scottsdale: {
+            title: "Scottsdale Auto Lab & Airpark",
+            tag: "Hangar Aerospace Facility",
+            line1: "15000 N Airport Dr, Hangar 4",
+            line2: "Scottsdale, AZ 85260",
+            temp: "20°C • 38% RH",
+            spec: "Cryogenic Dry Ice Bay",
+            protocol1: '<i class="ri-shield-check-fill text-gold"></i> Direct runway taxiway transport from private jets to cleanroom bay',
+            protocol2: '<i class="ri-parking-box-fill text-gold"></i> Monitored 24/7 biometric hangar storage for high-value exotics',
+            protocol3: '<i class="ri-snowflake-fill text-cyan"></i> Cryogenic non-abrasive CO2 dry ice blasting bay operational',
+            directions: "https://maps.google.com/?q=15000+N+Airport+Dr,+Scottsdale,+AZ+85260",
+            mapSrc: "https://maps.google.com/maps?q=15000+N+Airport+Dr,+Scottsdale,+AZ+85260&t=&z=15&ie=UTF8&iwloc=&output=embed",
+            phone: "tel:+14805550144",
+            phoneText: '<i class="ri-phone-fill"></i> Call Concierge: (480) 555-0144',
+            pinLabel: "Scottsdale Airpark Bay"
+        },
+        miami: {
+            title: "Miami Wynwood Marine Studio",
+            tag: "East Coast Cleanroom Hub",
+            line1: "250 NW 24th St, Bay 12",
+            line2: "Miami, FL 33127",
+            temp: "22°C • 45% RH (Dehumidified)",
+            spec: "Marine & Hypercar Bay",
+            protocol1: '<i class="ri-shield-check-fill text-gold"></i> Dehumidified positive pressure cleanroom coating chambers',
+            protocol2: '<i class="ri-parking-box-fill text-gold"></i> Covered climate-controlled tender and supercar loading dock',
+            protocol3: '<i class="ri-sailboat-fill text-cyan"></i> Dedicated superyacht tender & coastal marine ceramic division',
+            directions: "https://maps.google.com/?q=250+NW+24th+St,+Miami,+FL+33127",
+            mapSrc: "https://maps.google.com/maps?q=250+NW+24th+St,+Miami,+FL+33127&t=&z=15&ie=UTF8&iwloc=&output=embed",
+            phone: "tel:+13055550188",
+            phoneText: '<i class="ri-phone-fill"></i> Call Concierge: (305) 555-0188',
+            pinLabel: "Miami Wynwood Bay"
+        }
+    };
+
+    function switchMapLocation(locKey, btnElement) {
+        const data = studioLocationsData[locKey];
+        if (!data) return;
+
+        // Update active tab buttons
+        const buttons = document.querySelectorAll('.map-location-tabs .map-tab-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('btn-gold', 'active');
+            btn.classList.add('btn-outline');
+        });
+        if (btnElement) {
+            btnElement.classList.remove('btn-outline');
+            btnElement.classList.add('btn-gold', 'active');
+        }
+
+        // Animate Panel update
+        const panel = document.getElementById('map-info-panel');
+        if (panel) {
+            panel.style.opacity = '0.5';
+            panel.style.transform = 'translateY(4px)';
+        }
+
+        setTimeout(() => {
+            document.getElementById('loc-title').textContent = data.title;
+            document.getElementById('loc-tag').textContent = data.tag;
+            document.getElementById('loc-addr-line1').textContent = data.line1;
+            document.getElementById('loc-addr-line2').textContent = data.line2;
+            document.getElementById('loc-temp').textContent = data.temp;
+            document.getElementById('loc-spec').textContent = data.spec;
+            document.getElementById('loc-protocol-1').innerHTML = data.protocol1;
+            document.getElementById('loc-protocol-2').innerHTML = data.protocol2;
+            document.getElementById('loc-protocol-3').innerHTML = data.protocol3;
+            document.getElementById('loc-directions-btn').href = data.directions;
+            document.getElementById('loc-call-btn').href = data.phone;
+            document.getElementById('loc-call-btn').innerHTML = data.phoneText;
+            document.getElementById('map-pin-label').textContent = data.pinLabel;
+
+            const mapIframe = document.getElementById('studio-google-map');
+            if (mapIframe) {
+                mapIframe.src = data.mapSrc;
+            }
+
+            if (panel) {
+                panel.style.opacity = '1';
+                panel.style.transform = 'translateY(0)';
+            }
+        }, 150);
+    }
+    </script>
 
     <!-- Footer -->
     <footer class="site-footer" id="main-site-footer">

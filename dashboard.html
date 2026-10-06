@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Dashboard | APEX OBSIDIAN Portal</title>
-    <meta name="description" content="Manage your vehicle detailing reservations, track live cleanroom bay progress, view before-and-after photo archives, and redeem loyalty perks.">
+    <title>Customer Dashboard | APEX OBSIDIAN Detailing Portal</title>
+    <meta name="description" content="Manage your supercar detailing reservations, track live cleanroom bay progress, view before-and-after photo archives, and redeem loyalty perks.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
-    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +22,11 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/simulator.css">
-    <link rel="stylesheet" href="../assets/css/dark-mode.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/simulator.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body class="dashboard-body">
 
@@ -34,7 +34,7 @@
         <!-- Sidebar Navigation -->
         <aside class="dashboard-sidebar" id="dashboard-sidebar">
             <div class="sidebar-header">
-                <a href="../index.html" class="logo">
+                <a href="index.html" class="logo">
                     <span class="logo-mark"><i class="ri-car-fill"></i></span>
                     <span class="logo-text">APEX<span class="logo-accent">OBSIDIAN</span></span>
                 </a>
@@ -52,20 +52,20 @@
             <nav class="sidebar-menu">
                 <span class="menu-label">Client Portal</span>
                 <ul class="sidebar-links">
-                    <li><a href="index.html" class="active"><span class="link-content"><i class="ri-dashboard-3-fill text-gold"></i> <span>Overview Console</span></span></a></li>
-                    <li><a href="services-status.html"><span class="link-content"><i class="ri-sparkling-fill text-gold"></i> <span>Live 7-Stage Tracker</span></span> <span class="badge badge-gold" style="font-size:0.65rem; padding: 2px 6px;">Live</span></a></li>
-                    <li><a href="bookings.html"><span class="link-content"><i class="ri-calendar-check-line"></i> <span>My Bookings</span></span></a></li>
-                    <li><a href="before-after.html"><span class="link-content"><i class="ri-contrast-drop-line"></i> <span>Photo Vault & 50/50</span></span></a></li>
-                    <li><a href="loyalty-points.html"><span class="link-content"><i class="ri-copper-diamond-line text-cyan"></i> <span>Apex Gloss Club</span></span></a></li>
-                    <li><a href="invoices.html"><span class="link-content"><i class="ri-file-shield-line"></i> <span>Digital Warranties</span></span></a></li>
+                    <li><a href="dashboard/index.html" class="active"><span class="link-content"><i class="ri-dashboard-3-fill text-gold"></i> <span>Overview Console</span></span></a></li>
+                    <li><a href="dashboard/services-status.html"><span class="link-content"><i class="ri-sparkling-fill text-gold"></i> <span>Live 7-Stage Tracker</span></span> <span class="badge badge-gold" style="font-size:0.65rem; padding: 2px 6px;">Live</span></a></li>
+                    <li><a href="dashboard/bookings.html"><span class="link-content"><i class="ri-calendar-check-line"></i> <span>My Bookings</span></span></a></li>
+                    <li><a href="dashboard/before-after.html"><span class="link-content"><i class="ri-contrast-drop-line"></i> <span>Photo Vault & 50/50</span></span></a></li>
+                    <li><a href="dashboard/loyalty-points.html"><span class="link-content"><i class="ri-copper-diamond-line text-cyan"></i> <span>Apex Gloss Club</span></span></a></li>
+                    <li><a href="dashboard/invoices.html"><span class="link-content"><i class="ri-file-shield-line"></i> <span>Digital Warranties</span></span></a></li>
                 </ul>
 
                 <span class="menu-label">Garage & Account</span>
                 <ul class="sidebar-links">
-                    <li><a href="profile.html"><span class="link-content"><i class="ri-car-line"></i> <span>My Garage Fleet</span></span></a></li>
-                    <li><a href="settings.html"><span class="link-content"><i class="ri-settings-4-line"></i> <span>Preferences</span></span></a></li>
-                    <li><a href="../index.html"><span class="link-content"><i class="ri-home-4-line"></i> <span>Back to Main Showroom</span></span></a></li>
-                    <li><a href="../login.html" class="text-danger logout-btn"><span class="link-content"><i class="ri-logout-box-r-line"></i> <span>Sign Out</span></span></a></li>
+                    <li><a href="dashboard/profile.html"><span class="link-content"><i class="ri-car-line"></i> <span>My Garage Fleet</span></span></a></li>
+                    <li><a href="dashboard/settings.html"><span class="link-content"><i class="ri-settings-4-line"></i> <span>Preferences</span></span></a></li>
+                    <li><a href="index.html"><span class="link-content"><i class="ri-home-4-line"></i> <span>Back to Main Showroom</span></span></a></li>
+                    <li><a href="login.html" class="text-danger logout-btn"><span class="link-content"><i class="ri-logout-box-r-line"></i> <span>Sign Out</span></span></a></li>
                 </ul>
             </nav>
         </aside>
@@ -95,12 +95,12 @@
                     <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle Layout Direction (LTR/RTL)">
                         <span class="rtl-toggle-text">LTR</span>
                     </button>
-                    <a href="../cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
+                    <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
                         <i class="ri-shopping-bag-3-line"></i>
                         <span class="nav-cart-text">Cart</span>
                         <span class="cart-count-badge" id="cart-count-badge">0</span>
                     </a>
-                    <a href="../index.html#booking-section" class="btn btn-gold btn-sm"><i class="ri-add-line"></i> Book Bay Slot</a>
+                    <a href="index.html#booking-section" class="btn btn-gold btn-sm"><i class="ri-add-line"></i> Book Bay Slot</a>
                 </div>
             </header>
 
@@ -206,7 +206,7 @@
                             <button class="btn btn-sm btn-outline" onclick="ApexDashboard.advanceServiceStage()"><i class="ri-play-line"></i> Advance Stage (Demo)</button>
                             <button class="btn btn-sm btn-outline" onclick="ApexDashboard.resetServiceStage()"><i class="ri-refresh-line"></i> Reset (Demo)</button>
                         </div>
-                        <a href="services-status.html" class="btn btn-sm btn-gold"><i class="ri-scan-2-line"></i> Open Detailed 7-Stage Telemetry</a>
+                        <a href="dashboard/services-status.html" class="btn btn-sm btn-gold"><i class="ri-scan-2-line"></i> Open Detailed 7-Stage Telemetry</a>
                     </div>
                 </div>
 
@@ -217,7 +217,7 @@
                             <h3 style="font-size: 1.25rem; margin: 0;">My Garage Vehicles</h3>
                             <span style="font-size: 0.82rem; color: var(--text-secondary);">Real-time ceramic coating status and maintenance health</span>
                         </div>
-                        <a href="profile.html" class="btn btn-outline btn-sm"><i class="ri-add-line"></i> Register New Vehicle</a>
+                        <a href="dashboard/profile.html" class="btn btn-outline btn-sm"><i class="ri-add-line"></i> Register New Vehicle</a>
                     </div>
 
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
@@ -241,7 +241,7 @@
                                     <span class="text-cyan">7-Year E-Cert Active</span>
                                 </div>
                             </div>
-                            <a href="services-status.html" class="btn btn-sm btn-gold w-100"><i class="ri-eye-line"></i> Track In-Bay Progress</a>
+                            <a href="dashboard/services-status.html" class="btn btn-sm btn-gold w-100"><i class="ri-eye-line"></i> Track In-Bay Progress</a>
                         </div>
 
                         <!-- Vehicle 2 -->
@@ -264,7 +264,7 @@
                                     <span>Nov 15, 2026</span>
                                 </div>
                             </div>
-                            <a href="before-after.html" class="btn btn-sm btn-outline w-100"><i class="ri-contrast-drop-line"></i> View Photo Archive</a>
+                            <a href="dashboard/before-after.html" class="btn btn-sm btn-outline w-100"><i class="ri-contrast-drop-line"></i> View Photo Archive</a>
                         </div>
 
                         <!-- Vehicle 3 -->
@@ -287,7 +287,7 @@
                                     <span>Jan 10, 2027</span>
                                 </div>
                             </div>
-                            <a href="../index.html#booking-section" class="btn btn-sm btn-outline w-100"><i class="ri-calendar-line"></i> Book Maintenance</a>
+                            <a href="index.html#booking-section" class="btn btn-sm btn-outline w-100"><i class="ri-calendar-line"></i> Book Maintenance</a>
                         </div>
                     </div>
                 </div>
@@ -301,7 +301,7 @@
                                 <h3 style="font-size: 1.15rem; margin: 0;">Recent Studio Bookings</h3>
                                 <span style="font-size: 0.8rem; color: var(--text-secondary);">Historical cleanroom reservations & invoices</span>
                             </div>
-                            <a href="bookings.html" class="text-gold" style="font-size: 0.85rem; font-weight: 600;">View All</a>
+                            <a href="dashboard/bookings.html" class="text-gold" style="font-size: 0.85rem; font-weight: 600;">View All</a>
                         </div>
 
                         <div class="table-responsive-wrapper">
@@ -321,21 +321,21 @@
                                         <td style="padding: 12px 0;">Porsche 911 GT3 RS</td>
                                         <td style="padding: 12px 0;">10H Obsidian Shield</td>
                                         <td style="padding: 12px 0;"><span class="badge" style="background: rgba(34,197,94,0.2); color: #22c55e;">In-Progress</span></td>
-                                        <td style="padding: 12px 0; text-align: right;"><a href="booking-details.html" class="btn btn-sm btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">Telemetry</a></td>
+                                        <td style="padding: 12px 0; text-align: right;"><a href="dashboard/booking-details.html" class="btn btn-sm btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">Telemetry</a></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                         <td style="padding: 12px 0; font-weight: 600; color: var(--text-muted);">APX-7412</td>
                                         <td style="padding: 12px 0;">Ferrari 296 GTB</td>
                                         <td style="padding: 12px 0;">Swissvax Leather Feed</td>
                                         <td style="padding: 12px 0;"><span class="badge badge-cyan">Completed</span></td>
-                                        <td style="padding: 12px 0; text-align: right;"><a href="booking-details.html" class="btn btn-sm btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">Invoice</a></td>
+                                        <td style="padding: 12px 0; text-align: right;"><a href="dashboard/booking-details.html" class="btn btn-sm btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">Invoice</a></td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 12px 0; font-weight: 600; color: var(--text-muted);">APX-6301</td>
                                         <td style="padding: 12px 0;">McLaren 720S</td>
                                         <td style="padding: 12px 0;">Annual Inspection</td>
                                         <td style="padding: 12px 0;"><span class="badge badge-gold">Oct 18 Slot</span></td>
-                                        <td style="padding: 12px 0; text-align: right;"><a href="bookings.html" class="btn btn-sm btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">Details</a></td>
+                                        <td style="padding: 12px 0; text-align: right;"><a href="dashboard/bookings.html" class="btn btn-sm btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">Details</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -357,7 +357,7 @@
                                 You have <strong>2 VIP vouchers</strong> ready to redeem for complimentary hydrophobic windshield coating ($350 value) or interior steam sanitation.
                             </p>
                         </div>
-                        <a href="loyalty-points.html" class="btn btn-cyan btn-sm w-100"><i class="ri-gift-line"></i> Open VIP Rewards Store</a>
+                        <a href="dashboard/loyalty-points.html" class="btn btn-cyan btn-sm w-100"><i class="ri-gift-line"></i> Open VIP Rewards Store</a>
                     </div>
                 </div>
 
@@ -367,7 +367,7 @@
                     <div class="glass-card" style="padding: 25px; border-radius: 18px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                             <h3 style="font-size: 1.15rem; margin: 0;"><i class="ri-file-shield-line text-gold"></i> Digital E-Warranties</h3>
-                            <a href="invoices.html" class="text-gold" style="font-size: 0.85rem; font-weight: 600;">Manage</a>
+                            <a href="dashboard/invoices.html" class="text-gold" style="font-size: 0.85rem; font-weight: 600;">Manage</a>
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 10px;">
                             <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
@@ -398,7 +398,7 @@
                         </p>
                         <div style="display: flex; gap: 10px;">
                             <a href="tel:+13105550192" class="btn btn-outline btn-sm" style="flex: 1;"><i class="ri-phone-fill text-gold"></i> (310) 555-0192</a>
-                            <a href="../contact.html" class="btn btn-gold btn-sm" style="flex: 1;"><i class="ri-mail-send-line"></i> Message Concierge</a>
+                            <a href="contact.html" class="btn btn-gold btn-sm" style="flex: 1;"><i class="ri-mail-send-line"></i> Message Concierge</a>
                         </div>
                     </div>
                 </div>
@@ -407,11 +407,11 @@
     </div>
 
     <!-- Core Scripts -->
-    <script src="../assets/js/theme.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/cart.js"></script>
-    <script src="../assets/js/auth.js"></script>
-    <script src="../assets/js/booking.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/booking.js"></script>
+    <script src="assets/js/dashboard.js"></script>
 </body>
 </html>

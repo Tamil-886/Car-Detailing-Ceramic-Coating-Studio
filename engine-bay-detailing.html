@@ -50,10 +50,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
                             <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                            <li><a href="before-after.html"><i class="ri-sparkling-fill"></i> Before & After</a></li>
                         </ul>
                     </li>
-                    <li><a href="before-after.html">Before & After</a></li>
                     <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="dashboard/index.html">Dashboard</a></li>
                     <li><a href="blog.html">Journal</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -67,8 +68,8 @@
                     <i class="ri-sun-line theme-icon-light"></i>
                     <i class="ri-moon-line theme-icon-dark"></i>
                 </button>
-                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
-                    <i class="ri-translate-2"></i>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle Layout Direction (LTR/RTL)">
+                    <span class="rtl-toggle-text">LTR</span>
                 </button>
                 <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
                     <i class="ri-shopping-bag-3-line"></i>
@@ -308,15 +309,15 @@
                             </div>
 
                             <!-- CTA Buttons -->
-                            <button type="button" class="btn btn-gold w-100" id="btn-service-add-cart" style="margin-bottom: 12px; padding: 14px; font-weight: 800;" onclick="addCurrentServiceToCart()">
+                            <button type="button" class="btn btn-gold w-100" id="btn-service-add-cart" style="margin-bottom: 10px;" onclick="addCurrentServiceToCart()">
                                 <i class="ri-shopping-bag-3-line"></i> Add to Cart
                             </button>
                             
-                            <a href="index.html#booking-section" id="btn-service-book-now" class="btn btn-outline w-100" style="margin-bottom: 12px; padding: 12px;" onclick="prefillBookingService('Engine Bay Detailing')">
+                            <a href="index.html#booking-section" id="btn-service-book-now" class="btn btn-outline w-100" style="margin-bottom: 10px;" onclick="prefillBookingService('Engine Bay Detailing')">
                                 <i class="ri-calendar-check-line"></i> Book Now & Reserve Bay
                             </a>
 
-                            <a href="cart.html" class="btn btn-outline w-100" style="margin-bottom: 15px; padding: 10px; font-size: 0.85rem;">
+                            <a href="cart.html" class="btn btn-outline btn-sm w-100" style="margin-bottom: 12px;">
                                 <i class="ri-shopping-cart-line"></i> View Cart & Checkout
                             </a>
 

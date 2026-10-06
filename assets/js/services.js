@@ -1518,8 +1518,12 @@
         <div class="service-card glass-card service-item" data-category="${s.categorySlug}" style="border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;">
           <div style="position: relative;">
             <img src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80'" style="width: 100%; height: 210px; object-fit: cover;">
-            <span class="badge badge-gold" style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem;">${s.badge}</span>
-            <span class="badge" style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.75rem;"><i class="ri-star-fill text-gold"></i> ${s.rating}</span>
+            <span class="service-image-badge" style="position: absolute; top: 12px; right: 12px; font-size: 0.76rem; font-weight: 700; background: rgba(10, 12, 18, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #ffc837; border: 1px solid rgba(212, 175, 55, 0.75); padding: 5px 12px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); letter-spacing: 0.3px; display: inline-flex; align-items: center; gap: 5px; z-index: 2;">
+              <i class="ri-sparkling-fill" style="color: #ffc837; font-size: 0.85rem;"></i> ${s.badge}
+            </span>
+            <span class="service-rating-badge" style="position: absolute; top: 12px; left: 12px; font-size: 0.76rem; font-weight: 700; background: rgba(10, 12, 18, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.2); padding: 5px 12px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); letter-spacing: 0.3px; display: inline-flex; align-items: center; gap: 5px; z-index: 2;">
+              <i class="ri-star-fill" style="color: #ffc837; font-size: 0.85rem;"></i> ${s.rating}
+            </span>
           </div>
           <div style="padding: 22px; flex-grow: 1; display: flex; flex-direction: column;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
@@ -1536,10 +1540,10 @@
                 <strong class="text-gold" style="font-size: 1.35rem; font-weight: 800;">₹${price.toLocaleString()}</strong>
               </div>
               <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                <button type="button" class="btn btn-sm btn-gold add-service-to-cart-btn" onclick="window.addServiceToCart('${s.id}')" title="Add ${s.title} to Cart" style="padding: 7px 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; font-size: 0.82rem; border-radius: 8px;">
+                <button type="button" class="btn btn-sm btn-gold add-service-to-cart-btn" onclick="window.addServiceToCart('${s.id}')" title="Add ${s.title} to Cart">
                   <i class="ri-shopping-bag-3-line"></i> Add to Cart
                 </button>
-                <a href="${s.fileName}" class="btn btn-sm btn-outline" style="padding: 7px 12px; font-size: 0.82rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 4px;">
+                <a href="${s.fileName}" class="btn btn-sm btn-outline">
                   View Details <i class="ri-arrow-right-line"></i>
                 </a>
               </div>

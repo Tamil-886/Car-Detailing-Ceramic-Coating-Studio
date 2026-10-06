@@ -51,10 +51,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
                             <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                            <li><a href="before-after.html"><i class="ri-sparkling-fill"></i> Before & After</a></li>
                         </ul>
                     </li>
-                    <li><a href="before-after.html">Before & After</a></li>
                     <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="dashboard/index.html">Dashboard</a></li>
                     <li><a href="blog.html">Journal</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -68,8 +69,8 @@
                     <i class="ri-sun-line theme-icon-light"></i>
                     <i class="ri-moon-line theme-icon-dark"></i>
                 </button>
-                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
-                    <i class="ri-translate-2"></i>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle Layout Direction (LTR/RTL)">
+                    <span class="rtl-toggle-text">LTR</span>
                 </button>
                 <a href="cart.html" class="nav-cart-btn active" id="nav-cart-btn" title="View Shopping Cart">
                     <i class="ri-shopping-bag-3-line"></i>
@@ -136,7 +137,7 @@
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                         <h3 style="margin: 0; font-size: 1.25rem;">Selected Cleanroom Packages (<span id="cart-total-items-count">0</span>)</h3>
-                        <button type="button" class="btn btn-outline btn-sm" onclick="ApexCart.clearCart()" style="font-size: 0.75rem; color: #f87171; border-color: rgba(239,68,68,0.3);">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="ApexCart.clearCart()">
                             <i class="ri-delete-bin-line"></i> Clear Cart
                         </button>
                     </div>
@@ -193,7 +194,7 @@
                             </label>
                             <div style="display: flex; gap: 8px;">
                                 <input type="text" id="promo-input" class="form-control" placeholder="e.g. OBSIDIAN10" style="text-transform: uppercase; font-size: 0.85rem; padding: 10px 12px;">
-                                <button type="button" class="btn btn-outline btn-sm" onclick="handleApplyPromo()" style="flex-shrink: 0; padding: 0 16px;">
+                                <button type="button" class="btn btn-outline btn-sm" onclick="handleApplyPromo()" style="flex-shrink: 0;">
                                     Apply
                                 </button>
                             </div>
@@ -201,7 +202,7 @@
                         </div>
 
                         <!-- Checkout Button -->
-                        <a href="payment.html" class="btn btn-gold w-100 btn-lg" id="btn-proceed-payment" style="padding: 15px; font-weight: 800; letter-spacing: 0.5px; box-shadow: 0 8px 25px rgba(212,175,55,0.4);">
+                        <a href="payment.html" class="btn btn-gold w-100 btn-lg" id="btn-proceed-payment">
                             <i class="ri-secure-payment-line"></i> Proceed to Payment
                         </a>
 
@@ -415,6 +416,7 @@
 
     <!-- Scripts -->
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/navigation.js"></script>
     <script src="assets/js/audio-feedback.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/command-palette.js"></script>

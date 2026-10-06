@@ -51,10 +51,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="services.html"><i class="ri-grid-fill"></i> All Services</a></li>
                             <li><a href="packages.html"><i class="ri-price-tag-3-line"></i> Packages</a></li>
+                            <li><a href="before-after.html"><i class="ri-sparkling-fill"></i> Before & After</a></li>
                         </ul>
                     </li>
-                    <li><a href="before-after.html">Before & After</a></li>
                     <li><a href="gallery.html">Showroom Gallery</a></li>
+                    <li><a href="dashboard/index.html">Dashboard</a></li>
                     <li><a href="blog.html">Journal</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -68,8 +69,8 @@
                     <i class="ri-sun-line theme-icon-light"></i>
                     <i class="ri-moon-line theme-icon-dark"></i>
                 </button>
-                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout">
-                    <i class="ri-translate-2"></i>
+                <button class="rtl-toggle" id="rtl-toggle-btn" title="Toggle RTL Layout" aria-label="Toggle Layout Direction (LTR/RTL)">
+                    <span class="rtl-toggle-text">LTR</span>
                 </button>
                 <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" title="View Shopping Cart">
                     <i class="ri-shopping-bag-3-line"></i>
@@ -284,7 +285,7 @@
                         </div>
 
                         <!-- Confirm & Pay Now Button -->
-                        <button type="submit" id="btn-pay-now" class="btn btn-gold btn-lg w-100" style="padding: 16px; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.5px; box-shadow: 0 10px 30px rgba(212,175,55,0.4);">
+                        <button type="submit" id="btn-pay-now" class="btn btn-gold btn-lg w-100">
                             <i class="ri-lock-2-line"></i> Confirm Reservation & Authorize <span id="btn-pay-amount">$0</span>
                         </button>
 
@@ -607,6 +608,7 @@
 
     <!-- Scripts -->
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/navigation.js"></script>
     <script src="assets/js/audio-feedback.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/command-palette.js"></script>

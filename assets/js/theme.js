@@ -109,8 +109,15 @@
   }
 
   function updateRTLButtons(isRTL) {
-    document.querySelectorAll('#rtl-toggle-btn span, .rtl-toggle span').forEach(el => {
-      el.textContent = isRTL ? 'RTL' : 'LTR';
+    document.querySelectorAll('#rtl-toggle-btn, .rtl-toggle').forEach(btn => {
+      const textSpan = btn.querySelector('.rtl-toggle-text') || btn.querySelector('span');
+      if (textSpan) {
+        textSpan.textContent = isRTL ? 'RTL' : 'LTR';
+      } else {
+        btn.innerHTML = `<span class="rtl-toggle-text">${isRTL ? 'RTL' : 'LTR'}</span>`;
+      }
+      btn.title = isRTL ? 'Switch to Left-to-Right (LTR)' : 'Switch to Right-to-Left (RTL)';
+      btn.setAttribute('aria-label', btn.title);
     });
   }
 

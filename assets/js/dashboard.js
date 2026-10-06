@@ -455,20 +455,20 @@
 
       var statusBadgeHtml = '';
       if (statusKey === 'in-progress' || statusKey === 'in-bay') {
-        statusBadgeHtml = '<span class="badge" style="background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid #22c55e;"><i class="ri-loader-4-line spin"></i> In Progress</span>';
+        statusBadgeHtml = '<span class="badge badge-emerald" style="font-size: 0.75rem;"><i class="ri-loader-4-line spin"></i> In Progress</span>';
       } else if (statusKey === 'completed') {
-        statusBadgeHtml = '<span class="badge" style="background: rgba(0,229,255,0.15); color: var(--primary-cyan);"><i class="ri-checkbox-circle-fill"></i> Completed</span>';
+        statusBadgeHtml = '<span class="badge badge-cyan" style="font-size: 0.75rem;"><i class="ri-checkbox-circle-fill"></i> Completed</span>';
       } else if (statusKey === 'cancelled') {
-        statusBadgeHtml = '<span class="badge" style="background: rgba(239,68,68,0.15); color: #ef4444;"><i class="ri-close-circle-line"></i> Cancelled</span>';
+        statusBadgeHtml = '<span class="badge badge-danger" style="font-size: 0.75rem;"><i class="ri-close-circle-line"></i> Cancelled</span>';
       } else {
         statusBadgeHtml = '<span class="badge badge-gold" style="font-size: 0.75rem;"><i class="ri-calendar-check-line"></i> Confirmed</span>';
       }
 
       var paymentBadgeHtml = '';
       if ((b.paymentStatus || '').toLowerCase() === 'paid') {
-        paymentBadgeHtml = '<span class="badge" style="background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); font-size: 0.75rem;"><i class="ri-checkbox-circle-line"></i> Paid</span>';
+        paymentBadgeHtml = '<span class="badge badge-emerald" style="font-size: 0.75rem;"><i class="ri-checkbox-circle-line"></i> Paid</span>';
       } else {
-        paymentBadgeHtml = '<a href="../payment.html?bookingId=' + encodeURIComponent(b.code || b.id) + '" class="badge badge-warning" style="background: rgba(234,179,8,0.15); color: #eab308; border: 1px solid rgba(234,179,8,0.3); font-size: 0.75rem; text-decoration:none;" title="Click to Complete Payment"><i class="ri-time-line"></i> Pending</a>';
+        paymentBadgeHtml = '<a href="../payment.html?bookingId=' + encodeURIComponent(b.code || b.id) + '" class="badge badge-warning" style="font-size: 0.75rem; text-decoration:none;" title="Click to Complete Payment"><i class="ri-time-line"></i> Pending</a>';
       }
 
       tr.innerHTML = `
@@ -483,7 +483,7 @@
         <td style="padding: 15px 10px;">${statusBadgeHtml}</td>
         <td style="padding: 15px 10px;">${paymentBadgeHtml}</td>
         <td style="padding: 15px 10px; text-align: right;">
-          <a href="booking-details.html?id=${encodeURIComponent(b.code || b.id)}" class="btn btn-sm btn-gold" style="padding: 5px 12px; font-size: 0.8rem;"><i class="ri-file-search-line"></i> Details</a>
+          <a href="booking-details.html?id=${encodeURIComponent(b.code || b.id)}" class="btn btn-sm btn-gold"><i class="ri-file-search-line"></i> Details</a>
         </td>
       `;
       tbody.appendChild(tr);
@@ -526,15 +526,15 @@
       var tr = document.createElement('tr');
       tr.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
       var statusBadge = (b.status === 'In-Progress' || b.status === 'in-bay')
-        ? '<span class="badge" style="background: rgba(34,197,94,0.2); color: #22c55e;">In-Progress</span>'
-        : (b.status === 'Completed' ? '<span class="badge" style="background: rgba(0,229,255,0.15); color: var(--primary-cyan);">Completed</span>' : '<span class="badge badge-gold">Confirmed</span>');
+        ? '<span class="badge badge-emerald">In-Progress</span>'
+        : (b.status === 'Completed' ? '<span class="badge badge-cyan">Completed</span>' : '<span class="badge badge-gold">Confirmed</span>');
 
       tr.innerHTML = `
         <td style="padding: 12px 0; font-weight: 600; color: var(--primary-gold); font-family: var(--font-mono, monospace);">${b.code || b.id}</td>
         <td style="padding: 12px 0; color: var(--text-primary); font-weight: 600;">${b.vehicleModel || (b.vehicle ? (b.vehicle.year + ' ' + b.vehicle.make + ' ' + b.vehicle.model) : 'Vehicle')}</td>
         <td style="padding: 12px 0; color: var(--text-secondary); max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${b.servicePackage || b.packageName || 'Detailing'}</td>
         <td style="padding: 12px 0;">${statusBadge}</td>
-        <td style="padding: 12px 0; text-align: right;"><a href="booking-details.html?id=${encodeURIComponent(b.code || b.id)}" class="btn btn-sm btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">View</a></td>
+        <td style="padding: 12px 0; text-align: right;"><a href="booking-details.html?id=${encodeURIComponent(b.code || b.id)}" class="btn btn-sm btn-outline">View</a></td>
       `;
       tbody.appendChild(tr);
     });
@@ -586,9 +586,9 @@
 
     if (payBadgeEl) {
       if (isPaid) {
-        payBadgeEl.innerHTML = '<span class="badge" style="background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); font-size: 0.8rem;"><i class="ri-checkbox-circle-line"></i> Paid & Verified</span>';
+        payBadgeEl.innerHTML = '<span class="badge badge-emerald" style="font-size: 0.8rem;"><i class="ri-checkbox-circle-line"></i> Paid & Verified</span>';
       } else {
-        payBadgeEl.innerHTML = '<span class="badge badge-warning" style="background: rgba(234,179,8,0.15); color: #eab308; border: 1px solid rgba(234,179,8,0.3); font-size: 0.8rem;"><i class="ri-time-line"></i> Pending Payment</span>';
+        payBadgeEl.innerHTML = '<span class="badge badge-warning" style="font-size: 0.8rem;"><i class="ri-time-line"></i> Pending Payment</span>';
       }
     }
 

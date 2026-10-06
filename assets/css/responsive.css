@@ -12,7 +12,7 @@
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
   width: 100%;
   -webkit-text-size-adjust: 100%;
@@ -75,26 +75,48 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   2. Standard Desktop & Laptops (1201px - 1440px)
+   2. Standard Desktop & Laptops (min-width: 1025px)
    -------------------------------------------------------------------------- */
-@media (max-width: 1440px) and (min-width: 1201px) {
+@media (min-width: 1025px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+
+  .mobile-toggle, .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 1025px) {
   .container {
     max-width: 1180px;
     padding-left: 20px;
     padding-right: 20px;
   }
 
+  .site-header .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .site-header .header-inner {
+    height: 64px;
+    gap: 12px;
+  }
+
   .nav-links {
-    gap: 4px;
+    gap: 3px;
   }
 
   .nav-links > li > a {
-    padding: 0 10px;
-    font-size: 0.85rem;
+    padding: 0 9px;
+    font-size: 0.82rem;
+    height: 36px;
   }
 
   .header-actions {
-    gap: 8px;
+    gap: 6px;
   }
 
   .footer-grid {
@@ -104,51 +126,7 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   3. Small Laptops & Transition Desktop (1025px - 1200px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 1200px) and (min-width: 1025px) {
-  .container {
-    max-width: 980px;
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .site-header .header-inner {
-    height: 64px;
-  }
-
-  .nav-links {
-    gap: 2px;
-  }
-
-  .nav-links > li > a {
-    padding: 0 7px;
-    font-size: 0.8rem;
-    height: 34px;
-  }
-
-  .header-actions {
-    gap: 6px;
-  }
-
-  .header-actions .btn-sm {
-    padding: 0 10px;
-    font-size: 0.75rem;
-    height: 34px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-    gap: 28px;
-  }
-  
-  .footer-col-contact {
-    grid-column: span 4;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4. Large Tablets & iPad Pro Breakpoint (max-width: 1024px)
+   3. Tablets & iPad Pro Breakpoint (max-width: 1024px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .container {
@@ -164,7 +142,7 @@ input, select, textarea {
 
   /* Header & Mobile Toggle */
   .site-header .header-inner {
-    height: 60px;
+    height: 64px;
     gap: 12px;
   }
 
@@ -176,21 +154,33 @@ input, select, textarea {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--radius-sm, 8px);
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color, rgba(255,255,255,0.08));
     color: var(--text-primary, #f8fafc);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1;
+    flex-shrink: 0;
   }
 
   .mobile-toggle:hover {
     background: rgba(212, 175, 55, 0.15);
     color: var(--primary-gold, #d4af37);
     border-color: rgba(212, 175, 55, 0.35);
+  }
+
+  .nav-cart-btn {
+    display: inline-flex !important;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.8rem;
   }
 
   .header-actions .rtl-toggle {
@@ -486,6 +476,14 @@ input, select, textarea {
     font-size: 1rem;
   }
 
+  .nav-cart-btn {
+    display: inline-flex !important;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.78rem;
+    gap: 5px;
+  }
+
   .user-profile-btn {
     height: 34px;
     padding: 0 8px 0 5px;
@@ -772,10 +770,15 @@ input, select, textarea {
 
   .site-header .header-inner {
     height: 50px;
+    gap: 4px;
+  }
+
+  .logo {
+    gap: 4px;
   }
 
   .logo-text {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
 
   .logo-mark {
@@ -784,8 +787,51 @@ input, select, textarea {
     font-size: 0.8rem;
   }
 
+  .header-actions {
+    gap: 4px;
+  }
+
+  .theme-toggle,
+  .mobile-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .nav-cart-btn {
+    display: inline-flex !important;
+    height: 30px;
+    padding: 0 6px;
+    font-size: 0.70rem;
+    gap: 3px;
+  }
+
+  .nav-cart-text {
+    display: none !important;
+  }
+
+  .cart-count-badge {
+    min-width: 15px;
+    height: 15px;
+    font-size: 0.60rem;
+    padding: 0 3px;
+  }
+
+  .user-profile-btn {
+    height: 30px;
+    padding: 0 4px;
+  }
+
   .user-profile-btn .user-name-text {
     display: none;
+  }
+
+  .back-to-top-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
 
   .glass-card {

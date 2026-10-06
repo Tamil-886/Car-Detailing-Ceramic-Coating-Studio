@@ -237,16 +237,23 @@
     return { success: true, user: updatedUser };
   }
 
-  // 3. Route Protection Guards
+  // 3. Route Protection Guards (Seamless Dashboard Access)
   function requireAuth() {
-    const user = getCurrentUser();
-    const isDashboard = window.location.pathname.includes('/dashboard/');
+    let user = getCurrentUser();
+    const isDashboard = window.location.pathname.includes('/dashboard/') || window.location.pathname.endsWith('dashboard.html');
     
     if (!user && isDashboard) {
-      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      sessionStorage.setItem('apex_auth_redirect', `dashboard/${currentPath}`);
-      window.location.replace('../login.html?notice=unauthorized');
-      return false;
+      // Auto-provision demo VIP session for instant dashboard exploration without login barrier
+      const defaultUser = {
+        id: 'usr_vip_default',
+        name: 'Alexander Vance',
+        email: 'alexander.vance@apex-obsidian.com',
+        role: 'Obsidian VIP Member',
+        loyaltyPoints: 2450,
+        avatar: 'AV',
+        vehicle: '2024 Porsche 911 GT3 RS'
+      };
+      setCurrentUser(defaultUser);
     }
     return true;
   }
@@ -281,10 +288,10 @@
       const existingAuthBtn = headerActions.querySelector('a[href*="login.html"], .btn-outline');
       
       if (user) {
-        // User IS Logged In -> Show username button with profile dropdown
+        // User IS Logged In -> Show username button with profile dropdown (Sign Out only)
         const authBadgeHTML = `
           <div class="user-profile-dropdown" id="user-profile-dropdown">
-            <button type="button" class="user-profile-btn" id="user-profile-btn" aria-expanded="false" aria-haspopup="true" title="Account & Dashboard Menu">
+            <button type="button" class="user-profile-btn" id="user-profile-btn" aria-expanded="false" aria-haspopup="true" title="Account Menu">
               <span class="user-avatar-circle">${user.avatar || getInitials(user.name)}</span>
               <span class="user-name-text">${user.name}</span>
               <i class="ri-arrow-down-s-line dropdown-arrow"></i>
@@ -299,15 +306,6 @@
                   </div>
                 </div>
               </div>
-              <div class="dropdown-divider"></div>
-              <ul class="user-dropdown-links">
-                <li>
-                  <a href="${dashboardBase}index.html" class="dropdown-item dashboard-link">
-                    <i class="ri-dashboard-3-line"></i> 
-                    <span>Dashboard</span>
-                  </a>
-                </li>
-              </ul>
               <div class="dropdown-divider"></div>
               <div class="user-dropdown-footer">
                 <a href="#" class="dropdown-item text-danger logout-btn" id="header-dropdown-logout-btn">
@@ -364,8 +362,8 @@
                 </div>
               </div>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                <a href="${dashboardBase}index.html" class="btn btn-sm btn-gold" style="font-size: 0.75rem; padding: 8px; font-weight: 700;"><i class="ri-dashboard-line"></i> Dashboard</a>
-                <a href="${dashboardBase}profile.html" class="btn btn-sm btn-outline" style="font-size: 0.75rem; padding: 8px;"><i class="ri-user-line"></i> Garage</a>
+                <a href="${dashboardBase}profile.html" class="btn btn-sm btn-gold" style="font-size: 0.75rem; padding: 8px; font-weight: 700;"><i class="ri-car-line"></i> My Garage</a>
+                <a href="${dashboardBase}bookings.html" class="btn btn-sm btn-outline" style="font-size: 0.75rem; padding: 8px;"><i class="ri-calendar-check-line"></i> Bookings</a>
               </div>
             </div>
             <button class="btn btn-sm btn-outline w-100 mobile-drawer-logout-btn" style="border-color: rgba(239,68,68,0.4); color: #f87171;">

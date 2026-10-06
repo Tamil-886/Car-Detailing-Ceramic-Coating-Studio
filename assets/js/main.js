@@ -42,7 +42,7 @@
     function syncSliderSizes() {
       sliders.forEach(slider => {
         const beforeImg = slider.querySelector('.ba-image-before-wrapper img, .img-before-wrapper img');
-        if (beforeImg) {
+        if (beforeImg && slider.offsetWidth > 0) {
           beforeImg.style.width = `${slider.offsetWidth}px`;
           beforeImg.style.maxWidth = `${slider.offsetWidth}px`;
           beforeImg.style.height = `${slider.offsetHeight}px`;
@@ -52,9 +52,21 @@
 
     syncSliderSizes();
     window.addEventListener('resize', syncSliderSizes);
-    setTimeout(syncSliderSizes, 200);
+    window.addEventListener('load', syncSliderSizes);
+    setTimeout(syncSliderSizes, 100);
+    setTimeout(syncSliderSizes, 400);
+
+    // Watch for size changes if container resized
+    if (window.ResizeObserver) {
+      const resizeObserver = new ResizeObserver(() => syncSliderSizes());
+      sliders.forEach(slider => resizeObserver.observe(slider));
+    }
 
     sliders.forEach(slider => {
+      const beforeImg = slider.querySelector('.ba-image-before-wrapper img, .img-before-wrapper img');
+      if (beforeImg) {
+        beforeImg.addEventListener('load', syncSliderSizes);
+      }
       const beforeWrapper = slider.querySelector('.ba-image-before-wrapper, .img-before-wrapper');
       const handle = slider.querySelector('.ba-slider-handle, .slider-handle');
       if (!beforeWrapper || !handle) return;

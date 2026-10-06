@@ -239,10 +239,11 @@
   flex-shrink: 0;
 }
 
-.bg-gold-subtle { background: rgba(212, 175, 55, 0.12); color: var(--primary-gold); }
-.bg-cyan-subtle { background: rgba(0, 229, 255, 0.12); color: var(--primary-cyan); }
-.bg-green-subtle { background: rgba(34, 197, 94, 0.12); color: #22c55e; }
-.bg-purple-subtle { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
+.bg-gold-subtle { background: var(--accent-gold-subtle); color: var(--primary-gold); }
+.bg-cyan-subtle { background: var(--accent-cyan-subtle); color: var(--primary-cyan); }
+.bg-emerald-subtle, .bg-green-subtle { background: var(--accent-emerald-subtle); color: var(--accent-emerald); }
+.bg-danger-subtle { background: var(--accent-red-subtle); color: var(--accent-red); }
+.bg-warning-subtle { background: var(--accent-warning-subtle); color: var(--accent-warning); }
 
 .stat-label {
   display: block;
