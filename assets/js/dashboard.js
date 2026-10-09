@@ -326,9 +326,25 @@
     var newPhone = phoneInput ? phoneInput.value.trim() : '';
     var newLoc = locInput ? locInput.value : '';
 
-    if (!newName) {
-      showToast('Please enter your name.', 'error');
+    var lettersInName = newName.replace(/[^a-zA-Z]/g, '');
+    if (!newName || newName.length < 2 || lettersInName.length < 2 || /\d/.test(newName) || !/^[a-zA-Z\s'\-\.]{2,60}$/.test(newName)) {
+      showToast('Please enter a valid full name (at least 2 letters, no numbers).', 'error');
+      if (nameInput) nameInput.focus();
       return false;
+    }
+
+    if (newPhone) {
+      if (/[a-zA-Z]/.test(newPhone)) {
+        showToast('Phone number cannot contain letters.', 'error');
+        if (phoneInput) phoneInput.focus();
+        return false;
+      }
+      var cleanedPhone = newPhone.replace(/[^0-9]/g, '');
+      if (cleanedPhone.length < 7 || cleanedPhone.length > 15) {
+        showToast('Please enter a valid phone number (7-15 digits).', 'error');
+        if (phoneInput) phoneInput.focus();
+        return false;
+      }
     }
 
     if (window.ApexAuth && window.ApexAuth.updateProfile) {

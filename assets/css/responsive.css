@@ -292,6 +292,7 @@ input, select, textarea {
 
   /* Grid Reductions on Tablet */
   .grid-4-col,
+  .team-grid,
   [style*="grid-template-columns: repeat(4, 1fr)"],
   [style*="grid-template-columns: repeat(4,1fr)"] {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -329,16 +330,28 @@ input, select, textarea {
   [style*="grid-template-columns: 300px 1fr"],
   [style*="grid-template-columns: 2fr 1fr"],
   [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns: 1.1fr 0.9fr"],
+  [style*="grid-template-columns: 0.9fr 1.1fr"],
   .cart-grid,
-  .payment-grid {
+  .payment-grid,
+  .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 36px !important;
   }
 
   .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px;
     text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+    max-width: 720px;
+    text-align: center;
+  }
+
+  .hero-content .badge {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-text-col {
@@ -363,6 +376,11 @@ input, select, textarea {
 
   .footer-highlights-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .science-highlights-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -501,7 +519,7 @@ input, select, textarea {
   }
 
   /* All 2-col, 3-col, 4-col grids collapse to 1 Column */
-  .grid-2-col, .grid-3-col, .grid-4-col,
+  .grid-2-col, .grid-3-col, .grid-4-col, .team-grid,
   [style*="grid-template-columns: repeat(2, 1fr)"],
   [style*="grid-template-columns: repeat(2,1fr)"],
   [style*="grid-template-columns: repeat(3, 1fr)"],
@@ -513,9 +531,53 @@ input, select, textarea {
     gap: 20px !important;
   }
 
+  /* Hero Section Mobile Adjustments */
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .hero-cta-group .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .hero-live-pill {
+    top: -12px !important;
+    right: 8px !important;
+    padding: 6px 12px !important;
+  }
+
+  .hero-live-pill-text {
+    font-size: 0.78rem !important;
+  }
+
   /* Sliders & Interactive Modules */
-  .ba-slider-container {
-    height: clamp(240px, 48vw, 360px);
+  .ba-slider-container,
+  .before-after-container {
+    height: clamp(240px, 48vw, 360px) !important;
+  }
+
+  .before-after-container .badge {
+    padding: 5px 10px !important;
+    font-size: 0.74rem !important;
+    gap: 5px !important;
+    max-width: calc(100% - 24px) !important;
+  }
+
+  .before-after-container .img-before-wrapper .badge {
+    top: 12px !important;
+    bottom: auto !important;
+    left: 12px !important;
+  }
+
+  .before-after-container > .badge-gold,
+  .before-after-container .badge.badge-gold,
+  .before-after-container > .badge-cyan,
+  .before-after-container .badge.badge-cyan {
+    bottom: 12px !important;
+    right: 12px !important;
   }
 
   .simulator-canvas {
@@ -595,6 +657,28 @@ input, select, textarea {
   .cart-item-price {
     min-width: auto;
     text-align: left;
+  }
+
+  .custom-dropdown-btn {
+    min-width: 120px;
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
+
+  .custom-dropdown.w-100 .custom-dropdown-btn {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 10px 14px !important;
+    font-size: 0.88rem !important;
+  }
+
+  .custom-dropdown-list {
+    max-width: calc(100vw - 32px);
+  }
+
+  .custom-dropdown.w-100 .custom-dropdown-list {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -757,6 +841,12 @@ input, select, textarea {
     padding: 18px 14px !important;
     margin: 10px auto;
   }
+
+  .team-card-img-wrap {
+    height: 240px !important;
+    min-height: 240px !important;
+    max-height: 240px !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -837,4 +927,61 @@ input, select, textarea {
   .glass-card {
     padding: 14px 12px;
   }
+
+  #btn-submit-booking {
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 0.88rem !important;
+    padding: 12px 14px !important;
+  }
+
+  .vip-portal-grid,
+  .contact-cards-grid,
+  .contact-main-grid,
+  .dashboard-split-grid,
+  .dashboard-grid-2-col {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .form-row-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .map-telemetry-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .map-location-tabs {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    border-radius: 14px !important;
+    gap: 6px !important;
+    padding: 6px !important;
+  }
+
+  .map-tab-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    font-size: 0.80rem !important;
+    padding: 8px 10px !important;
+  }
+
+  .telemetry-row {
+    grid-template-columns: 1fr !important;
+    padding: 12px 10px !important;
+    gap: 12px !important;
+  }
+
+  .gauge-label {
+    align-items: baseline !important;
+    font-size: 0.72rem !important;
+  }
 }
+
+

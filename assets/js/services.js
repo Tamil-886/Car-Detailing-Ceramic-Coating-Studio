@@ -1602,6 +1602,7 @@
     activeSortBy = 'popular';
 
     document.querySelectorAll('.category-filter-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-cat') === 'all'));
+    
     const vehSelect = document.getElementById('filter-vehicle-type');
     const priceSelect = document.getElementById('filter-price-range');
     const sortSelect = document.getElementById('filter-sort-by');
@@ -1609,8 +1610,81 @@
     if (priceSelect) priceSelect.value = 'all';
     if (sortSelect) sortSelect.value = 'popular';
 
+    // Reset Custom Dropdown UI Labels and Selected States
+    const vehDd = document.getElementById('dropdown-filter-vehicle-type');
+    if (vehDd) {
+      const lbl = vehDd.querySelector('.custom-dropdown-label');
+      if (lbl) lbl.textContent = 'All Vehicles';
+      vehDd.querySelectorAll('.custom-dropdown-option').forEach(o => o.classList.toggle('selected', o.getAttribute('data-value') === 'all'));
+    }
+
+    const priceDd = document.getElementById('dropdown-filter-price-range');
+    if (priceDd) {
+      const lbl = priceDd.querySelector('.custom-dropdown-label');
+      if (lbl) lbl.textContent = 'All Prices';
+      priceDd.querySelectorAll('.custom-dropdown-option').forEach(o => o.classList.toggle('selected', o.getAttribute('data-value') === 'all'));
+    }
+
+    const sortDd = document.getElementById('dropdown-filter-sort-by');
+    if (sortDd) {
+      const lbl = sortDd.querySelector('.custom-dropdown-label');
+      if (lbl) lbl.textContent = 'Most Popular';
+      sortDd.querySelectorAll('.custom-dropdown-option').forEach(o => o.classList.toggle('selected', o.getAttribute('data-value') === 'popular'));
+    }
+
     renderAllServices();
   };
+
+  /**
+   * Initializes custom luxury dropdown components & synchronization with selects
+   */
+  function initCustomDropdowns() {
+    const dropdowns = document.querySelectorAll('.custom-dropdown');
+    dropdowns.forEach(dropdown => {
+      const btn = dropdown.querySelector('.custom-dropdown-btn');
+      const label = dropdown.querySelector('.custom-dropdown-label');
+      const options = dropdown.querySelectorAll('.custom-dropdown-option');
+      const select = dropdown.querySelector('select');
+
+      if (!btn || !select) return;
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.contains('open');
+        dropdowns.forEach(d => d.classList.remove('open'));
+        if (!isOpen) {
+          dropdown.classList.add('open');
+        }
+      });
+
+      options.forEach(opt => {
+        opt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const val = opt.getAttribute('data-value');
+          select.value = val;
+          if (label) {
+            label.textContent = opt.textContent.trim();
+          }
+          options.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          dropdown.classList.remove('open');
+
+          // Trigger change event to trigger existing filtering logic
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+      });
+    });
+
+    document.addEventListener('click', () => {
+      dropdowns.forEach(d => d.classList.remove('open'));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdowns.forEach(d => d.classList.remove('open'));
+      }
+    });
+  }
 
   function initFilterListeners() {
     // 1. Category Filter Tabs
@@ -1679,6 +1753,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     updateSizePills();
     renderAllServices();
+    initCustomDropdowns();
     initFilterListeners();
   });
 })();

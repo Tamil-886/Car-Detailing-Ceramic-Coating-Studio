@@ -316,12 +316,22 @@
       }
 
       // 7. Full Name
-      if (!nameInput || !nameInput.value.trim()) {
+      const nameVal = nameInput ? nameInput.value.trim() : '';
+      const lettersInName = nameVal.replace(/[^a-zA-Z]/g, '');
+      if (!nameInput || !nameVal) {
         showFieldError(nameInput, 'Please enter your full name.');
         valid = false;
         if (!firstInvalidEl) firstInvalidEl = nameInput;
-      } else if (nameInput.value.trim().length < 2) {
-        showFieldError(nameInput, 'Name must be at least 2 characters.');
+      } else if (nameVal.length < 2 || lettersInName.length < 2) {
+        showFieldError(nameInput, 'Name must contain at least 2 letters.');
+        valid = false;
+        if (!firstInvalidEl) firstInvalidEl = nameInput;
+      } else if (/\d/.test(nameVal)) {
+        showFieldError(nameInput, 'Name cannot contain numbers or digits.');
+        valid = false;
+        if (!firstInvalidEl) firstInvalidEl = nameInput;
+      } else if (!/^[a-zA-Z\s'\-\.]{2,60}$/.test(nameVal)) {
+        showFieldError(nameInput, 'Please enter a valid full name (letters only).');
         valid = false;
         if (!firstInvalidEl) firstInvalidEl = nameInput;
       } else {
@@ -329,12 +339,17 @@
       }
 
       // 8. Phone Number
-      if (!phoneInput || !phoneInput.value.trim()) {
+      const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+      if (!phoneInput || !phoneVal) {
         showFieldError(phoneInput, 'Please enter your phone number.');
         valid = false;
         if (!firstInvalidEl) firstInvalidEl = phoneInput;
+      } else if (/[a-zA-Z]/.test(phoneVal)) {
+        showFieldError(phoneInput, 'Phone number cannot contain letters.');
+        valid = false;
+        if (!firstInvalidEl) firstInvalidEl = phoneInput;
       } else {
-        const cleanedPhone = phoneInput.value.replace(/[^0-9]/g, '');
+        const cleanedPhone = phoneVal.replace(/[^0-9]/g, '');
         if (cleanedPhone.length < 7 || cleanedPhone.length > 15) {
           showFieldError(phoneInput, 'Please enter a valid phone number (7-15 digits).');
           valid = false;
@@ -345,13 +360,14 @@
       }
 
       // 9. Email Address
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailInput || !emailInput.value.trim()) {
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+      const emailStrictRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailInput || !emailVal) {
         showFieldError(emailInput, 'Please enter your email address.');
         valid = false;
         if (!firstInvalidEl) firstInvalidEl = emailInput;
-      } else if (!emailRegex.test(emailInput.value.trim())) {
-        showFieldError(emailInput, 'Please enter a valid email address (e.g. name@domain.com).');
+      } else if (!emailStrictRegex.test(emailVal)) {
+        showFieldError(emailInput, 'Please enter a valid email address with a domain (e.g. name@domain.com).');
         valid = false;
         if (!firstInvalidEl) firstInvalidEl = emailInput;
       } else {

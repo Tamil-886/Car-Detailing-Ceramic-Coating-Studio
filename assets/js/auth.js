@@ -122,12 +122,31 @@
     const { name, email, phone, password, confirmPassword, vehicle, plate, terms } = formData;
 
     // Field-level validations
-    if (!name || name.trim().length < 2) {
-      return { success: false, field: 'name', message: 'Please enter your full legal name (at least 2 characters).' };
+    const nameVal = name ? name.trim() : '';
+    const lettersInName = nameVal.replace(/[^a-zA-Z]/g, '');
+    if (!name || nameVal.length < 2 || lettersInName.length < 2) {
+      return { success: false, field: 'name', message: 'Please enter your full legal name (at least 2 letters).' };
+    }
+    if (/\d/.test(nameVal)) {
+      return { success: false, field: 'name', message: 'Full name cannot contain numbers or digits.' };
+    }
+    if (!/^[a-zA-Z\s'\-\.]{2,60}$/.test(nameVal)) {
+      return { success: false, field: 'name', message: 'Full name can only contain letters, spaces, hyphens, and apostrophes.' };
     }
 
     if (!email || !validateEmailFormat(email)) {
       return { success: false, field: 'email', message: 'Please provide a valid email address (e.g. name@domain.com).' };
+    }
+
+    if (phone && phone.trim()) {
+      const phoneVal = phone.trim();
+      if (/[a-zA-Z]/.test(phoneVal)) {
+        return { success: false, field: 'phone', message: 'Phone number cannot contain letters.' };
+      }
+      const cleanedPhone = phoneVal.replace(/[^0-9]/g, '');
+      if (cleanedPhone.length < 7 || cleanedPhone.length > 15) {
+        return { success: false, field: 'phone', message: 'Please enter a valid phone number (7-15 digits).' };
+      }
     }
 
     if (!password || password.length < 6) {

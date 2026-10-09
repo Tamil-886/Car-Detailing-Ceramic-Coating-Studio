@@ -100,7 +100,6 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html" class="active">All 20 Services</a></li>
                 <li><a href="packages.html">Packages & Pricing</a></li>
-                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
                 <li><a href="before-after.html">Before & After Sliders</a></li>
                 <li><a href="gallery.html">Showroom Gallery</a></li>
                 <li><a href="dashboard/index.html">Customer Dashboard</a></li>
@@ -150,43 +149,83 @@
                 </div>
 
                 <!-- Secondary Filter Selects -->
-                <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
                     
                     <!-- Vehicle Type Filter -->
-                    <div style="display: flex; align-items: center; gap: 6px;">
-                        <label for="filter-vehicle-type" style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Vehicle:</label>
-                        <select id="filter-vehicle-type" class="form-control" style="font-size: 0.85rem; padding: 6px 12px; width: auto;">
-                            <option value="all" selected>All Vehicles</option>
-                            <option value="hatchback">Hatchback</option>
-                            <option value="sedan">Sedan</option>
-                            <option value="suv">SUV</option>
-                            <option value="luxury">Luxury</option>
-                            <option value="sports">Sports / Exotic</option>
-                        </select>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.3px;">Vehicle:</span>
+                        <div class="custom-dropdown" id="dropdown-filter-vehicle-type">
+                            <button type="button" class="custom-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" title="Select Vehicle Size">
+                                <span class="custom-dropdown-label">All Vehicles</span>
+                                <i class="ri-arrow-down-s-line custom-dropdown-icon"></i>
+                            </button>
+                            <ul class="custom-dropdown-list" role="listbox">
+                                <li class="custom-dropdown-option selected" data-value="all"><i class="ri-car-line"></i> All Vehicles</li>
+                                <li class="custom-dropdown-option" data-value="hatchback"><i class="ri-car-fill"></i> Hatchback</li>
+                                <li class="custom-dropdown-option" data-value="sedan"><i class="ri-car-line"></i> Sedan</li>
+                                <li class="custom-dropdown-option" data-value="suv"><i class="ri-roadster-line"></i> SUV</li>
+                                <li class="custom-dropdown-option" data-value="luxury"><i class="ri-vip-diamond-line"></i> Luxury</li>
+                                <li class="custom-dropdown-option" data-value="sports"><i class="ri-flashlight-line"></i> Sports / Exotic</li>
+                            </ul>
+                            <select id="filter-vehicle-type" class="filter-select" style="display:none;">
+                                <option value="all" selected>All Vehicles</option>
+                                <option value="hatchback">Hatchback</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="luxury">Luxury</option>
+                                <option value="sports">Sports / Exotic</option>
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Price Range Filter -->
-                    <div style="display: flex; align-items: center; gap: 6px;">
-                        <label for="filter-price-range" style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Price:</label>
-                        <select id="filter-price-range" class="form-control" style="font-size: 0.85rem; padding: 6px 12px; width: auto;">
-                            <option value="all" selected>All Prices</option>
-                            <option value="under-2000">Under ₹2,000</option>
-                            <option value="2000-5000">₹2,000 – ₹5,000</option>
-                            <option value="5000-10000">₹5,000 – ₹10,000</option>
-                            <option value="above-10000">₹10,000+</option>
-                        </select>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.3px;">Price:</span>
+                        <div class="custom-dropdown" id="dropdown-filter-price-range">
+                            <button type="button" class="custom-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" title="Filter by Price Range">
+                                <span class="custom-dropdown-label">All Prices</span>
+                                <i class="ri-arrow-down-s-line custom-dropdown-icon"></i>
+                            </button>
+                            <ul class="custom-dropdown-list" role="listbox">
+                                <li class="custom-dropdown-option selected" data-value="all"><i class="ri-price-tag-3-line"></i> All Prices</li>
+                                <li class="custom-dropdown-option" data-value="under-2000"><i class="ri-money-dollar-circle-line"></i> Under ₹2,000</li>
+                                <li class="custom-dropdown-option" data-value="2000-5000"><i class="ri-money-dollar-circle-line"></i> ₹2,000 – ₹5,000</li>
+                                <li class="custom-dropdown-option" data-value="5000-10000"><i class="ri-money-dollar-circle-line"></i> ₹5,000 – ₹10,000</li>
+                                <li class="custom-dropdown-option" data-value="above-10000"><i class="ri-money-dollar-circle-line"></i> ₹10,000+</li>
+                            </ul>
+                            <select id="filter-price-range" class="filter-select" style="display:none;">
+                                <option value="all" selected>All Prices</option>
+                                <option value="under-2000">Under ₹2,000</option>
+                                <option value="2000-5000">₹2,000 – ₹5,000</option>
+                                <option value="5000-10000">₹5,000 – ₹10,000</option>
+                                <option value="above-10000">₹10,000+</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <!-- Sort By -->
-                    <div style="display: flex; align-items: center; gap: 6px;">
-                        <label for="filter-sort-by" style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Sort:</label>
-                        <select id="filter-sort-by" class="form-control" style="font-size: 0.85rem; padding: 6px 12px; width: auto;">
-                            <option value="popular" selected>Most Popular</option>
-                            <option value="rating">Highest Rated</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="newest">Newest Services</option>
-                        </select>
+                    <!-- Sort By Filter -->
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.3px;">Sort:</span>
+                        <div class="custom-dropdown" id="dropdown-filter-sort-by">
+                            <button type="button" class="custom-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" title="Sort Services">
+                                <span class="custom-dropdown-label">Most Popular</span>
+                                <i class="ri-arrow-down-s-line custom-dropdown-icon"></i>
+                            </button>
+                            <ul class="custom-dropdown-list" role="listbox">
+                                <li class="custom-dropdown-option selected" data-value="popular"><i class="ri-fire-line"></i> Most Popular</li>
+                                <li class="custom-dropdown-option" data-value="rating"><i class="ri-star-fill text-gold"></i> Highest Rated</li>
+                                <li class="custom-dropdown-option" data-value="price-low"><i class="ri-sort-asc"></i> Price: Low to High</li>
+                                <li class="custom-dropdown-option" data-value="price-high"><i class="ri-sort-desc"></i> Price: High to Low</li>
+                                <li class="custom-dropdown-option" data-value="newest"><i class="ri-sparkling-fill text-cyan"></i> Newest Services</li>
+                            </ul>
+                            <select id="filter-sort-by" class="filter-select" style="display:none;">
+                                <option value="popular" selected>Most Popular</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest Services</option>
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Reset Button -->

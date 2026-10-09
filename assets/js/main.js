@@ -188,6 +188,61 @@
     });
   }
 
+  // 6. Universal Custom Luxury Dropdowns Handler
+  function initCustomDropdowns() {
+    const dropdowns = document.querySelectorAll('.custom-dropdown');
+    dropdowns.forEach(dropdown => {
+      if (dropdown.dataset.initialized === 'true') return;
+      dropdown.dataset.initialized = 'true';
+
+      const btn = dropdown.querySelector('.custom-dropdown-btn');
+      const label = dropdown.querySelector('.custom-dropdown-label');
+      const options = dropdown.querySelectorAll('.custom-dropdown-option');
+      const select = dropdown.querySelector('select');
+
+      if (!btn) return;
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.contains('open');
+        document.querySelectorAll('.custom-dropdown').forEach(d => {
+          if (d !== dropdown) d.classList.remove('open');
+        });
+        dropdown.classList.toggle('open', !isOpen);
+      });
+
+      options.forEach(opt => {
+        opt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const val = opt.getAttribute('data-value');
+          if (select) {
+            select.value = val;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+            select.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+          if (label) {
+            label.textContent = opt.textContent.trim();
+          }
+          options.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          dropdown.classList.remove('open');
+        });
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.custom-dropdown')) {
+        document.querySelectorAll('.custom-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.custom-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  }
+
   // Expose
   window.showToast = showToast;
   window.ApexNotifications = {
@@ -197,6 +252,7 @@
   };
   window.initBeforeAfterSliders = initBeforeAfterSliders;
   window.initBookingPrefill = initBookingPrefill;
+  window.initCustomDropdowns = initCustomDropdowns;
 
   // Initialize
   document.addEventListener('DOMContentLoaded', () => {
@@ -204,5 +260,6 @@
     initCounters();
     initFaqs();
     initBookingPrefill();
+    initCustomDropdowns();
   });
 })();

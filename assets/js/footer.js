@@ -147,9 +147,9 @@
 
                     <div class="footer-newsletter">
                         <span class="newsletter-label">Studio Journal Newsletter</span>
-                        <form class="footer-newsletter-form" onsubmit="event.preventDefault(); if(window.showToast) { window.showToast('Thank you for subscribing to Apex Obsidian Journals!'); } this.reset();">
+                        <form class="footer-newsletter-form" onsubmit="event.preventDefault(); var email = this.querySelector('input[type=email]').value.trim(); if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) { if (window.ApexNotifications) { window.ApexNotifications.show('Please provide a valid email address (e.g. name@domain.com).', 'error'); } else if (window.showToast) { window.showToast('Please provide a valid email address (e.g. name@domain.com).', 'error'); } return; } if(window.ApexNotifications) { window.ApexNotifications.show('Thank you for subscribing to Apex Obsidian Journals!', 'success'); } else if (window.showToast) { window.showToast('Thank you for subscribing to Apex Obsidian Journals!', 'success'); } this.reset();">
                             <div class="newsletter-input-group">
-                                <input type="email" placeholder="Enter your email" required class="form-control newsletter-input">
+                                <input type="email" placeholder="Enter your email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address with a domain (e.g. name@domain.com)" class="form-control newsletter-input">
                                 <button type="submit" class="btn btn-gold btn-sm newsletter-btn" title="Subscribe"><i class="ri-send-plane-fill"></i></button>
                             </div>
                         </form>

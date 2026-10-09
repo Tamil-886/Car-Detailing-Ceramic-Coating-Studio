@@ -816,3 +816,31 @@
   font-size: 0.75rem;
   color: var(--text-muted);
 }
+
+/* Mobile & 360px Telemetry Readout Alignment */
+@media (max-width: 576px) {
+  .telemetry-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    padding: 14px 12px !important;
+  }
+  .stage-buttons {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+  }
+  .stage-btn {
+    padding: 10px 6px !important;
+  }
+  .stage-btn-num {
+    font-size: 0.65rem !important;
+  }
+  .stage-btn-title {
+    font-size: 0.74rem !important;
+  }
+  .gauge-label {
+    font-size: 0.72rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+  }
+}

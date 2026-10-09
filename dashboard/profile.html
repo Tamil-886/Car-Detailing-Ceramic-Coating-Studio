@@ -170,10 +170,10 @@
                     <h3 style="font-size: 1.25rem; margin-bottom: 20px;">Personal & Concierge Contact</h3>
 
                     <form id="apex-profile-edit-form" onsubmit="handleProfileUpdate(event)">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div class="form-row-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                             <div>
                                 <label class="form-label" for="profile-name">Full Legal Name</label>
-                                <input type="text" id="profile-name" class="form-control" value="Alexander Vance" required>
+                                <input type="text" id="profile-name" class="form-control" value="Alexander Vance" required minlength="2" maxlength="60" pattern="^[a-zA-Z\s'\-\.]{2,60}$" title="Please enter a valid full name (at least 2 letters, no numbers)">
                             </div>
                             <div>
                                 <label class="form-label" for="profile-email">Email Address</label>
@@ -181,10 +181,10 @@
                             </div>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div class="form-row-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                             <div>
                                 <label class="form-label" for="profile-phone">Primary Concierge Phone</label>
-                                <input type="tel" id="profile-phone" class="form-control" value="+1 (310) 555-0192">
+                                <input type="tel" id="profile-phone" class="form-control" value="+1 (310) 555-0192" pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]{6,15}$" title="Please enter a valid phone number (7-15 digits, no letters)">
                             </div>
                             <div>
                                 <label class="form-label" for="profile-location">Default Studio Location</label>

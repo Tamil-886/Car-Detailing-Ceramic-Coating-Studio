@@ -73,7 +73,7 @@
                         <label class="form-label" for="login-email">Email Address</label>
                         <div class="auth-input-wrapper">
                             <i class="ri-mail-line input-icon"></i>
-                            <input type="email" id="login-email" name="email" class="form-control" placeholder="name@example.com" required autocomplete="email">
+                            <input type="email" id="login-email" name="email" class="form-control" placeholder="name@example.com" required autocomplete="email" pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address with a domain (e.g. name@domain.com)">
                         </div>
                         <span id="email-error-msg" class="field-error-msg" style="display: none;"></span>
                     </div>
@@ -104,6 +104,23 @@
                     <button type="submit" id="login-btn" class="btn btn-gold w-100" style="padding: 13px; font-weight: 700;">
                         <i class="ri-login-box-line"></i> Sign In
                     </button>
+
+                    <!-- Social Login Divider -->
+                    <div class="auth-divider">
+                        <span>OR SIGN IN WITH</span>
+                    </div>
+
+                    <!-- Social Login Buttons -->
+                    <div class="auth-social-grid">
+                        <button type="button" class="btn-social-auth" onclick="handleSocialLogin('Google')" title="Sign in with Google">
+                            <i class="ri-google-fill social-icon-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="btn-social-auth" onclick="handleSocialLogin('Apple')" title="Sign in with Apple">
+                            <i class="ri-apple-fill social-icon-apple"></i>
+                            <span>Apple</span>
+                        </button>
+                    </div>
                 </form>
 
                 <!-- Footer Link to Register -->
@@ -194,7 +211,7 @@
                 showFieldError('login-email', 'email-error-msg', 'Please enter your email address.');
                 hasError = true;
             } else if (!ApexAuth.validateEmail(email)) {
-                showFieldError('login-email', 'email-error-msg', 'Please enter a valid email format.');
+                showFieldError('login-email', 'email-error-msg', 'Please enter a valid email address with a domain (e.g. name@domain.com).');
                 hasError = true;
             }
 
@@ -229,6 +246,16 @@
                     window.location.href = redirectUrl;
                 }, 500);
             }, 500);
+        }
+
+        function handleSocialLogin(provider) {
+            showAlert(`Connecting to ${provider} Single Sign-On...`, 'info');
+            setTimeout(() => {
+                showAlert(`Successfully authenticated via ${provider}! Redirecting to dashboard...`, 'success');
+                setTimeout(() => {
+                    window.location.href = 'dashboard/index.html';
+                }, 800);
+            }, 700);
         }
     </script>
 </body>

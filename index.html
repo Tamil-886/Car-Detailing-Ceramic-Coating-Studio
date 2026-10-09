@@ -104,7 +104,6 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">All 20 Services</a></li>
                 <li><a href="packages.html">Packages & Pricing</a></li>
-                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
                 <li><a href="before-after.html">Before & After Sliders</a></li>
                 <li><a href="gallery.html">Showroom Gallery</a></li>
                 <li><a href="dashboard/index.html">Customer Dashboard</a></li>
@@ -122,8 +121,8 @@
         <div class="hero-glow hero-glow-1"></div>
         <div class="hero-glow hero-glow-2"></div>
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center;">
-                <div class="hero-content" style="z-index: 2;">
+            <div class="hero-grid">
+                <div class="hero-content">
                     <div class="badge badge-gold" style="margin-bottom: 20px;">
                         <i class="ri-shield-flash-line"></i> Bespoke Automotive Surface Protection
                     </div>
@@ -134,11 +133,11 @@
                     <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 540px; margin-bottom: 35px; line-height: 1.7;">
                         Enter an ISO Class 10,000 cleanroom detailing lab engineered for supercars, exotics, and luxury daily drivers. Multi-stage optical paint correction and 10H nanoceramic glass matrices.
                     </p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
+                    <div class="hero-cta-group">
                         <a href="#booking-section" class="btn btn-gold btn-lg"><i class="ri-calendar-fill"></i> Instant Bay Booking</a>
                         <a href="before-after.html" class="btn btn-outline btn-lg"><i class="ri-sparkling-fill"></i> View Transformation</a>
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 1px solid var(--border-color); padding-top: 25px;">
+                    <div class="hero-stats-row">
                         <div>
                             <h3 class="stat-number text-gold" data-target="99.8" data-suffix=" GU">99.8 GU</h3>
                             <p style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Peak Optical Gloss</p>
@@ -154,25 +153,15 @@
                     </div>
                 </div>
 
-                <div class="hero-visual" style="position: relative; z-index: 2;">
-                    <div class="glass-card" style="padding: 10px; border-radius: 20px; box-shadow: 0 30px 70px rgba(0,0,0,0.6); position: relative;">
-                        <!-- Interactive Hero Before/After -->
-                        <div class="before-after-container" style="height: 380px; border-radius: 16px;">
-                            <img src="assets/images/before-after/swirl-after.jpg" alt="Obsidian 10H Ceramic Coated Paint Correction" class="img-after">
-                            <div class="img-before-wrapper" style="width: 50%;">
-                                <img src="assets/images/before-after/swirl-before.jpg" alt="Pre-Correction Swirled Paint Scangrip Inspection">
-                                <span class="badge"><i class="ri-close-circle-fill"></i> Before: 64.2 GU Swirled</span>
-                            </div>
-                            <span class="badge badge-gold"><i class="ri-checkbox-circle-fill"></i> After: 99.8 GU 10H Ceramic</span>
-                            <div class="slider-handle" style="left: 50%;">
-                                <i class="ri-arrow-left-right-line"></i>
-                            </div>
+                <div class="hero-visual">
+                    <!-- Pure Styled Before/After Picture Visual -->
+                    <div class="before-after-container hero-before-after" style="height: 420px; border-radius: 20px; box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 35px rgba(212,175,55,0.15); border: 1px solid rgba(255,255,255,0.12);">
+                        <img src="assets/images/before-after/swirl-after.jpg" alt="Obsidian 10H Ceramic Coated Paint Correction" class="img-after">
+                        <div class="img-before-wrapper" style="width: 50%;">
+                            <img src="assets/images/before-after/swirl-before.jpg" alt="Pre-Correction Swirled Paint Scangrip Inspection">
                         </div>
-
-                        <!-- Floating Live Bay Pill -->
-                        <div class="hero-live-pill" style="position: absolute; top: -15px; right: -10px; backdrop-filter: blur(10px); border: 1px solid var(--primary-gold); padding: 10px 18px; border-radius: 30px; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                            <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 10px #22c55e; display: inline-block;"></span>
-                            <span class="hero-live-pill-text" style="font-size: 0.85rem; font-weight: 600;">Bay 02: 911 GT3 RS Curing</span>
+                        <div class="slider-handle" style="left: 50%;">
+                            <i class="ri-arrow-left-right-line"></i>
                         </div>
                     </div>
                 </div>
@@ -382,27 +371,27 @@
             </div>
 
             <!-- Detailing Science Feature Highlights -->
-            <div class="glass-card" style="padding: 35px; border-radius: 20px; border-color: rgba(212,175,55,0.25);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; align-items: center;">
-                    <div style="display: flex; gap: 15px; align-items: flex-start;">
-                        <div style="font-size: 1.8rem; color: var(--primary-gold); line-height: 1;"><i class="ri-drop-fill"></i></div>
-                        <div>
-                            <h4 style="font-size: 1rem; margin-bottom: 4px;">118° Hydrophobic Contact</h4>
-                            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.5;">Extreme water repellency causes rain and road grime to sheet off instantly at highway speeds.</p>
+            <div class="glass-card feature-highlights-strip" style="padding: 26px 32px; border-radius: 20px; border-color: rgba(212,175,55,0.25);">
+                <div class="science-highlights-grid">
+                    <div class="science-highlight-item">
+                        <div class="science-highlight-icon text-gold"><i class="ri-drop-fill"></i></div>
+                        <div class="science-highlight-content">
+                            <h4>118° Hydrophobic Contact:</h4>
+                            <p>Extreme water repellency causes rain and road grime to sheet off instantly at highway speeds.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 15px; align-items: flex-start;">
-                        <div style="font-size: 1.8rem; color: var(--primary-cyan); line-height: 1;"><i class="ri-flashlight-fill"></i></div>
-                        <div>
-                            <h4 style="font-size: 1rem; margin-bottom: 4px;">96 CRI Optical Scangrip</h4>
-                            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.5;">True daylight simulation reveals defects invisible under ordinary showroom and garage lighting.</p>
+                    <div class="science-highlight-item">
+                        <div class="science-highlight-icon text-cyan"><i class="ri-flashlight-fill"></i></div>
+                        <div class="science-highlight-content">
+                            <h4>96 CRI Optical Scangrip:</h4>
+                            <p>True daylight simulation reveals defects invisible under ordinary showroom and garage lighting.</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 15px; align-items: flex-start;">
-                        <div style="font-size: 1.8rem; color: var(--primary-gold); line-height: 1;"><i class="ri-shield-check-fill"></i></div>
-                        <div>
-                            <h4 style="font-size: 1rem; margin-bottom: 4px;">7-Year Transferable Warranty</h4>
-                            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.5;">Registered digital certificate increases vehicle resale value and includes annual maintenance audits.</p>
+                    <div class="science-highlight-item">
+                        <div class="science-highlight-icon text-gold"><i class="ri-shield-check-fill"></i></div>
+                        <div class="science-highlight-content">
+                            <h4>7-Year Transferable Warranty:</h4>
+                            <p>Registered digital certificate increases vehicle resale value and includes annual maintenance audits.</p>
                         </div>
                     </div>
                 </div>
@@ -451,14 +440,12 @@
                 </div>
 
                 <div>
-                    <div class="glass-card" style="padding: 12px; border-radius: 20px;">
-                        <div class="before-after-container" style="height: 420px; border-radius: 14px;">
+                    <div class="glass-card" style="padding: 10px; border-radius: 22px;">
+                        <div class="before-after-container" style="height: 390px; border-radius: 16px;">
                             <img src="assets/images/before-after/beading-after.jpg" alt="10H Ceramic Coating Hydrophobic Water Beading" class="img-after">
                             <div class="img-before-wrapper" style="width: 50%;">
                                  <img src="assets/images/before-after/beading-before.jpg" alt="Unprotected Paint Flat Water Sheeting">
-                                 <span class="badge"><i class="ri-close-circle-fill"></i> Before: Flat Sheeting (38°)</span>
                             </div>
-                            <span class="badge badge-gold"><i class="ri-checkbox-circle-fill"></i> After: 118° Hydrophobic Beads</span>
                             <div class="slider-handle" style="left: 50%;">
                                 <i class="ri-arrow-left-right-line"></i>
                             </div>
@@ -569,7 +556,7 @@
     <!-- Real-Time Customer Dashboard Preview Section -->
     <section class="section" style="background: radial-gradient(circle at center, rgba(212,175,55,0.05) 0%, transparent 70%), var(--bg-primary);">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center;">
+            <div class="vip-portal-grid">
                 <div>
                     <span class="badge badge-cyan"><i class="ri-dashboard-3-line"></i> VIP Client Portal</span>
                     <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-top: 10px; margin-bottom: 20px;">
@@ -729,17 +716,17 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;">
                         <div>
                             <label class="form-label" for="booking_client_name">Full Name *</label>
-                            <input type="text" class="form-control" name="client_name" id="booking_client_name" placeholder="Alexander Vance" required>
+                            <input type="text" class="form-control" name="client_name" id="booking_client_name" placeholder="Alexander Vance" required minlength="2" maxlength="60" pattern="^[a-zA-Z\s'\-\.]{2,60}$" title="Please enter a valid full name (at least 2 letters, no numbers)">
                             <span class="field-error-msg" id="err-name" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;"></span>
                         </div>
                         <div>
                             <label class="form-label" for="booking_client_phone">Phone Number *</label>
-                            <input type="tel" class="form-control" name="client_phone" id="booking_client_phone" placeholder="+1 (310) 555-0192" required>
+                            <input type="tel" class="form-control" name="client_phone" id="booking_client_phone" placeholder="+1 (310) 555-0192" required pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]{6,15}$" title="Please enter a valid phone number (7-15 digits, no letters)">
                             <span class="field-error-msg" id="err-phone" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;"></span>
                         </div>
                         <div>
                             <label class="form-label" for="booking_client_email">Email Address *</label>
-                            <input type="email" class="form-control" name="client_email" id="booking_client_email" placeholder="vance@exoticmotors.com" required>
+                            <input type="email" class="form-control" name="client_email" id="booking_client_email" placeholder="vance@exoticmotors.com" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address with a domain (e.g. name@domain.com)">
                             <span class="field-error-msg" id="err-email" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;"></span>
                         </div>
                     </div>

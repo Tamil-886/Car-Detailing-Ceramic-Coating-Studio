@@ -208,6 +208,16 @@ html[data-theme="light"] .mobile-toggle:hover {
   color: #b45309 !important;
 }
 
+/* Theme Toggle Icons Strict Light Mode */
+html.light .theme-icon-light,
+html[data-theme="light"] .theme-icon-light {
+  display: none !important;
+}
+html.light .theme-icon-dark,
+html[data-theme="light"] .theme-icon-dark {
+  display: inline-flex !important;
+}
+
 /* User Auth Badge & Profile Dropdown in Header */
 html.light .user-welcome-chip,
 html[data-theme="light"] .user-welcome-chip {
@@ -533,23 +543,46 @@ html.light input,
 html.light select,
 html.light textarea,
 html.light .form-control,
+html.light .filter-select,
 html[data-theme="light"] input,
 html[data-theme="light"] select,
 html[data-theme="light"] textarea,
-html[data-theme="light"] .form-control {
+html[data-theme="light"] .form-control,
+html[data-theme="light"] .filter-select {
   background-color: #ffffff !important;
   color: #0f172a !important;
   border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html.light select,
+html.light select.form-control,
+html.light .filter-select,
+html[data-theme="light"] select,
+html[data-theme="light"] select.form-control,
+html[data-theme="light"] .filter-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='%23b45309'%3E%3Cpath d='M12 15l-4.243-4.242 1.415-1.414L12 12.172l2.828-2.828 1.415 1.414z'/%3E%3C/svg%3E") !important;
+}
+
+html.light select option,
+html.light select.form-control option,
+html.light .filter-select option,
+html[data-theme="light"] select option,
+html[data-theme="light"] select.form-control option,
+html[data-theme="light"] .filter-select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 html.light input:focus,
 html.light select:focus,
 html.light textarea:focus,
 html.light .form-control:focus,
+html.light .filter-select:focus,
 html[data-theme="light"] input:focus,
 html[data-theme="light"] select:focus,
 html[data-theme="light"] textarea:focus,
-html[data-theme="light"] .form-control:focus {
+html[data-theme="light"] .form-control:focus,
+html[data-theme="light"] .filter-select:focus {
   border-color: #b45309 !important;
   box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15) !important;
 }
@@ -559,6 +592,50 @@ html.light textarea::placeholder,
 html[data-theme="light"] input::placeholder,
 html[data-theme="light"] textarea::placeholder {
   color: #94a3b8 !important;
+}
+
+/* Light Mode Custom Dropdown */
+html.light .custom-dropdown-btn,
+html[data-theme="light"] .custom-dropdown-btn {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html.light .custom-dropdown-btn:hover,
+html[data-theme="light"] .custom-dropdown-btn:hover {
+  background: #f8fafc !important;
+  border-color: #b45309 !important;
+}
+
+html.light .custom-dropdown.open .custom-dropdown-btn,
+html[data-theme="light"] .custom-dropdown.open .custom-dropdown-btn {
+  border-color: #b45309 !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15) !important;
+}
+
+html.light .custom-dropdown-list,
+html[data-theme="light"] .custom-dropdown-list {
+  background: #ffffff !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light .custom-dropdown-option,
+html[data-theme="light"] .custom-dropdown-option {
+  color: #334155 !important;
+}
+
+html.light .custom-dropdown-option:hover,
+html[data-theme="light"] .custom-dropdown-option:hover {
+  color: #0f172a !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .custom-dropdown-option.selected,
+html[data-theme="light"] .custom-dropdown-option.selected {
+  color: #b45309 !important;
+  background: rgba(217, 119, 6, 0.08) !important;
 }
 
 /* Alerts */
@@ -1746,3 +1823,134 @@ html[data-theme="light"] .service-rating-badge {
   border-color: rgba(255, 255, 255, 0.25) !important;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
 }
+
+/* Light Mode Map Section & Studio Cleanroom Telemetry Panel */
+html.light .map-info-panel,
+html[data-theme="light"] .map-info-panel {
+  background: #f8fafc !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .map-info-panel #loc-title,
+html[data-theme="light"] .map-info-panel #loc-title {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light .map-address-box,
+html[data-theme="light"] .map-address-box,
+html.light .map-telemetry-box,
+html[data-theme="light"] .map-telemetry-box {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light #loc-addr-line1,
+html[data-theme="light"] #loc-addr-line1 {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light #loc-addr-line2,
+html[data-theme="light"] #loc-addr-line2 {
+  color: #475569 !important;
+}
+
+html.light .map-info-panel h4,
+html[data-theme="light"] .map-info-panel h4 {
+  color: #64748b !important;
+  font-weight: 700 !important;
+}
+
+html.light .map-protocol-list li,
+html[data-theme="light"] .map-protocol-list li {
+  color: #334155 !important;
+}
+
+html.light .map-info-panel .btn-outline,
+html[data-theme="light"] .map-info-panel .btn-outline {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+html.light .map-info-panel .btn-outline:hover,
+html[data-theme="light"] .map-info-panel .btn-outline:hover {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+}
+
+/* Before-After & Studio Live Badges in Light Mode */
+html.light .ba-badge-clean,
+html[data-theme="light"] .ba-badge-clean {
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .ba-badge-clean.ba-badge-left,
+html[data-theme="light"] .ba-badge-clean.ba-badge-left {
+  border-color: rgba(220, 38, 38, 0.4) !important;
+}
+
+html.light .ba-badge-clean.ba-badge-right,
+html[data-theme="light"] .ba-badge-clean.ba-badge-right {
+  border-color: rgba(180, 83, 9, 0.4) !important;
+}
+
+html.light .ba-badge-clean.ba-badge-cyan,
+html[data-theme="light"] .ba-badge-clean.ba-badge-cyan {
+  border-color: rgba(2, 132, 199, 0.4) !important;
+}
+
+html.light .hero-live-pill,
+html[data-theme="light"] .hero-live-pill {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(180, 83, 9, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .hero-live-text,
+html[data-theme="light"] .hero-live-text {
+  color: #0f172a !important;
+}
+
+html.light .hero-before-after,
+html[data-theme="light"] .hero-before-after {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .hero-before-after:hover,
+html[data-theme="light"] .hero-before-after:hover {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Social Media Auth in Light Mode */
+html.light .btn-social-auth,
+html[data-theme="light"] .btn-social-auth {
+  background: #f8fafc !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: #0f172a !important;
+}
+
+html.light .btn-social-auth:hover,
+html[data-theme="light"] .btn-social-auth:hover {
+  background: #ffffff !important;
+  border-color: #d97706 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .social-icon-apple,
+html[data-theme="light"] .social-icon-apple,
+html.light .social-icon-github,
+html[data-theme="light"] .social-icon-github {
+  color: #0f172a !important;
+}
+
+
+

@@ -104,7 +104,6 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">All 20 Services</a></li>
                 <li><a href="packages.html">Packages & Pricing</a></li>
-                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
                 <li><a href="before-after.html">Before & After Sliders</a></li>
                 <li><a href="gallery.html">Showroom Gallery</a></li>
                 <li><a href="dashboard/index.html">Customer Dashboard</a></li>
@@ -132,7 +131,7 @@
     <section class="section">
         <div class="container">
             <!-- 3 Studio Location Cards -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px;">
+            <div class="contact-cards-grid">
                 <!-- Location 1 -->
                 <div class="glass-card" style="padding: 30px; border-radius: 18px; border-color: var(--primary-gold);">
                     <div class="badge badge-gold" style="margin-bottom: 15px;">Flagship HQ</div>
@@ -180,40 +179,57 @@
             </div>
 
             <!-- Inquiry Form & Radar Preview -->
-            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: start;">
-                <div class="glass-card" style="padding: 40px; border-radius: 24px;">
+            <div class="contact-main-grid">
+                <div class="glass-card contact-form-card" style="padding: 40px; border-radius: 24px;">
                     <h3 style="font-size: 1.6rem; margin-bottom: 10px;">Direct Studio Inquiry</h3>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 25px;">
                         Leave your vehicle details and service requirements. A senior studio consultant will call you within 2 business hours.
                     </p>
 
                     <form id="apex-contact-form">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div class="form-row-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                             <div>
                                 <label class="form-label">Your Name *</label>
-                                <input type="text" class="form-control" name="name" placeholder="Lord Alexander Vance" required>
+                                <input type="text" class="form-control" name="name" id="contact-name" placeholder="Lord Alexander Vance" required minlength="2" maxlength="60" pattern="^[a-zA-Z\s'\-\.]{2,60}$" title="Please enter a valid full name (at least 2 letters, no numbers)">
+                                <span class="field-error-msg" id="contact-name-error" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;"></span>
                             </div>
                             <div>
-                                <label class="form-label">Phone Number *</label>
-                                <input type="tel" class="form-control" name="phone" placeholder="+1 (310) 555-0192" required>
+                                <label class="form-label" for="contact-phone">Phone Number *</label>
+                                <input type="tel" class="form-control" name="phone" id="contact-phone" placeholder="+1 (310) 555-0192" required pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]{6,15}$" title="Please enter a valid phone number (7-15 digits, no letters)">
+                                <span class="field-error-msg" id="contact-phone-error" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;"></span>
                             </div>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div class="form-row-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                             <div>
-                                <label class="form-label">Email Address *</label>
-                                <input type="email" class="form-control" name="email" placeholder="vance@exoticmotors.com" required>
+                                <label class="form-label" for="contact-email">Email Address *</label>
+                                <input type="email" class="form-control" name="email" id="contact-email" placeholder="vance@exoticmotors.com" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address with a domain (e.g. name@domain.com)">
+                                <span class="field-error-msg" id="contact-email-error" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;"></span>
                             </div>
                             <div>
-                                <label class="form-label">Service of Interest *</label>
-                                <select class="form-control" name="service" required>
-                                    <option value="Ceramic Coating 10H">Ceramic Coating 10H</option>
-                                    <option value="3-Stage Paint Correction">3-Stage Paint Correction</option>
-                                    <option value="Bespoke Interior & Leather">Bespoke Interior & Leather</option>
-                                    <option value="Paint Protection Film (PPF)">Paint Protection Film (PPF)</option>
-                                    <option value="Dry Ice Engine Cryo-Clean">Dry Ice Engine Cryo-Clean</option>
-                                    <option value="Enclosed Transport Consultation">VIP Enclosed Transport</option>
-                                </select>
+                                <label class="form-label" for="contact-service">Service of Interest *</label>
+                                <div class="custom-dropdown w-100" id="dropdown-contact-service">
+                                    <button type="button" class="custom-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" title="Select Service of Interest">
+                                        <span class="custom-dropdown-label">Ceramic Coating 10H</span>
+                                        <i class="ri-arrow-down-s-line custom-dropdown-icon"></i>
+                                    </button>
+                                    <ul class="custom-dropdown-list" role="listbox">
+                                        <li class="custom-dropdown-option selected" data-value="Ceramic Coating 10H"><i class="ri-shield-star-line"></i> Ceramic Coating 10H</li>
+                                        <li class="custom-dropdown-option" data-value="3-Stage Paint Correction"><i class="ri-sparkling-fill"></i> 3-Stage Paint Correction</li>
+                                        <li class="custom-dropdown-option" data-value="Bespoke Interior & Leather"><i class="ri-car-line"></i> Bespoke Interior & Leather</li>
+                                        <li class="custom-dropdown-option" data-value="Paint Protection Film (PPF)"><i class="ri-shield-flash-line"></i> Paint Protection Film (PPF)</li>
+                                        <li class="custom-dropdown-option" data-value="Dry Ice Engine Cryo-Clean"><i class="ri-temp-cold-line"></i> Dry Ice Engine Cryo-Clean</li>
+                                        <li class="custom-dropdown-option" data-value="Enclosed Transport Consultation"><i class="ri-truck-line"></i> VIP Enclosed Transport</li>
+                                    </ul>
+                                    <select class="form-control" name="service" id="contact-service" required style="display:none;">
+                                        <option value="Ceramic Coating 10H" selected>Ceramic Coating 10H</option>
+                                        <option value="3-Stage Paint Correction">3-Stage Paint Correction</option>
+                                        <option value="Bespoke Interior & Leather">Bespoke Interior & Leather</option>
+                                        <option value="Paint Protection Film (PPF)">Paint Protection Film (PPF)</option>
+                                        <option value="Dry Ice Engine Cryo-Clean">Dry Ice Engine Cryo-Clean</option>
+                                        <option value="Enclosed Transport Consultation">VIP Enclosed Transport</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
@@ -297,7 +313,7 @@
                             </div>
 
                             <!-- Address Box -->
-                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 18px;">
+                            <div class="map-address-box" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin-bottom: 18px;">
                                 <div style="display: flex; align-items: flex-start; gap: 10px;">
                                     <i class="ri-map-pin-2-fill text-gold" style="font-size: 1.25rem; margin-top: 1px; flex-shrink: 0;"></i>
                                     <div>
@@ -308,21 +324,21 @@
                             </div>
 
                             <!-- Live Telemetry Grid -->
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
-                                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 12px;">
+                            <div class="map-telemetry-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
+                                <div class="map-telemetry-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 12px;">
                                     <span style="font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">Bay Climate</span>
                                     <strong class="text-cyan" style="font-size: 0.95rem;" id="loc-temp">21°C • 42% RH</strong>
                                 </div>
-                                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 12px;">
+                                <div class="map-telemetry-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 12px;">
                                     <span style="font-size: 0.7rem; color: var(--text-muted); display: block; text-transform: uppercase;">Cleanroom Spec</span>
                                     <strong class="text-gold" style="font-size: 0.95rem;" id="loc-spec">ISO-6 HEPA Bay</strong>
                                 </div>
                             </div>
 
                             <!-- Arrival Protocol List -->
-                            <div style="margin-bottom: 20px;">
+                            <div class="map-protocol-box" style="margin-bottom: 20px;">
                                 <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px;">Security & Arrival Guide</h4>
-                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+                                <ul class="map-protocol-list" style="list-style: none; padding: 0; margin: 0; font-size: 0.82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
                                     <li id="loc-protocol-1"><i class="ri-shield-check-fill text-gold"></i> Private gated access with automatic ANPR vehicle recognition</li>
                                     <li id="loc-protocol-2"><i class="ri-parking-box-fill text-gold"></i> Subterranean climate-controlled supercar valet lounge</li>
                                     <li id="loc-protocol-3"><i class="ri-charging-pile-2-fill text-cyan"></i> 350kW DC Ultra-Fast EV charging available for client vehicles</li>

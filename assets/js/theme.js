@@ -103,6 +103,18 @@
         ? '<i class="ri-sun-fill text-gold"></i> Light'
         : '<i class="ri-moon-fill text-cyan"></i> Dark';
     });
+
+    // Navbar icon-only theme toggles (strictly 1 icon at all times)
+    const iconToggles = document.querySelectorAll('#theme-toggle-btn, .theme-toggle');
+    iconToggles.forEach(btn => {
+      const nextTitle = theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+      btn.setAttribute('title', nextTitle);
+      btn.setAttribute('aria-label', nextTitle);
+      btn.innerHTML = theme === 'dark'
+        ? '<i class="ri-sun-line theme-icon-light" style="display:inline-flex !important;"></i>'
+        : '<i class="ri-moon-line theme-icon-dark" style="display:inline-flex !important;"></i>';
+    });
+
     document.querySelectorAll('.theme-label-text').forEach(el => {
       el.textContent = theme === 'dark' ? 'Light' : 'Dark';
     });

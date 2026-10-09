@@ -73,7 +73,7 @@
                         <label class="form-label" for="register-fullname">Full Name</label>
                         <div class="auth-input-wrapper">
                             <i class="ri-user-line input-icon"></i>
-                            <input type="text" id="register-fullname" name="fullname" class="form-control" placeholder="Alexander Vance" required autocomplete="name">
+                            <input type="text" id="register-fullname" name="fullname" class="form-control" placeholder="Alexander Vance" required autocomplete="name" minlength="2" maxlength="60" pattern="^[a-zA-Z\s'\-\.]{2,60}$" title="Please enter a valid full name (at least 2 letters, no numbers)">
                         </div>
                         <span id="name-error-msg" class="field-error-msg" style="display: none;"></span>
                     </div>
@@ -84,7 +84,7 @@
                             <label class="form-label" for="register-email">Email Address</label>
                             <div class="auth-input-wrapper">
                                 <i class="ri-mail-line input-icon"></i>
-                                <input type="email" id="register-email" name="email" class="form-control" placeholder="name@example.com" required autocomplete="email">
+                                <input type="email" id="register-email" name="email" class="form-control" placeholder="name@example.com" required autocomplete="email" pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address with a domain (e.g. name@domain.com)">
                             </div>
                             <span id="email-error-msg" class="field-error-msg" style="display: none;"></span>
                         </div>
@@ -92,7 +92,7 @@
                             <label class="form-label" for="register-phone">Phone Number</label>
                             <div class="auth-input-wrapper">
                                 <i class="ri-phone-line input-icon"></i>
-                                <input type="tel" id="register-phone" name="phone" class="form-control" placeholder="+1 (310) 555-0192" autocomplete="tel">
+                                <input type="tel" id="register-phone" name="phone" class="form-control" placeholder="+1 (310) 555-0192" autocomplete="tel" pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]{6,15}$" title="Please enter a valid phone number (7-15 digits, no letters)">
                             </div>
                             <span id="phone-error-msg" class="field-error-msg" style="display: none;"></span>
                         </div>
@@ -137,6 +137,23 @@
                     <button type="submit" id="register-btn" class="btn btn-gold w-100" style="padding: 13px; font-weight: 700;">
                         <i class="ri-user-add-line"></i> Create Account
                     </button>
+
+                    <!-- Social Registration Divider -->
+                    <div class="auth-divider">
+                        <span>OR SIGN UP WITH</span>
+                    </div>
+
+                    <!-- Social Registration Buttons -->
+                    <div class="auth-social-grid">
+                        <button type="button" class="btn-social-auth" onclick="handleSocialSignup('Google')" title="Sign up with Google">
+                            <i class="ri-google-fill social-icon-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="btn-social-auth" onclick="handleSocialSignup('Apple')" title="Sign up with Apple">
+                            <i class="ri-apple-fill social-icon-apple"></i>
+                            <span>Apple</span>
+                        </button>
+                    </div>
                 </form>
 
                 <!-- Footer Link to Login -->
@@ -217,8 +234,9 @@
 
             let hasError = false;
 
-            if (!name || name.length < 2) {
-                showFieldError('register-fullname', 'name-error-msg', 'Please enter your full name (at least 2 characters).');
+            const lettersOnly = name.replace(/[^a-zA-Z]/g, '');
+            if (!name || name.length < 2 || lettersOnly.length < 2 || /\d/.test(name) || !/^[a-zA-Z\s'\-\.]{2,60}$/.test(name)) {
+                showFieldError('register-fullname', 'name-error-msg', 'Please enter a valid full name (at least 2 letters, no numbers).');
                 hasError = true;
             }
 
@@ -226,8 +244,21 @@
                 showFieldError('register-email', 'email-error-msg', 'Please enter your email address.');
                 hasError = true;
             } else if (!ApexAuth.validateEmail(email)) {
-                showFieldError('register-email', 'email-error-msg', 'Please enter a valid email format.');
+                showFieldError('register-email', 'email-error-msg', 'Please enter a valid email address with a domain (e.g. name@domain.com).');
                 hasError = true;
+            }
+
+            if (phone) {
+                if (/[a-zA-Z]/.test(phone)) {
+                    showFieldError('register-phone', 'phone-error-msg', 'Phone number cannot contain letters.');
+                    hasError = true;
+                } else {
+                    const cleanedPhone = phone.replace(/[^0-9]/g, '');
+                    if (cleanedPhone.length < 7 || cleanedPhone.length > 15) {
+                        showFieldError('register-phone', 'phone-error-msg', 'Please enter a valid phone number (7-15 digits).');
+                        hasError = true;
+                    }
+                }
             }
 
             if (!password) {
@@ -286,6 +317,16 @@
                     window.location.href = `login.html?registered=true&email=${encodeURIComponent(email)}`;
                 }, 800);
             }, 600);
+        }
+
+        function handleSocialSignup(provider) {
+            showAlert(`Connecting to ${provider} Account Provisioning...`, 'info');
+            setTimeout(() => {
+                showAlert(`Account verified via ${provider}! Redirecting to customer dashboard...`, 'success');
+                setTimeout(() => {
+                    window.location.href = 'dashboard/index.html';
+                }, 800);
+            }, 700);
         }
     </script>
 </body>

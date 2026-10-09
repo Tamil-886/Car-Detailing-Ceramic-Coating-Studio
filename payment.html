@@ -101,7 +101,6 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">All 20 Services</a></li>
                 <li><a href="packages.html">Packages & Pricing</a></li>
-                <li><a href="cart.html"><i class="ri-shopping-bag-3-line text-gold"></i> Shopping Cart <span class="badge badge-gold" id="mobile-cart-badge">0</span></a></li>
                 <li><a href="before-after.html">Before & After Sliders</a></li>
                 <li><a href="gallery.html">Showroom Gallery</a></li>
                 <li><a href="dashboard/index.html">Customer Dashboard</a></li>
@@ -152,21 +151,21 @@
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                                 <div>
                                     <label class="form-label" for="client-name">Full Name *</label>
-                                    <input type="text" id="client-name" class="form-control" placeholder="e.g. Alexander Vance" required>
-                                    <span class="field-error-msg" id="err-client-name" style="display: none;">Full name is required.</span>
+                                    <input type="text" id="client-name" class="form-control" placeholder="e.g. Alexander Vance" required minlength="2" maxlength="60" pattern="^[a-zA-Z\s'\-\.]{2,60}$" title="Please enter a valid full name (at least 2 letters, no numbers)">
+                                    <span class="field-error-msg" id="err-client-name" style="display: none;">Please enter a valid full name (at least 2 letters, no numbers).</span>
                                 </div>
                                 <div>
                                     <label class="form-label" for="client-email">Email Address *</label>
-                                    <input type="email" id="client-email" class="form-control" placeholder="vance@exoticmotors.com" required>
-                                    <span class="field-error-msg" id="err-client-email" style="display: none;">Valid email is required.</span>
+                                    <input type="email" id="client-email" class="form-control" placeholder="vance@exoticmotors.com" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address with a domain (e.g. name@domain.com)">
+                                    <span class="field-error-msg" id="err-client-email" style="display: none;">Valid email address with domain is required.</span>
                                 </div>
                             </div>
 
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                                 <div>
                                     <label class="form-label" for="client-phone">Phone Number *</label>
-                                    <input type="tel" id="client-phone" class="form-control" placeholder="+1 (310) 555-0199" required value="+1 (310) 555-0199">
-                                    <span class="field-error-msg" id="err-client-phone" style="display: none;">Phone number is required.</span>
+                                    <input type="tel" id="client-phone" class="form-control" placeholder="+1 (310) 555-0199" required value="+1 (310) 555-0199" pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]{6,15}$" title="Please enter a valid phone number (7-15 digits, no letters)">
+                                    <span class="field-error-msg" id="err-client-phone" style="display: none;">Valid phone number is required.</span>
                                 </div>
                                 <div>
                                     <label class="form-label" for="client-vehicle">Vehicle Year, Make & Model *</label>
@@ -249,8 +248,8 @@
                             <div id="card-fields-group">
                                 <div style="margin-bottom: 16px;">
                                     <label class="form-label" for="card-name">Cardholder Name *</label>
-                                    <input type="text" id="card-name" class="form-control" placeholder="ALEXANDER VANCE" required value="ALEXANDER VANCE">
-                                    <span class="field-error-msg" id="err-card-name" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;">Cardholder name is required.</span>
+                                    <input type="text" id="card-name" class="form-control" placeholder="ALEXANDER VANCE" required value="ALEXANDER VANCE" minlength="2" maxlength="60" pattern="^[a-zA-Z\s'\-\.]{2,60}$" title="Please enter a valid cardholder name (at least 2 letters, no numbers)">
+                                    <span class="field-error-msg" id="err-card-name" style="display: none; color: #ef4444; font-size: 0.78rem; margin-top: 4px;">Please enter a valid cardholder name (at least 2 letters, no numbers).</span>
                                 </div>
 
                                 <div style="margin-bottom: 16px;">
@@ -891,9 +890,84 @@
             }
         };
 
-        validateField('client-name', 'err-client-name', 2);
-        validateField('client-email', 'err-client-email', 4);
-        validateField('client-phone', 'err-client-phone', 7);
+        const validateNameField = (id, errId) => {
+            const input = document.getElementById(id);
+            const err = document.getElementById(errId);
+            const val = input ? input.value.trim() : '';
+            const lettersOnly = val.replace(/[^a-zA-Z]/g, '');
+            if (!input || val.length < 2 || lettersOnly.length < 2 || /\d/.test(val) || !/^[a-zA-Z\s'\-\.]{2,60}$/.test(val)) {
+                isValid = false;
+                if (input) {
+                    input.style.borderColor = '#ef4444';
+                    input.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.25)';
+                }
+                if (err) {
+                    err.textContent = 'Please enter a valid name (at least 2 letters, no numbers).';
+                    err.style.display = 'block';
+                }
+                if (!firstInvalid) firstInvalid = input;
+            } else {
+                if (input) {
+                    input.style.borderColor = '';
+                    input.style.boxShadow = '';
+                }
+                if (err) err.style.display = 'none';
+            }
+        };
+
+        const validateEmailField = (id, errId) => {
+            const input = document.getElementById(id);
+            const err = document.getElementById(errId);
+            const val = input ? input.value.trim() : '';
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!input || !val || !emailRegex.test(val)) {
+                isValid = false;
+                if (input) {
+                    input.style.borderColor = '#ef4444';
+                    input.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.25)';
+                }
+                if (err) {
+                    err.textContent = 'Please enter a valid email address with a domain (e.g. name@domain.com).';
+                    err.style.display = 'block';
+                }
+                if (!firstInvalid) firstInvalid = input;
+            } else {
+                if (input) {
+                    input.style.borderColor = '';
+                    input.style.boxShadow = '';
+                }
+                if (err) err.style.display = 'none';
+            }
+        };
+
+        const validatePhoneField = (id, errId) => {
+            const input = document.getElementById(id);
+            const err = document.getElementById(errId);
+            const val = input ? input.value.trim() : '';
+            const cleaned = val.replace(/[^0-9]/g, '');
+            if (!input || !val || /[a-zA-Z]/.test(val) || cleaned.length < 7 || cleaned.length > 15) {
+                isValid = false;
+                if (input) {
+                    input.style.borderColor = '#ef4444';
+                    input.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.25)';
+                }
+                if (err) {
+                    err.textContent = /[a-zA-Z]/.test(val) ? 'Phone number cannot contain letters.' : 'Please enter a valid phone number (7-15 digits).';
+                    err.style.display = 'block';
+                }
+                if (!firstInvalid) firstInvalid = input;
+            } else {
+                if (input) {
+                    input.style.borderColor = '';
+                    input.style.boxShadow = '';
+                }
+                if (err) err.style.display = 'none';
+            }
+        };
+
+        validateNameField('client-name', 'err-client-name');
+        validateEmailField('client-email', 'err-client-email');
+        validatePhoneField('client-phone', 'err-client-phone');
         validateField('client-vehicle', 'err-client-vehicle', 2);
         validateField('bill-address', 'err-bill-address', 3);
         validateField('bill-city', 'err-bill-city', 2);
@@ -901,7 +975,7 @@
         validateField('bill-zip', 'err-bill-zip', 3);
 
         if (currentPaymentMethod === 'card') {
-            validateField('card-name', 'err-card-name', 2);
+            validateNameField('card-name', 'err-card-name');
             
             const cardNumInput = document.getElementById('card-number');
             const cardNumClean = cardNumInput ? cardNumInput.value.replace(/\D/g, '') : '';
