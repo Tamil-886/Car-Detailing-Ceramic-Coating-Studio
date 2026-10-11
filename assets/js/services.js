@@ -1422,6 +1422,84 @@
       "graphene-coating",
       "premium-exterior-detailing"
     ]
+  },
+  {
+    "id": "dry-ice-cleaning",
+    "slug": "dry-ice-cleaning",
+    "fileName": "dry-ice-cleaning.html",
+    "title": "Dry Ice Cryogenic Cleaning",
+    "category": "Restoration",
+    "categorySlug": "restoration",
+    "tagline": "-78.5°C Solid CO2 Pellet Supersonic Cryo-Blasting & Sub-Surface Decontamination",
+    "shortDesc": "Aerospace-grade sub-zero dry ice blasting lifts decades of oil, carbon deposits, cosmoline, and road tar from undercarriages, suspension arms, and engine bays with zero moisture or chemical residue.",
+    "longDesc": "Our bespoke Dry Ice Cryogenic Cleaning utilizes aerospace-grade solid CO2 micro-pellets accelerated at supersonic speeds. Upon impact at -78.5°C (-109.3°F), the thermal shock sublimates grease, factory undercoating, baked-on road tar, and oxidation instantly from bare aluminum, zinc-plated fasteners, rubber seals, and sensitive electrical wiring without abrasive clearcoat marring or water contamination.",
+    "prices": {
+      "hatchback": 7999,
+      "sedan": 8999,
+      "suv": 10999,
+      "luxury": 13999,
+      "sports": 15999
+    },
+    "duration": "4 to 6 Hours",
+    "warranty": "Studio Cryo-Clean Certificate",
+    "badge": "Cryo-Tech Signature",
+    "rating": 5.0,
+    "reviewsCount": 86,
+    "popularity": 99,
+    "createdDate": "2024-04-15",
+    "image": "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=1200&q=80",
+    "hasBeforeAfter": true,
+    "inclusions": [
+      "Sub-zero -78.5°C food-grade solid CO2 micro-pellet blast system",
+      "Full undercarriage, floor pan, and differential cosmoline purge",
+      "Complete engine block, intake manifold, and alternator cryo-decontamination",
+      "Wheel well liners, brake caliper bodies, and suspension link restoration",
+      "Safe for sensitive wiring harnesses, rubber bushings, and sensors (zero moisture)",
+      "High-pressure clean air dry evacuation and particulate vacuum extraction",
+      "OEM matte anti-static aerospace preservative dressing applied to rubber/plastics",
+      "High-resolution digital before-and-after microscopic inspection report"
+    ],
+    "processSteps": [
+      {
+        "num": 1,
+        "title": "Cleanroom Hoist & Masking",
+        "desc": "Vehicle elevated on our cleanroom hydraulic lift; delicate sensors, intake filters, and cabin vents sealed."
+      },
+      {
+        "num": 2,
+        "title": "Cryogenic Sublimation Blast",
+        "desc": "Compressed dry ice micro-pellets freeze contaminants at -78.5°C, creating micro-thermal shock lift."
+      },
+      {
+        "num": 3,
+        "title": "Crevice & Loom Detailing",
+        "desc": "Precision angular nozzles detail intricate wiring looms, fastener heads, and aluminum crevices."
+      },
+      {
+        "num": 4,
+        "title": "OEM Preservative Dressing",
+        "desc": "Bare metals and vulcanized rubber receive museum-grade moisture-repellent preservative barrier."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is Dry Ice Cryogenic Cleaning and how does it work?",
+        "a": "Dry ice blasting uses accelerated solid CO2 pellets at -78.5°C (-109.3°F). When the pellets strike the surface, the extreme cold makes the grime brittle while the pellets expand 800 times in volume as they sublimate into gas, lifting dirt instantly without water, sand, or solvents."
+      },
+      {
+        "q": "Will dry ice blasting damage sensitive automotive electrical wiring or rubber?",
+        "a": "No. Unlike sandblasting or high-pressure water washing, dry ice is completely non-abrasive and non-conductive. It does not scratch aluminum, harm wire insulation, or deteriorate rubber seals, making it the gold standard for supercars and vintage classics."
+      },
+      {
+        "q": "Is any water or chemical residue left behind after treatment?",
+        "a": "Zero residue. Solid CO2 sublimates directly from solid to gas upon contact. The lifted grime simply falls to the cleanroom floor as dry particulate and is vacuumed away, leaving a dry, factory-fresh finish."
+      }
+    ],
+    "relatedIds": [
+      "engine-bay-detailing",
+      "underbody-cleaning",
+      "ceramic-coating"
+    ]
   }
 ];
 
