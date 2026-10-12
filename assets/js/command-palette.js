@@ -25,7 +25,7 @@
     { title: 'Contact Studios (Beverly Hills / Miami)', url: 'contact.html', icon: 'ri-map-pin-line', category: 'Studio Portals' },
 
     // Dashboard
-    { title: 'Customer Dashboard Overview', url: 'dashboard/index.html', icon: 'ri-dashboard-3-line', category: 'Client Portal' },
+    { title: 'Customer Dashboard Overview', url: 'dashboard.html', icon: 'ri-dashboard-3-line', category: 'Client Portal' },
     { title: 'Live 7-Stage Cleanroom Bay Tracker', url: 'dashboard/services-status.html', icon: 'ri-sparkling-fill', category: 'Client Portal' },
     { title: 'My Reservations & Telemetry', url: 'dashboard/bookings.html', icon: 'ri-calendar-check-line', category: 'Client Portal' },
     { title: 'Personal Transformation Photo Vault', url: 'dashboard/before-after.html', icon: 'ri-gallery-upload-line', category: 'Client Portal' },

@@ -122,7 +122,7 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; font-size: 0.9rem;">
                         <div>
                             <p style="color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; font-size: 0.75rem;">Billed To:</p>
-                            <strong style="color: var(--text-primary);">Alexander Vance</strong><br>
+                            <strong style="color: var(--text-primary);">${(window.ApexAuth && window.ApexAuth.getCurrentUser()) ? (window.ApexAuth.getCurrentUser().username || window.ApexAuth.getCurrentUser().name) : 'Alexander Vance'}</strong><br>
                             <span style="color: var(--text-secondary);">9400 Wilshire Blvd, Beverly Hills, CA</span><br>
                             <span style="color: var(--text-secondary);">Vehicle: ${inv.vehicle}</span>
                         </div>
@@ -192,7 +192,7 @@
                         </tr>
                         <tr>
                             <td class="label">Client & Owner</td>
-                            <td class="val">${(window.ApexAuth && window.ApexAuth.getCurrentUser()) ? window.ApexAuth.getCurrentUser().name : 'Alexander Vance'} (Obsidian VIP Member)</td>
+                            <td class="val">${(window.ApexAuth && window.ApexAuth.getCurrentUser()) ? (window.ApexAuth.getCurrentUser().username || window.ApexAuth.getCurrentUser().name) : 'Alexander Vance'} (Obsidian VIP Member)</td>
                         </tr>
                         <tr>
                             <td class="label">Registered Vehicle</td>

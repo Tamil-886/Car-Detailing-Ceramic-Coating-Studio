@@ -131,13 +131,13 @@ section[style*="radial-gradient"],
 
   .site-header .container {
     max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .site-header .header-inner {
     height: 64px;
-    gap: 12px;
+    gap: 10px;
   }
 
   .nav-links {
@@ -145,8 +145,8 @@ section[style*="radial-gradient"],
   }
 
   .nav-links > li > a {
-    padding: 0 9px;
-    font-size: 0.82rem;
+    padding: 0 8px;
+    font-size: 0.81rem;
     height: 36px;
   }
 
@@ -158,6 +158,109 @@ section[style*="radial-gradient"],
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
     gap: 30px;
   }
+}
+
+/* Specific Laptop & Intermediate Viewport Optimization (1025px to 1280px) - Prevent Navbar Collisions */
+@media (max-width: 1280px) and (min-width: 1025px) {
+  .site-header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-header .header-inner {
+    gap: 6px;
+  }
+
+  .logo {
+    font-size: 1.05rem;
+    gap: 6px;
+  }
+
+  .logo-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .desktop-nav {
+    margin: 0 4px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nav-links {
+    gap: 2px;
+    justify-content: center;
+  }
+
+  .nav-links > li > a {
+    padding: 0 6px;
+    font-size: 0.77rem;
+    height: 32px;
+    gap: 3px;
+    letter-spacing: -0.2px;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .palette-trigger-btn,
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .rtl-toggle {
+    min-width: 36px;
+    height: 32px;
+    padding: 0 6px;
+    font-size: 0.7rem;
+  }
+
+  .nav-cart-btn {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+
+  .nav-cart-btn .nav-cart-text {
+    display: none !important;
+  }
+
+  .header-actions .btn-sm {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 0.76rem;
+  }
+
+  .user-profile-dropdown .user-name-text {
+    display: inline-block !important;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .user-profile-dropdown .user-profile-btn {
+    height: 32px;
+    padding: 2px 8px;
+    gap: 6px;
+  }
+}
+
+/* Universal RTL Metric & LTR Isolation */
+[dir="rtl"] .ltr-isolate,
+[dir="rtl"] bdi,
+body.rtl .ltr-isolate,
+body.rtl bdi {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline-block !important;
+  text-align: left !important;
 }
 
 /* --------------------------------------------------------------------------

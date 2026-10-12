@@ -102,7 +102,7 @@
                     <ul class="footer-links">
                         <li><a href="${prefix}index.html#booking-section"><i class="ri-calendar-check-line text-gold"></i> Reserve Detailing Slot</a></li>
                         <li><a href="${prefix}cart.html"><i class="ri-shopping-cart-2-line text-gold"></i> View Cart & Checkout</a></li>
-                        <li><a href="${prefix}dashboard/index.html"><i class="ri-dashboard-line text-gold"></i> Live Telemetry Portal</a></li>
+                        <li><a href="${prefix}dashboard.html"><i class="ri-dashboard-line text-gold"></i> Live Telemetry Portal</a></li>
                         <li><a href="${prefix}dashboard/bookings.html"><i class="ri-time-line text-gold"></i> Booking History</a></li>
                         <li><a href="${prefix}dashboard/loyalty-points.html"><i class="ri-copper-diamond-line text-gold"></i> Apex Gloss Club</a></li>
                         <li><a href="${prefix}dashboard/invoices.html"><i class="ri-file-shield-line text-gold"></i> Digital Warranties</a></li>

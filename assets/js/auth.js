@@ -22,6 +22,7 @@
     {
       id: 'USER-001',
       name: 'Alexander Vance',
+      username: 'Alexander Vance',
       email: 'vance@exoticmotors.com',
       password: 'obsidian2024',
       phone: '+1 (310) 555-0192',
@@ -36,6 +37,7 @@
     {
       id: 'USER-002',
       name: 'Marcus Vance',
+      username: 'Marcus Vance',
       email: 'marcus@apexobsidian.com',
       password: 'masterdetailer',
       phone: '+1 (310) 555-8833',
@@ -168,6 +170,7 @@
     const newUser = {
       id: 'USER-' + Date.now() + '-' + Math.floor(Math.random() * 10000),
       name: name.trim(),
+      username: (formData.username || name).trim(),
       email: cleanEmail,
       phone: (phone || '').trim(),
       password: password,
@@ -259,21 +262,14 @@
   // 3. Route Protection Guards (Seamless Dashboard Access)
   function requireAuth() {
     let user = getCurrentUser();
-    const isDashboard = window.location.pathname.includes('/dashboard/') || window.location.pathname.endsWith('dashboard.html');
-    
-    if (!user && isDashboard) {
-      // Auto-provision demo VIP session for instant dashboard exploration without login barrier
-      const defaultUser = {
-        id: 'usr_vip_default',
-        name: 'Alexander Vance',
-        email: 'alexander.vance@apex-obsidian.com',
-        role: 'Obsidian VIP Member',
-        loyaltyPoints: 2450,
-        avatar: 'AV',
-        vehicle: '2024 Porsche 911 GT3 RS'
-      };
-      setCurrentUser(defaultUser);
+
+    // Clean up any old auto-provisioned fake session from previous visits
+    if (user && user.id === 'usr_vip_default') {
+      clearCurrentUser();
+      user = null;
     }
+
+    // Dashboard is directly accessible to everyone without requiring login or redirects.
     return true;
   }
 
@@ -295,10 +291,16 @@
 
   // 4. Dynamic Navbar & Drawer State Updates
   function updateNavbarUI() {
-    const user = getCurrentUser();
-    const isDashboard = window.location.pathname.includes('/dashboard/');
-    const dashboardBase = isDashboard ? '' : 'dashboard/';
-    const rootBase = isDashboard ? '../' : '';
+    let user = getCurrentUser();
+    if (user && user.id === 'usr_vip_default') {
+      clearCurrentUser();
+      user = null;
+    }
+
+    const isSubdirDashboard = window.location.pathname.includes('/dashboard/');
+    const dashboardBase = isSubdirDashboard ? '' : 'dashboard/';
+    const rootBase = isSubdirDashboard ? '../' : '';
+    const dashboardHomeUrl = isSubdirDashboard ? 'index.html' : 'dashboard.html';
 
     // Update Header Actions in site navigation
     const headerActions = document.querySelector('.header-actions');
@@ -307,23 +309,42 @@
       const existingAuthBtn = headerActions.querySelector('a[href*="login.html"], .btn-outline');
       
       if (user) {
-        // User IS Logged In -> Show username button with profile dropdown (Sign Out only)
+        // Derive correct authenticated username / display name
+        const displayName = (user.username || user.name || 'User').trim();
+        const avatarInitials = user.avatar || getInitials(displayName);
+
+        // User IS Logged In -> Show username button with profile dropdown
         const authBadgeHTML = `
           <div class="user-profile-dropdown" id="user-profile-dropdown">
             <button type="button" class="user-profile-btn" id="user-profile-btn" aria-expanded="false" aria-haspopup="true" title="Account Menu">
-              <span class="user-avatar-circle">${user.avatar || getInitials(user.name)}</span>
-              <span class="user-name-text">${user.name}</span>
+              <span class="user-avatar-circle">${avatarInitials}</span>
+              <span class="user-name-text">${displayName}</span>
               <i class="ri-arrow-down-s-line dropdown-arrow"></i>
             </button>
             <div class="user-dropdown-menu" id="user-dropdown-menu" role="menu">
               <div class="user-dropdown-header">
                 <div class="user-dropdown-user-info">
-                  <span class="user-avatar-circle large">${user.avatar || getInitials(user.name)}</span>
+                  <span class="user-avatar-circle large">${avatarInitials}</span>
                   <div class="user-details">
-                    <strong class="user-display-name">${user.name}</strong>
+                    <strong class="user-display-name">${displayName}</strong>
                     <span class="user-tier-badge"><i class="ri-vip-crown-fill text-gold"></i> ${user.role || 'Obsidian VIP'}</span>
                   </div>
                 </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div style="padding: 4px 0;">
+                <a href="${dashboardHomeUrl}" class="dropdown-item">
+                  <i class="ri-dashboard-3-line text-gold"></i> 
+                  <span>Customer Dashboard</span>
+                </a>
+                <a href="${dashboardBase}bookings.html" class="dropdown-item">
+                  <i class="ri-calendar-check-line text-cyan"></i> 
+                  <span>My Bookings</span>
+                </a>
+                <a href="${dashboardBase}profile.html" class="dropdown-item">
+                  <i class="ri-car-line"></i> 
+                  <span>Garage Fleet</span>
+                </a>
               </div>
               <div class="dropdown-divider"></div>
               <div class="user-dropdown-footer">
@@ -358,7 +379,6 @@
       let drawerAuthSection = mobileDrawer.querySelector('.drawer-auth-actions') || mobileDrawer.querySelector('.mobile-drawer-auth');
       
       if (!drawerAuthSection) {
-        // If drawer body doesn't have an auth container, create one at bottom of drawer-body
         const drawerBody = mobileDrawer.querySelector('.drawer-body');
         if (drawerBody) {
           drawerAuthSection = document.createElement('div');
@@ -371,12 +391,15 @@
 
       if (drawerAuthSection) {
         if (user) {
+          const displayName = (user.username || user.name || 'User').trim();
+          const avatarInitials = user.avatar || getInitials(displayName);
+
           drawerAuthSection.innerHTML = `
             <div style="background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); border-radius: 12px; padding: 14px; margin-bottom: 12px;">
               <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                <span class="user-avatar-circle" style="width: 34px; height: 34px; font-size: 0.85rem;">${user.avatar || getInitials(user.name)}</span>
+                <span class="user-avatar-circle" style="width: 34px; height: 34px; font-size: 0.85rem;">${avatarInitials}</span>
                 <div>
-                  <h5 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 700;">${user.name}</h5>
+                  <h5 style="margin: 0; font-size: 0.95rem; color: var(--text-primary); font-weight: 700;">${displayName}</h5>
                   <span style="font-size: 0.75rem; color: var(--primary-gold);"><i class="ri-vip-crown-fill"></i> ${user.role || 'Obsidian VIP'}</span>
                 </div>
               </div>
@@ -456,22 +479,26 @@
     });
   }
 
-  // 5. Dynamic Dashboard Sidebar UI Updates
+  // 5. Dynamic Dashboard UI Updates
   function updateDashboardUI() {
     const user = getCurrentUser();
     if (!user) return;
 
-    const firstName = (user.name || '').split(' ')[0] || user.name;
+    const displayName = (user.username || user.name || 'User').trim();
+    const firstName = displayName.split(' ')[0] || displayName;
 
     // Update Sidebar User Name, Avatar, and Role
     const userNameElements = document.querySelectorAll('.sidebar-user .user-name, .dashboard-user-name');
     userNameElements.forEach(el => {
-      el.textContent = user.name;
+      // Do NOT display username inside the dashboard heading
+      if (!el.closest('.dashboard-greeting-title')) {
+        el.textContent = displayName;
+      }
     });
 
     const userAvatarElements = document.querySelectorAll('.sidebar-user .user-avatar, .dashboard-user-avatar');
     userAvatarElements.forEach(el => {
-      el.textContent = user.avatar || getInitials(user.name);
+      el.textContent = user.avatar || getInitials(displayName);
     });
 
     const userBadgeElements = document.querySelectorAll('.sidebar-user .user-badge');
@@ -479,11 +506,7 @@
       el.innerHTML = `<i class="ri-vip-crown-fill text-gold"></i> ${user.role || 'Obsidian VIP'}`;
     });
 
-    // Update Top Greetings
-    const greetingElements = document.querySelectorAll('.dashboard-greeting-title, .dashboard-user-greeting');
-    greetingElements.forEach(el => {
-      el.innerHTML = `Welcome back, <span class="text-gold">${user.name}</span>`;
-    });
+    // NOTE: Dashboard Heading remains clean Overview Console without displaying personal names!
 
     const firstNameElements = document.querySelectorAll('.dashboard-user-firstname');
     firstNameElements.forEach(el => {
@@ -507,13 +530,59 @@
       const emailInput = profileForm.querySelector('input[type="email"]');
       const phoneInput = profileForm.querySelector('input[type="tel"]');
 
-      if (nameInput) nameInput.value = user.name;
-      if (emailInput) emailInput.value = user.email;
+      if (nameInput) nameInput.value = displayName;
+      if (emailInput) emailInput.value = user.email || '';
       if (phoneInput && user.phone) phoneInput.value = user.phone;
     }
   }
 
-  // 6. Global Setup & Initialization
+  // 6. Dynamic Home Page UI Updates (Pre-fill Booking Form & Client Name)
+  function updateHomePageUI() {
+    const user = getCurrentUser();
+    const displayName = user ? (user.username || user.name || '').trim() : '';
+
+    // Pre-fill Booking Reservation Form if on page
+    const bookingNameInput = document.getElementById('booking_client_name');
+    if (bookingNameInput) {
+      if (user && displayName) {
+        bookingNameInput.value = displayName;
+      }
+    }
+
+    const bookingEmailInput = document.getElementById('booking_client_email');
+    if (bookingEmailInput && user && user.email) {
+      bookingEmailInput.value = user.email;
+    }
+
+    const bookingPhoneInput = document.getElementById('booking_client_phone');
+    if (bookingPhoneInput && user && user.phone) {
+      bookingPhoneInput.value = user.phone;
+    }
+
+    const bookingVehicleInput = document.getElementById('booking_vehicle_model');
+    if (bookingVehicleInput && user && user.vehicle) {
+      bookingVehicleInput.value = user.vehicle;
+    }
+
+    // Portal Preview button
+    const homePortalBtn = document.getElementById('home-portal-signin-btn');
+    if (homePortalBtn) {
+      if (user && displayName) {
+        homePortalBtn.href = 'dashboard.html';
+        homePortalBtn.innerHTML = `<i class="ri-user-star-line text-gold"></i> Signed in as ${displayName}`;
+      } else {
+        homePortalBtn.href = 'login.html';
+        homePortalBtn.innerHTML = `<i class="ri-user-star-line"></i> Client Sign In`;
+      }
+    }
+
+    // Update any elements marked for logged-in user name
+    document.querySelectorAll('.home-user-name, .logged-in-username').forEach(el => {
+      el.textContent = displayName;
+    });
+  }
+
+  // 7. Global Setup & Initialization
   function init() {
     // Seed storage with default accounts if empty
     getUsers();
@@ -524,6 +593,7 @@
 
     // Update Visual States
     updateNavbarUI();
+    updateHomePageUI();
     updateDashboardUI();
   }
 
@@ -547,6 +617,7 @@
     requireAuth,
     redirectIfAuthenticated,
     updateNavbarUI,
+    updateHomePageUI,
     updateDashboardUI,
     validateEmail: validateEmailFormat,
     getInitials

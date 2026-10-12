@@ -251,9 +251,20 @@
         function handleSocialLogin(provider) {
             showAlert(`Connecting to ${provider} Single Sign-On...`, 'info');
             setTimeout(() => {
-                showAlert(`Successfully authenticated via ${provider}! Redirecting to dashboard...`, 'success');
+                const socialUser = {
+                    id: 'USER-' + provider.toLowerCase() + '-' + Date.now(),
+                    name: provider === 'Google' ? 'Alex Rivera' : 'Jordan Taylor',
+                    username: provider === 'Google' ? 'Alex Rivera' : 'Jordan Taylor',
+                    email: provider === 'Google' ? 'alex.rivera@gmail.com' : 'jordan.taylor@icloud.com',
+                    role: 'Obsidian VIP',
+                    avatar: provider === 'Google' ? 'AR' : 'JT'
+                };
+                ApexAuth.setCurrentUser(socialUser);
+                showAlert(`Successfully authenticated via ${provider}! Redirecting...`, 'success');
                 setTimeout(() => {
-                    window.location.href = 'dashboard/index.html';
+                    const redirectUrl = sessionStorage.getItem('apex_auth_redirect') || 'index.html';
+                    sessionStorage.removeItem('apex_auth_redirect');
+                    window.location.href = redirectUrl;
                 }, 800);
             }, 700);
         }

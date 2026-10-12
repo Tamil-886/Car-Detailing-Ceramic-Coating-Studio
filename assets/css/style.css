@@ -770,11 +770,7 @@ select.form-control option:hover {
 }
 
 .site-header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 1050;
   background: rgba(6, 7, 9, 0.90);
   backdrop-filter: blur(20px);
@@ -4062,6 +4058,17 @@ body:not(.dark-mode) .map-iframe-container iframe {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
+}
+
+/* Universal RTL Metric & LTR Isolation */
+[dir="rtl"] .ltr-isolate,
+[dir="rtl"] bdi,
+body.rtl .ltr-isolate,
+body.rtl bdi {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline-block !important;
+  text-align: left !important;
 }
 
 
