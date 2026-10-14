@@ -100,7 +100,8 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
    -------------------------------------------------------------------------- */
 html.light .site-header,
 html[data-theme="light"] .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1050;
   background: rgba(255, 255, 255, 0.94) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
