@@ -41,8 +41,15 @@
                 <button class="sidebar-close-btn" id="sidebar-close-btn" title="Close Menu">&times;</button>
             </div>
 
+            <div class="sidebar-user">
+                <div class="user-avatar dashboard-user-avatar">AV</div>
+                <div class="user-info">
+                    <h4 class="user-name dashboard-user-name">Alexander Vance</h4>
+                    <span class="user-badge"><i class="ri-vip-crown-fill text-gold"></i> <span class="dashboard-user-tier">Obsidian VIP Member</span></span>
+                </div>
+            </div>
 
-            <nav class="sidebar-menu">
+<nav class="sidebar-menu">
                 <span class="menu-label">Client Portal</span>
                 <ul class="sidebar-links">
                     <li><a href="index.html" class="active"><span class="link-content"><i class="ri-dashboard-3-fill text-gold"></i> <span>Overview Console</span></span></a></li>
@@ -72,7 +79,7 @@
                         <i class="ri-menu-2-line"></i>
                     </button>
                     <div>
-                        <h2 class="dashboard-greeting-title" style="font-size: 1.35rem; margin: 0;">Overview Console</h2>
+                        <h2 class="dashboard-greeting-title" style="font-size: 1.35rem; margin: 0;">Welcome back, <span class="dashboard-user-name text-gold">Alexander Vance</span></h2>
                         <span style="font-size: 0.8rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px;">
                             <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e; display: inline-block;"></span>
                             Beverly Hills Bay 02 Cleanroom Telemetry Active
@@ -81,6 +88,7 @@
                 </div>
 
                 <div style="display: flex; align-items: center; gap: 12px;">
+                    <a href="profile.html" class="btn btn-outline btn-sm dashboard-profile-action-btn" title="View Profile & Garage Fleet"><i class="ri-user-3-line"></i> Profile</a>
                     <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
                         <i class="ri-sun-line theme-icon-light"></i>
                         <i class="ri-moon-line theme-icon-dark"></i>
@@ -98,6 +106,20 @@
             </header>
 
             <div class="dashboard-content">
+                <!-- Welcome Note & Profile Banner -->
+                <div class="dashboard-welcome-banner glass-card" style="padding: 20px 24px; border-radius: 16px; margin-bottom: 25px; border-left: 4px solid var(--primary-gold); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div class="user-avatar dashboard-user-avatar" style="width: 48px; height: 48px; font-size: 1.1rem;">AV</div>
+                        <div>
+                            <h3 style="margin: 0 0 4px; font-size: 1.15rem;">Welcome to Your Studio Portal, <span class="dashboard-user-name text-gold">Alexander Vance</span></h3>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">Cleanroom bay telemetry, active ceramic warranty status, and private fleet diagnostics.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span class="user-badge dashboard-user-tier-badge" style="background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.35); padding: 6px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 700;"><i class="ri-vip-crown-fill text-gold"></i> <span class="dashboard-user-tier">Obsidian VIP Member</span></span>
+                        <a href="profile.html" class="btn btn-sm btn-outline"><i class="ri-user-line"></i> Profile</a>
+                    </div>
+                </div>
                 <!-- Stat Cards Row -->
                 <div class="dashboard-stat-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-bottom: 25px;">
                     <div class="glass-card stat-card" style="padding: 20px; border-radius: 16px;">

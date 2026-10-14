@@ -719,7 +719,8 @@ html[data-theme="light"] .dashboard-sidebar {
 
 html.light .sidebar-user,
 html[data-theme="light"] .sidebar-user {
-  display: none !important;
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
 }
 
 html.light .sidebar-links li a,

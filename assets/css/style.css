@@ -3391,7 +3391,7 @@ html[dir="rtl"] .password-toggle-btn {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--primary-cyan);
-  margin-bottom: 22px;
+  margin: 0 auto 22px;
   letter-spacing: 0.4px;
 }
 
@@ -3417,6 +3417,7 @@ html[dir="rtl"] .password-toggle-btn {
   line-height: 1.12;
   margin-bottom: 18px;
   letter-spacing: -0.5px;
+  text-align: center;
 }
 
 .text-cyan-glow {
@@ -3428,8 +3429,9 @@ html[dir="rtl"] .password-toggle-btn {
   font-size: 1.08rem;
   color: var(--text-secondary);
   max-width: 780px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
   line-height: 1.65;
+  text-align: center;
 }
 
 .hero-ceramic-actions {
@@ -3437,6 +3439,7 @@ html[dir="rtl"] .password-toggle-btn {
   gap: 14px;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   margin-bottom: 45px;
 }
 
@@ -3770,6 +3773,7 @@ html[dir="rtl"] .password-toggle-btn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
 }
 
 .science-pillar-card:hover {
@@ -4069,6 +4073,21 @@ body.rtl bdi {
   unicode-bidi: isolate !important;
   display: inline-block !important;
   text-align: left !important;
+}
+
+/* Testimonial Cards & Equal Name Card Alignment */
+.testimonial-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.testimonial-card p {
+  flex: 1 1 auto !important;
+}
+
+.testimonial-author {
+  margin-top: auto !important;
 }
 
 

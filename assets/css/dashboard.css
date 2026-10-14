@@ -59,7 +59,14 @@
 }
 
 .sidebar-user {
-  display: none !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 22px;
 }
 
 .user-avatar {

@@ -479,34 +479,39 @@
     });
   }
 
-  // 5. Dynamic Dashboard UI Updates
+  // 5. Dynamic Dashboard UI Updates (Profile & Welcome Note)
   function updateDashboardUI() {
-    const user = getCurrentUser();
-    if (!user) return;
+    let user = getCurrentUser();
+    if (user && user.id === 'usr_vip_default') {
+      clearCurrentUser();
+      user = null;
+    }
 
-    const displayName = (user.username || user.name || 'User').trim();
+    const displayName = user ? (user.username || user.name || 'User').trim() : 'Alexander Vance';
+    const avatarInitials = user ? (user.avatar || getInitials(displayName)) : 'AV';
+    const userRole = user ? (user.role || 'Obsidian VIP Member') : 'Obsidian VIP Member';
     const firstName = displayName.split(' ')[0] || displayName;
 
-    // Update Sidebar User Name, Avatar, and Role
+    // Update Sidebar User Name, Profile widgets, and Welcome Note names
     const userNameElements = document.querySelectorAll('.sidebar-user .user-name, .dashboard-user-name');
     userNameElements.forEach(el => {
-      // Do NOT display username inside the dashboard heading
-      if (!el.closest('.dashboard-greeting-title')) {
-        el.textContent = displayName;
-      }
+      el.textContent = displayName;
     });
 
     const userAvatarElements = document.querySelectorAll('.sidebar-user .user-avatar, .dashboard-user-avatar');
     userAvatarElements.forEach(el => {
-      el.textContent = user.avatar || getInitials(displayName);
+      el.textContent = avatarInitials;
     });
 
     const userBadgeElements = document.querySelectorAll('.sidebar-user .user-badge');
     userBadgeElements.forEach(el => {
-      el.innerHTML = `<i class="ri-vip-crown-fill text-gold"></i> ${user.role || 'Obsidian VIP'}`;
+      el.innerHTML = `<i class="ri-vip-crown-fill text-gold"></i> <span>${userRole}</span>`;
     });
 
-    // NOTE: Dashboard Heading remains clean Overview Console without displaying personal names!
+    const userTierElements = document.querySelectorAll('.dashboard-user-tier');
+    userTierElements.forEach(el => {
+      el.textContent = userRole;
+    });
 
     const firstNameElements = document.querySelectorAll('.dashboard-user-firstname');
     firstNameElements.forEach(el => {
